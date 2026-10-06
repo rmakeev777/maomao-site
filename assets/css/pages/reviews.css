@@ -1,0 +1,29 @@
+/* MAOMAO — «Ваши отзывы» (reviews.html). Коммент 9. Белые карточки отзывов как на главной. */
+.rv-title { font-size: var(--fs-90); }
+.rv-lead { max-width: max(320px, calc(900 * var(--u))); }
+.rv { padding-bottom: max(72px, calc(150 * var(--u))); }
+.rv__grid {
+  columns: 4 calc(300 * var(--u));
+  column-gap: calc(48 * var(--u));
+  margin-top: max(16px, calc(30 * var(--u)));
+}
+.rv__item {
+  display: block;
+  break-inside: avoid;
+  margin-bottom: calc(48 * var(--u));
+  padding: max(10px, calc(22 * var(--u)));
+  background: var(--white);
+}
+.rv__item img { width: 100%; height: auto; border-radius: calc(11 * var(--u)); transition: transform .6s var(--ease); }
+.rv__item:hover img { transform: scale(1.02); }
+.rv__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 18px max(20px, calc(40 * var(--u)));
+  margin-top: max(24px, calc(56 * var(--u)));
+}
+.rv__cta-text { margin: 0; font-family: var(--f-display); font-size: var(--fs-42); line-height: 1.1; }
+@media (max-width: 1199.98px) { .rv__grid { columns: 3; column-gap: 20px; } .rv__item { margin-bottom: 20px; } }
+@media (max-width: 767.98px) { .rv__grid { columns: 2; column-gap: 14px; } .rv__item { margin-bottom: 14px; } }

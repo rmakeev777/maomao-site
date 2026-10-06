@@ -1,0 +1,494 @@
+/* =========================================================================
+   MAOMAO — base.css
+   Шрифты, сброс, дизайн-токены (из макета Figma «Frame 16», 1920px),
+   бумага-фон, контейнер, типографика, reveal-система, утилиты, фокус.
+   Владелец: Foundation. Страничные правки — только в pages/<page>.css.
+   ========================================================================= */
+
+/* ---------- Libertinus Serif 7.051 (OFL, локально; у сборки Google Fonts пустой глиф «ё») ---------- */
+@font-face {
+  font-family: "Libertinus Serif";
+  src: url("../fonts/LibertinusSerif-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Libertinus Serif";
+  src: url("../fonts/LibertinusSerif-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- Unageo (OFL, локально) ---------- */
+@font-face {
+  font-family: "Unageo";
+  src: url("../fonts/Unageo-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unageo";
+  src: url("../fonts/Unageo-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unageo";
+  src: url("../fonts/Unageo-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Токены ---------- */
+:root {
+  /* цвета макета */
+  --ink: #262626;
+  --paper: #FCFCFC;
+  --paper-text: #FAF9F6;
+  --white: #FFFFFF;
+  --green: #687B4F;
+  --olive: #565D3B;
+  --olive-2: #6E804D;
+  --pink: #EDC7CE;
+  --yellow: #E3C870;
+  --folder-01: #F6DCB9;
+  --tab-01: #F9E0BD;
+  --tab-02: #EBD8C6;
+  --tab-03: #E1E6D3;
+  --tab-04: #D3DCE7;
+  --notebook: #F2E2C7;
+  --notebook-cover: #0E2824;
+  --sticky: #EED998;
+  --line: rgba(38, 38, 38, .3);           /* линии таблицы выставок */
+  --overlay: rgba(38, 38, 38, .29);       /* оверлей фото футера (fill-opacity .29 в SVG) */
+  --sage-tint: rgba(104, 123, 79, .22);   /* #687B4F 22% поверх бумаги-шалфея */
+
+  /* градиенты кнопок (точно из SVG макета) */
+  --grad-green: linear-gradient(90deg, rgba(86, 93, 59, .25) 0%, #565D3B 22.3%, #6E804D 100%);
+  --grad-green-wide: linear-gradient(90deg, rgba(86, 93, 59, .25) 0%, #565D3B 7.5%, #565D3B 100%);
+  --grad-pink: linear-gradient(90deg, rgba(237, 199, 206, .25) 0%, #EDC7CE 22.3%, #EDC7CE 100%);
+  --grad-yellow: linear-gradient(90deg, rgba(227, 200, 112, .2) 0%, #E3C870 26.4%, #E3C870 100%);
+  --grad-light: linear-gradient(90deg, #FFFFFF 0%, #EDC7CE 22.3%, #EDC7CE 100%);
+  --pink-grad: linear-gradient(90deg, rgba(245, 232, 228, .7) 0%, rgba(241, 221, 224, .8) 14.06%, #EDC7CE 35.1%, #DDB9C2 74.52%);
+
+  /* текстура бумаги */
+  --paper-img: url("../img/ui/paper.jpg");
+  --paper-img-sm: url("../img/ui/paper-sm.jpg");
+
+  /* шрифты */
+  --f-display: "Libertinus Serif", "Libertinus Serif Display", Georgia, "Times New Roman", serif;
+  --f-text: "Ysabeau Infant", "Ysabeau", "Helvetica Neue", Arial, sans-serif;
+  --f-accent: "Unageo", "Ysabeau Infant", Arial, sans-serif;
+
+  /* масштаб: 1 px макета 1920. --sbw (ширина скроллбара) выставляет main.js */
+  --u: min(1px, calc((100vw - var(--sbw, 0px)) / 1920));
+  /* 1 px мобильного макета 390 */
+  --m: calc((100vw - var(--sbw, 0px)) / 390);
+
+  /* контейнер */
+  --gutter: calc(80 * var(--u));
+  --container: calc(1920 * var(--u));
+
+  /* кегли макета (desktop: N*--u, с минимумами) */
+  --fs-135: max(54px, calc(134.94 * var(--u)));
+  --fs-130: max(52px, calc(130 * var(--u)));
+  --fs-117: max(46px, calc(116.78 * var(--u)));
+  --fs-90: max(36px, calc(90 * var(--u)));
+  --fs-84: max(36px, calc(84.34 * var(--u)));
+  --fs-80: max(34px, calc(80 * var(--u)));
+  --fs-60: max(28px, calc(60 * var(--u)));
+  --fs-58: max(30px, calc(58.46 * var(--u)));
+  --fs-42: max(24px, calc(42 * var(--u)));
+  --fs-40: max(24px, calc(40 * var(--u)));
+  --fs-36: max(20px, calc(36 * var(--u)));
+  --fs-35: max(18px, calc(35 * var(--u)));
+  --fs-33: max(18px, calc(33.19 * var(--u)));
+  --fs-32: max(18px, calc(32 * var(--u)));
+  --fs-30: max(17px, calc(30 * var(--u)));
+  --fs-28: max(16px, calc(28 * var(--u)));
+  --fs-26: max(16px, calc(26 * var(--u)));
+  --fs-25: max(16px, calc(25 * var(--u)));
+  --fs-24: max(15px, calc(24 * var(--u)));
+  --fs-22: max(15px, calc(22 * var(--u)));
+  --fs-20: max(14px, calc(20 * var(--u)));
+  --fs-18: max(14px, calc(18 * var(--u)));
+  --fs-16: max(13px, calc(16 * var(--u)));
+  --fs-14: max(12px, calc(14 * var(--u)));
+
+  --lh-display: .95;
+  --lh-text: 1.5;
+
+  /* движение */
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --ease-io: cubic-bezier(.65, 0, .35, 1);
+  --dur: .8s;
+
+  /* слои */
+  --z-totop: 40;
+  --z-header: 50;
+  --z-menu: 100;
+  --z-lightbox: 200;
+
+  /* высота липкой шапки (для scroll-margin) */
+  --header-h: max(60px, calc(76 * var(--u)));
+
+  /* фокус */
+  --focus: 0 0 0 2px var(--paper), 0 0 0 4px var(--olive);
+}
+
+/* мобильная адаптация (<768): кегли по мобильному фрейму, шрифты/цвета — desktop */
+@media (max-width: 767.98px) {
+  :root {
+    --gutter: 15px;
+    --container: 100%;
+    --header-h: 56px;
+    --fs-135: 62px;
+    --fs-130: 48px;
+    --fs-117: 40px;
+    --fs-90: 34px;
+    --fs-84: 44px;
+    --fs-80: 34px;
+    --fs-60: 28px;
+    --fs-58: 28px;
+    --fs-42: 26px;
+    --fs-40: 26px;
+    --fs-36: 20px;
+    --fs-35: 16px;
+    --fs-33: 18px;
+    --fs-32: 20px;
+    --fs-30: 16px;
+    --fs-28: 16px;
+    --fs-26: 16px;
+    --fs-25: 15px;
+    --fs-24: 15px;
+    --fs-22: 15px;
+    --fs-20: 15px;
+    --fs-18: 14px;
+    --fs-16: 13px;
+    --fs-14: 12px;
+  }
+}
+
+/* ---------- Сброс ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--header-h);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body,
+h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+ul[role="list"], ol[role="list"], .list-reset { list-style: none; padding: 0; margin: 0; }
+
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+img { height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+a, button, [role="button"], [role="tab"] { -webkit-tap-highlight-color: transparent; }
+:where(h1, h2, h3, h4) { font-weight: 400; overflow-wrap: break-word; }
+p, li, figcaption { overflow-wrap: break-word; }
+[hidden] { display: none !important; }
+table { border-collapse: collapse; }
+
+/* ---------- Страница: бумага ---------- */
+body {
+  min-height: 100vh;
+  overflow-x: clip;
+  font-family: var(--f-text);
+  font-size: var(--fs-22);
+  font-weight: 400;
+  line-height: var(--lh-text);
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image: var(--paper-img);
+  background-repeat: repeat;
+  background-position: top center;
+  background-size: 100% auto;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (min-width: 1920px) {
+  body { background-size: 1920px auto; }
+}
+@media (max-width: 767.98px) {
+  body { background-image: var(--paper-img-sm); background-size: 880px auto; }
+}
+
+main { display: block; }
+
+/* зелёные/оливковые плашки = цвет + та же бумага в multiply */
+.bg-green,
+.bg-olive,
+.bg-paper-tint {
+  background-image: var(--paper-img);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+}
+.bg-green { background-color: var(--green); color: var(--paper-text); }
+.bg-olive { background-color: var(--olive); color: var(--white); }
+.bg-paper-tint {
+  background-color: var(--tint, var(--folder-01));
+  /* компенсация multiply: средний тон бумаги ≈ (.962,.958,.943) → итоговый цвет = токен */
+  background-color: rgb(from var(--tint, var(--folder-01)) calc(r * 1.039) calc(g * 1.043) calc(b * 1.061));
+}
+.bg-paper { background: var(--paper) var(--paper-img) top center / 100% auto repeat; }
+@media (max-width: 767.98px) {
+  .bg-green, .bg-olive, .bg-paper-tint { background-image: var(--paper-img-sm); }
+  .bg-paper { background-image: var(--paper-img-sm); background-size: 880px auto; }
+}
+
+/* ---------- Контейнер ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+/* полная ширина колонки 1920 без полей */
+.frame {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+}
+@media (max-width: 767.98px) {
+  .container, .frame { max-width: none; }
+}
+
+/* ---------- Типографика ---------- */
+/* Заголовки Libertinus: ls −0.05em (по умолчанию), line-height .95 */
+.t-display {
+  font-family: var(--f-display);
+  font-weight: 400;
+  letter-spacing: -.05em;
+  line-height: var(--lh-display);
+}
+/* курсивный акцент: «работ», «в искусстве» */
+.t-display em,
+.t-display i,
+.t-accent {
+  font-style: italic;
+  color: var(--olive);
+}
+/* на тёмной/зелёной плашке акцент розовый («вместе», «МАО МАО») */
+.t-display--light { color: var(--white); }
+.t-display--light em,
+.t-display--light i,
+.t-accent--pink { color: var(--pink); }
+
+.t-hero-xl   { font-size: var(--fs-135); }                                    /* МАО МАО */
+.t-title-xl  { font-size: var(--fs-117); }                                    /* Галерея работ */
+.t-title-l   { font-size: var(--fs-90); }                                     /* Воплотим…, Ваши отзывы, Остались вопросы? */
+.t-title-st  { font-size: var(--fs-80); letter-spacing: -.03em; }             /* Artist Statement */
+.t-title-m   { font-size: var(--fs-60); }                                     /* Между мгновениями, Стикеры и открытки */
+.t-title-s   { font-size: var(--fs-42); letter-spacing: 0; }                  /* Выставки, Арт Фестивали */
+.t-title-xs  { font-size: var(--fs-40); letter-spacing: 0; }                  /* Катерина Макеева */
+.t-logo      { font-family: var(--f-display); font-size: max(22px, calc(30 * var(--u))); letter-spacing: -.05em; line-height: 1; }
+
+/* «серия» — Unageo 28 −0.05em */
+.t-series-label {
+  display: block;
+  font-family: var(--f-accent);
+  font-size: var(--fs-28);
+  font-weight: 400;
+  letter-spacing: -.05em;
+  line-height: 1.1;
+  color: rgba(38, 38, 38, .6);   /* fill-opacity .6 в макете */
+}
+.t-unageo { font-family: var(--f-accent); }
+
+/* Ysabeau Infant — текстовые стили макета */
+.t-text      { font-family: var(--f-text); }
+.t-lead      { font-family: var(--f-text); font-size: var(--fs-25); letter-spacing: -.03em; line-height: 1.32; }   /* подзаголовки секций */
+.t-body-l    { font-family: var(--f-text); font-size: var(--fs-25); font-weight: 500; letter-spacing: -.02em; line-height: 1.52; } /* Artist Statement слева, текст услуг */
+.t-body      { font-family: var(--f-text); font-size: var(--fs-22); font-weight: 500; line-height: 1.5; }      /* правая колонка Statement, значения */
+.t-body-s    { font-family: var(--f-text); font-size: var(--fs-18); font-weight: 500; line-height: 1.5; }      /* абзацы блокнота, места выставок */
+.t-label     { font-family: var(--f-text); font-size: var(--fs-18); font-weight: 500; opacity: .5; line-height: 1.3; } /* «техники», «образование» */
+.t-card-title { font-family: var(--f-text); font-size: var(--fs-30); font-weight: 500; line-height: 1.2; }
+.t-card-meta  { font-family: var(--f-text); font-size: var(--fs-25); font-weight: 400; line-height: 1.3; }
+.t-h-tab     { font-family: var(--f-text); font-size: var(--fs-36); font-weight: 500; letter-spacing: -.03em; line-height: 1.2; } /* «Авторские картины» */
+.t-h-sub     { font-family: var(--f-text); font-size: var(--fs-32); font-weight: 400; letter-spacing: -.03em; line-height: 1.2; } /* «Сроки и стоимость» */
+.t-crumbs    { font-family: var(--f-text); font-size: var(--fs-18); opacity: .5; }
+
+/* кегли и начертания — утилиты */
+.fs-135 { font-size: var(--fs-135); } .fs-130 { font-size: var(--fs-130); } .fs-117 { font-size: var(--fs-117); }
+.fs-90 { font-size: var(--fs-90); } .fs-84 { font-size: var(--fs-84); } .fs-80 { font-size: var(--fs-80); }
+.fs-60 { font-size: var(--fs-60); } .fs-58 { font-size: var(--fs-58); } .fs-42 { font-size: var(--fs-42); }
+.fs-40 { font-size: var(--fs-40); } .fs-36 { font-size: var(--fs-36); } .fs-35 { font-size: var(--fs-35); }
+.fs-33 { font-size: var(--fs-33); } .fs-32 { font-size: var(--fs-32); } .fs-30 { font-size: var(--fs-30); }
+.fs-28 { font-size: var(--fs-28); } .fs-26 { font-size: var(--fs-26); } .fs-25 { font-size: var(--fs-25); }
+.fs-24 { font-size: var(--fs-24); } .fs-22 { font-size: var(--fs-22); } .fs-20 { font-size: var(--fs-20); }
+.fs-18 { font-size: var(--fs-18); } .fs-16 { font-size: var(--fs-16); } .fs-14 { font-size: var(--fs-14); }
+.w-300 { font-weight: 300; } .w-400 { font-weight: 400; } .w-500 { font-weight: 500; } .w-600 { font-weight: 600; } .w-700 { font-weight: 700; }
+.ls-0 { letter-spacing: 0; } .ls-2 { letter-spacing: -.02em; } .ls-3 { letter-spacing: -.03em; } .ls-5 { letter-spacing: -.05em; }
+.it { font-style: italic; }
+.o-50 { opacity: .5; } .o-40 { opacity: .4; }
+.c-ink { color: var(--ink); } .c-olive { color: var(--olive); } .c-green { color: var(--green); }
+.c-pink { color: var(--pink); } .c-white { color: var(--white); } .c-paper-text { color: var(--paper-text); }
+.ta-c { text-align: center; } .ta-r { text-align: right; } .ta-l { text-align: left; }
+.nowrap { white-space: nowrap; }
+.text-flow > * + * { margin-top: 1em; }
+
+/* ссылки внутри текста */
+.prose a,
+.link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+  transition: color .3s var(--ease), text-decoration-color .3s var(--ease);
+}
+.prose a:hover, .link:hover { color: var(--olive); }
+
+/* ---------- Фокус ---------- */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--olive);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+.bg-green :focus-visible,
+.bg-olive :focus-visible,
+.on-dark :focus-visible { outline-color: var(--pink); }
+
+/* ---------- Доступность ---------- */
+.visually-hidden,
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: 12px;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 16px;
+  transform: translateY(-160%);
+  transition: transform .25s var(--ease);
+}
+.skip-link:focus-visible { transform: none; outline-color: var(--pink); }
+
+/* ---------- Утилиты раскладки ---------- */
+.u-rel { position: relative; }
+.u-clip { overflow: clip; }
+.u-block { display: block; }
+.u-center { margin-inline: auto; }
+.stack > * + * { margin-top: var(--stack, 1em); }
+.cover-img { width: 100%; height: 100%; object-fit: cover; }
+.u-hide { display: none !important; }
+@media (max-width: 767.98px) {
+  .u-hide-m { display: none !important; }
+}
+@media (min-width: 768px) {
+  .u-show-m { display: none !important; }
+}
+@media (max-width: 1199.98px) {
+  .u-hide-t { display: none !important; }
+}
+@media (min-width: 1200px) {
+  .u-show-t { display: none !important; }
+}
+
+/* якоря под липкой шапкой */
+[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
+
+/* ---------- Reveal-система ----------
+   [data-reveal]               — fade-up 24px, 0.8s, один раз (IntersectionObserver)
+   [data-reveal="drop"]        — «выкладка» коллажного элемента: + доворот 3° к своему углу
+   [data-reveal="fade"]        — только прозрачность
+   [data-reveal-stagger]       — дети появляются волной (60 мс; --i выставляет main.js)
+   [data-intro]                — hero-последовательность при загрузке (.is-in по порядку --i)
+   html.js ставится инлайн-скриптом в <head>; без JS всё видно сразу. */
+.js [data-reveal],
+.js [data-reveal-stagger] > *,
+.js [data-intro] {
+  opacity: 0;
+  translate: 0 24px;
+  transition:
+    opacity var(--dur) var(--ease),
+    translate var(--dur) var(--ease),
+    rotate var(--dur) var(--ease);
+  transition-delay: calc(var(--i, 0) * var(--stagger, 60ms) + var(--delay, 0ms));
+}
+.js [data-intro] { --stagger: 90ms; transition-duration: 1s; }
+.js [data-reveal="fade"] { translate: none; }
+.js [data-reveal="drop"],
+.js [data-intro="drop"] { rotate: var(--drop-rot, 3deg); translate: 0 24px; }
+
+.js [data-reveal].is-revealed,
+.js [data-reveal-stagger].is-revealed > *,
+.js [data-intro].is-in,
+.reveal-all [data-reveal],
+.reveal-all [data-reveal-stagger] > *,
+.reveal-all [data-intro] {
+  opacity: 1;
+  translate: none;
+  rotate: none;
+}
+
+/* параллакс коллажа (main.js выставляет --px/--py) */
+.js [data-parallax].is-revealed,
+.js [data-parallax].is-in,
+.js [data-parallax]:not([data-reveal]):not([data-intro]) {
+  translate: var(--px, 0px) var(--py, 0px);
+}
+[data-parallax].is-parallax-live { transition: opacity var(--dur) var(--ease), translate 1.1s var(--ease), rotate var(--dur) var(--ease); transition-delay: 0s; }
+
+/* рукописные подчёркивания: [data-draw] svg → path прорисовываются */
+.js [data-draw] path {
+  transition: stroke-dashoffset 1.2s var(--ease);
+  transition-delay: calc(var(--i, 0) * 180ms + 200ms);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    transition-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+  .js [data-reveal],
+  .js [data-reveal-stagger] > *,
+  .js [data-intro] {
+    opacity: 1;
+    translate: none;
+    rotate: none;
+  }
+  .js [data-draw] path { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; }
+}
+
+/* печать */
+@media print {
+  .site-header, .menu, .totop, .lightbox, .slider__controls { display: none !important; }
+  body { background: #fff; }
+  .js [data-reveal], .js [data-reveal-stagger] > *, .js [data-intro] { opacity: 1 !important; translate: none !important; }
+}

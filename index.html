@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<!-- @include head title="Катерина Макеева" description="Катя Мао Мао — художник и иллюстратор. Живопись маслом, цифровая иллюстрация, принты, арт-встречи и эскизы тату. Каталог работ, выставки, заказ картин." page="" css="pages/home.css" fulltitle="Катерина Макеева · Катя Мао Мао — художник и иллюстратор" -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Катерина Макеева · Катя Мао Мао — художник и иллюстратор</title>
+<meta name="description" content="Катя Мао Мао — художник и иллюстратор. Живопись маслом, цифровая иллюстрация, принты, арт-встречи и эскизы тату. Каталог работ, выставки, заказ картин.">
+<link rel="canonical" href="https://rmakeev777.github.io/maomao-site/">
+<meta name="theme-color" content="#687B4F">
+<meta name="format-detection" content="telephone=no">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="МАОМАО — Катерина Макеева">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Катерина Макеева · Катя Мао Мао — художник и иллюстратор">
+<meta property="og:description" content="Катя Мао Мао — художник и иллюстратор. Живопись маслом, цифровая иллюстрация, принты, арт-встречи и эскизы тату. Каталог работ, выставки, заказ картин.">
+<meta property="og:url" content="https://rmakeev777.github.io/maomao-site/">
+<meta property="og:image" content="https://rmakeev777.github.io/maomao-site/assets/img/works/gratsiya-1280.webp">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="1280">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:ital,wght@0,300..700;1,300..700&display=swap">
+<link rel="preload" href="assets/fonts/LibertinusSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Unageo-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/pages/home.css">
+
+<!-- html.js — до отрисовки (reveal-анимации прячут элементы только при работающем JS);
+     страховка: если main.js не загрузился за 4 с — всё показывается. -->
+<script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.MAOMAO_READY)document.documentElement.classList.add("reveal-all")},4000);</script>
+<!-- @end head -->
+</head>
+<body class="page-home">
+<!-- @include header variant="home" -->
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+<header class="site-header site-header--home" data-header="home">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="index.html" aria-label="МАОМАО — на главную">МАОМАО</a>
+    <nav class="site-nav" aria-label="Основное меню">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="catalog.html">Каталог работ</a></li>
+        <li><a class="site-nav__link" href="about.html">О художнике</a></li>
+        <li><a class="site-nav__link" href="services.html">Услуги</a></li>
+        <li><a class="site-nav__link" href="#contact">Сотрудничество</a></li>
+      </ul>
+    </nav>
+    <button class="burger" type="button" data-menu-open aria-controls="mobile-menu" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span></button>
+  </div>
+</header>
+<!-- @end header -->
+<!-- @include mobile-menu -->
+<div class="menu" id="mobile-menu" data-menu role="dialog" aria-modal="true" aria-label="Меню" inert aria-hidden="true">
+  <div class="menu__top">
+    <a class="menu__logo" href="index.html" aria-label="МАОМАО — на главную">МАОМАО</a>
+    <button class="menu__close" type="button" data-menu-close aria-label="Закрыть меню"></button>
+  </div>
+  <nav class="menu__nav" aria-label="Меню сайта">
+    <ul class="menu__list">
+      <li><a class="menu__link" href="catalog.html">Каталог работ</a></li>
+      <li><a class="menu__link" href="about.html">О художнике</a></li>
+      <li><a class="menu__link" href="services.html">Услуги</a></li>
+      <li><a class="menu__link" href="#contact">Сотрудничество</a></li>
+      <li><a class="menu__link" href="exhibitions.html">Выставки</a></li>
+      <li><a class="menu__link" href="reviews.html">Отзывы</a></li>
+    </ul>
+  </nav>
+  <div class="menu__foot">
+    <a href="https://t.me/katemaomao" data-contact="telegram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M21.2 3.6 2.8 10.9c-.6.2-.6 1.1 0 1.3l4.6 1.6 1.8 5.6c.2.5.8.7 1.2.3l2.7-2.5 4.6 3.4c.5.4 1.2.1 1.3-.5l3.1-15.6c.1-.6-.4-1.1-.9-.9Z"/><path d="m7.4 13.8 10.3-6.6-8.1 8.1"/></svg>Телеграм</a>
+    <a href="https://instagram.com/kate.maomao" data-contact="instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.1" cy="6.9" r=".6" fill="currentColor"/></svg><span aria-hidden="true">Инст*</span><span class="visually-hidden">Инстаграм @kate.maomao (проект Meta Platforms Inc, деятельность которой запрещена в РФ)</span></a>
+    <a href="mailto:kate.maomao@mail.ru" data-contact="email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.8 6.6 8.2 6.2 8.2-6.2"/></svg>kate.maomao@mail.ru</a>
+    <p class="menu__note">* проект Meta Platforms Inc, деятельность которой запрещена в РФ</p>
+  </div>
+</div>
+<!-- @end mobile-menu -->
+
+<main id="main">
+
+  <!-- ============================ HERO (0–920) ============================ -->
+  <section class="hero" data-hero aria-labelledby="hero-title">
+    <div class="hero__left bg-green on-dark">
+      <a class="hero__logo" href="index.html" aria-label="МАОМАО — на главную" data-intro style="--i:0">МАОМАО</a>
+      <nav class="hero__nav" aria-label="Меню">
+        <ul>
+          <li data-intro style="--i:0"><a class="u-line" href="catalog.html">Каталог работ</a></li>
+          <li data-intro style="--i:1"><a class="u-line" href="about.html">О художнике</a></li>
+          <li data-intro style="--i:2"><a class="u-line" href="services.html">Услуги</a></li>
+          <li data-intro style="--i:3"><a class="u-line" href="#contact">Сотрудничество</a></li>
+        </ul>
+      </nav>
+      <div class="hero__content">
+        <p class="hero__role" data-intro style="--i:1"><span class="hero__dot" aria-hidden="true"></span>Художник и иллюстратор</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="hero__name" data-intro style="--i:2">Катерина</span>
+          <span class="hero__brand" data-intro style="--i:3">МАО МАО</span>
+        </h1>
+        <p class="hero__text" data-intro style="--i:4">Создаю и исследую современные художественные<br class="u-hide-m"> образы — о&nbsp;хрупкости момента, красоте<br class="u-hide-m"> повседневности и внутренней тишине</p>
+        <a class="btn btn--hero-pink hero__btn" href="#gallery" data-intro style="--i:5">Мои работы</a>
+      </div>
+    </div>
+
+    <div class="hero__right">
+      <img class="hero__paint" src="assets/img/ui/hero-paint.webp" width="2048" height="1962" alt="" fetchpriority="high" decoding="async">
+      <p class="hero__tagline" data-intro style="--i:3">о хрупкости момента и красоте</p>
+      <div class="hero__collage collage" style="--cw:960;--ch:920;--cw-m:390;--ch-m:462">
+        <!-- коммент 2: новый набросок с той же рваной окантовкой -->
+        <div class="collage__item hero__piece" data-intro="drop" data-parallax="0.6"
+             style="--i:5;--x:45;--y:241;--w:388;--h:310;--x-m:-18;--y-m:98;--w-m:197;--h-m:158">
+          <img src="assets/img/ui/torn-sketch-hero.webp" width="1100" height="880" alt="Набросок с натуры на рваном листе бумаги" fetchpriority="high" decoding="async">
+        </div>
+        <!-- коммент 3: «Цветочная композиция» в полароиде со скотчем (вместо полароида с девочкой) -->
+        <figure class="collage__item polaroid hero__piece hero__flowers" data-intro="drop" data-parallax="1"
+                style="--i:6;--x:70;--y:520;--w:250;--h:344;--x-m:6;--y-m:236;--w-m:128;--h-m:174;--pol-ratio:1589/2000;--pol-bottom:16cqw">
+          <span class="tape" style="--tape-y:1.5%;--tape-rot:-3deg" aria-hidden="true"></span>
+          <img src="assets/img/works/tsvetochnaya-kompozitsiya-640.webp" srcset="assets/img/works/tsvetochnaya-kompozitsiya-640.webp 544w, assets/img/works/tsvetochnaya-kompozitsiya-1280.webp 1088w" sizes="(max-width: 767px) 120px, 13vw" width="1088" height="1280" alt="Работа «Цветочная композиция»" decoding="async">
+        </figure>
+        <!-- коммент 1: фото Кати с рамкой-бабочкой в полароиде -->
+        <div class="collage__item hero__piece" data-intro="drop" data-parallax="1.4"
+             style="--i:7;--x:311;--y:107;--w:392;--h:392;--x-m:117;--y-m:30;--w-m:200;--h-m:200">
+          <img src="assets/img/ui/polaroid-hero.webp" width="1000" height="1000" alt="Катерина Макеева с картиной из серии «Перламутр» — полароид" fetchpriority="high" decoding="async">
+        </div>
+        <div class="collage__item hero__piece" data-intro="drop" data-parallax="0.9"
+             style="--i:8;--x:351;--y:403;--w:311;--h:359;--x-m:138;--y-m:181;--w-m:158;--h-m:183">
+          <img src="assets/img/ui/sticky-note-text.webp" width="933" height="1077" alt="Стикер: живопись, иллюстрация, принты, арт-встречи, тату" decoding="async">
+        </div>
+        <div class="collage__item hero__piece" data-intro="drop" data-parallax="1.2"
+             style="--i:9;--x:552;--y:396;--w:400;--h:300;--x-m:240;--y-m:177;--w-m:204;--h-m:153">
+          <img src="assets/img/ui/polaroid-interior-caption.webp" width="1200" height="900" alt="Полароид мастерской с подписью «Москва · Бангкок, работаю по всему миру»" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== ГАЛЕРЕЯ РАБОТ (920–4900) ======================== -->
+  <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+    <header class="gallery__head container">
+      <h2 class="gallery__title" id="gallery-title" data-reveal>Галерея <em>работ</em></h2>
+      <p class="gallery__lead" data-reveal>Живопись о состояниях, близости,<br> природе и повседневных наблюдениях</p>
+    </header>
+
+    <!-- Серия «Между мгновениями» — слайдер (коммент 5) -->
+    <div class="series series--bm container" aria-labelledby="bm-title">
+      <div class="series-head" data-reveal>
+        <div class="series-head__titles">
+          <p class="t-series-label">серия</p>
+          <h3 class="series-head__title" id="bm-title">Между мгновениями</h3>
+        </div>
+        <div class="series-head__actions">
+          <div class="slider__controls">
+            <button class="slider__btn slider__btn--prev" type="button" data-slider-prev="bm-slider" aria-label="Предыдущие работы"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 4 7 13l9 9"/></svg></button>
+            <button class="slider__btn slider__btn--next" type="button" data-slider-next="bm-slider" aria-label="Следующие работы"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m10 4 9 9-9 9"/></svg></button>
+          </div>
+          <a class="btn btn--green" href="catalog.html?series=between-moments">Каталог серии</a>
+        </div>
+      </div>
+      <div class="slider bm-slider" id="bm-slider" data-slider data-slider-label="Работы серии «Между мгновениями»">
+        <div class="slider__track" data-slider-track>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=gratsiya">
+          <span class="art-card__media"><img src="assets/img/works/gratsiya-640.webp" srcset="assets/img/works/gratsiya-640.webp 632w, assets/img/works/gratsiya-1280.webp 1264w, assets/img/works/gratsiya-2000.webp 1782w" sizes="(max-width: 767px) 152px, 23vw" width="1782" height="1804" alt="Грация — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Грация</span><span class="art-card__meta">2026</span></span>
+        </a>
+        <a class="art-card art-card--slide-s slider__slide" href="work.html?id=prikosnovenie-lotosa">
+          <span class="art-card__media"><img src="assets/img/works/prikosnovenie-lotosa-640.webp" srcset="assets/img/works/prikosnovenie-lotosa-640.webp 444w, assets/img/works/prikosnovenie-lotosa-1280.webp 889w, assets/img/works/prikosnovenie-lotosa-2000.webp 1195w" sizes="(max-width: 767px) 152px, 15vw" width="1195" height="1721" alt="Прикосновение лотоса — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Прикосновение лотоса</span><span class="art-card__meta">2026</span></span>
+        </a>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=yunost">
+          <span class="art-card__media"><img src="assets/img/works/yunost-640.webp" srcset="assets/img/works/yunost-640.webp 633w, assets/img/works/yunost-1280.webp 1265w, assets/img/works/yunost-2000.webp 1791w" sizes="(max-width: 767px) 152px, 23vw" width="1791" height="1812" alt="Юность — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Юность</span><span class="art-card__meta">2026</span></span>
+        </a>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=pod-odnim-zontom">
+          <span class="art-card__media"><img src="assets/img/works/pod-odnim-zontom-640.webp" srcset="assets/img/works/pod-odnim-zontom-640.webp 640w, assets/img/works/pod-odnim-zontom-1280.webp 1280w, assets/img/works/pod-odnim-zontom-2000.webp 2000w" sizes="(max-width: 767px) 152px, 23vw" width="2000" height="2000" alt="Под одним зонтом — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Под одним зонтом</span><span class="art-card__meta">2025</span></span>
+        </a>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=vstrecha">
+          <span class="art-card__media"><img src="assets/img/works/vstrecha-640.webp" srcset="assets/img/works/vstrecha-640.webp 640w, assets/img/works/vstrecha-1280.webp 1280w, assets/img/works/vstrecha-2000.webp 2000w" sizes="(max-width: 767px) 152px, 23vw" width="2000" height="2000" alt="Встреча — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Встреча</span><span class="art-card__meta">2025</span></span>
+        </a>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=vesenniy-son">
+          <span class="art-card__media"><img src="assets/img/works/vesenniy-son-640.webp" srcset="assets/img/works/vesenniy-son-640.webp 640w, assets/img/works/vesenniy-son-1280.webp 1280w, assets/img/works/vesenniy-son-2000.webp 2000w" sizes="(max-width: 767px) 152px, 23vw" width="2000" height="2000" alt="Весенний сон — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Весенний сон</span><span class="art-card__meta">2025</span></span>
+        </a>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=tsvetenie">
+          <span class="art-card__media"><img src="assets/img/works/tsvetenie-640.webp" srcset="assets/img/works/tsvetenie-640.webp 640w, assets/img/works/tsvetenie-1280.webp 1280w, assets/img/works/tsvetenie-2000.webp 2000w" sizes="(max-width: 767px) 152px, 23vw" width="2000" height="2000" alt="Цветение — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Цветение</span><span class="art-card__meta">2026</span></span>
+        </a>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=limony">
+          <span class="art-card__media"><img src="assets/img/works/limony-640.webp" srcset="assets/img/works/limony-640.webp 640w, assets/img/works/limony-1280.webp 1280w, assets/img/works/limony-2000.webp 2000w" sizes="(max-width: 767px) 152px, 23vw" width="2000" height="2000" alt="Лимоны — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Лимоны</span><span class="art-card__meta">2026</span></span>
+        </a>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=svet">
+          <span class="art-card__media"><img src="assets/img/works/svet-640.webp" srcset="assets/img/works/svet-640.webp 640w, assets/img/works/svet-1280.webp 1280w, assets/img/works/svet-2000.webp 2000w" sizes="(max-width: 767px) 152px, 23vw" width="2000" height="2000" alt="Свет — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Свет</span><span class="art-card__meta">2025</span></span>
+        </a>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=teplyy-vecher">
+          <span class="art-card__media"><img src="assets/img/works/teplyy-vecher-640.webp" srcset="assets/img/works/teplyy-vecher-640.webp 640w, assets/img/works/teplyy-vecher-1280.webp 1280w" sizes="(max-width: 767px) 152px, 23vw" width="1280" height="1280" alt="Теплый вечер — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Теплый вечер</span><span class="art-card__meta">2026</span></span>
+        </a>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=vodopad">
+          <span class="art-card__media"><img src="assets/img/works/vodopad-640.webp" srcset="assets/img/works/vodopad-640.webp 640w, assets/img/works/vodopad-1280.webp 1280w, assets/img/works/vodopad-2000.webp 1500w" sizes="(max-width: 767px) 152px, 23vw" width="1500" height="1500" alt="Водопад — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Водопад</span><span class="art-card__meta">2025</span></span>
+        </a>
+        <a class="art-card art-card--slide-s slider__slide" href="work.html?id=tsvetochnyy-rynok">
+          <span class="art-card__media"><img src="assets/img/works/tsvetochnyy-rynok-640.webp" srcset="assets/img/works/tsvetochnyy-rynok-640.webp 421w, assets/img/works/tsvetochnyy-rynok-1280.webp 842w, assets/img/works/tsvetochnyy-rynok-2000.webp 1156w" sizes="(max-width: 767px) 152px, 15vw" width="1156" height="1758" alt="Цветочный рынок — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Цветочный рынок</span><span class="art-card__meta">2025</span></span>
+        </a>
+        <a class="art-card art-card--slide-s slider__slide" href="work.html?id=tsvetochnaya-kompozitsiya">
+          <span class="art-card__media"><img src="assets/img/works/tsvetochnaya-kompozitsiya-640.webp" srcset="assets/img/works/tsvetochnaya-kompozitsiya-640.webp 544w, assets/img/works/tsvetochnaya-kompozitsiya-1280.webp 1088w, assets/img/works/tsvetochnaya-kompozitsiya-2000.webp 1364w" sizes="(max-width: 767px) 152px, 15vw" width="1364" height="1605" alt="Цветочная композиция — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Цветочная композиция</span><span class="art-card__meta">2025</span></span>
+        </a>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=u-morya">
+          <span class="art-card__media"><img src="assets/img/works/u-morya-640.webp" srcset="assets/img/works/u-morya-640.webp 640w, assets/img/works/u-morya-1280.webp 1280w, assets/img/works/u-morya-2000.webp 1636w" sizes="(max-width: 767px) 152px, 23vw" width="1636" height="1054" alt="У моря — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">У моря</span><span class="art-card__meta">2025</span></span>
+        </a>
+        <a class="art-card art-card--slide-l slider__slide" href="work.html?id=khranitel-khrama">
+          <span class="art-card__media"><img src="assets/img/works/khranitel-khrama-640.webp" srcset="assets/img/works/khranitel-khrama-640.webp 640w, assets/img/works/khranitel-khrama-1280.webp 1280w, assets/img/works/khranitel-khrama-2000.webp 1504w" sizes="(max-width: 767px) 152px, 23vw" width="1504" height="1503" alt="Хранитель храма — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Хранитель храма</span><span class="art-card__meta">2026</span></span>
+        </a>
+        <a class="art-card art-card--slide-s slider__slide" href="work.html?id=mgnovenie">
+          <span class="art-card__media"><img src="assets/img/works/mgnovenie-640.webp" srcset="assets/img/works/mgnovenie-640.webp 457w, assets/img/works/mgnovenie-1280.webp 915w, assets/img/works/mgnovenie-2000.webp 1129w" sizes="(max-width: 767px) 152px, 15vw" width="1129" height="1580" alt="Мгновение — цифровая живопись" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Мгновение</span><span class="art-card__meta">2025</span></span>
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Серия «Перламутр» -->
+    <div class="series series--perl container" aria-labelledby="perl-title">
+      <div class="series-head" data-reveal>
+        <div class="series-head__titles">
+          <p class="t-series-label">серия</p>
+          <h3 class="series-head__title" id="perl-title">Перламутр</h3>
+        </div>
+        <div class="series-head__actions">
+          <a class="btn btn--pink" href="catalog.html?series=perlamutr">Каталог серии</a>
+        </div>
+      </div>
+      <div class="perl-grid" data-reveal-stagger>
+        <a class="art-card" href="work.html?id=inzhir">
+          <span class="art-card__media"><img src="assets/img/photos/perlamutr-hand-1.webp" width="960" height="1280" alt="Работа «Инжир» из серии «Перламутр» в руках художницы" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Инжир</span></span>
+        </a>
+        <a class="art-card" href="work.html?id=zhasmin">
+          <span class="art-card__media"><img src="assets/img/photos/perlamutr-hand-2.webp" width="960" height="1280" alt="Работа «Жасмин» из серии «Перламутр» в руках художницы" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Жасмин</span></span>
+        </a>
+        <a class="art-card" href="work.html?id=rakovina">
+          <span class="art-card__media"><img src="assets/img/photos/perlamutr-hand-3.webp" width="960" height="1280" alt="Работа «Раковина» из серии «Перламутр» в круглой резной раме" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Раковина</span></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- «Стикеры и открытки» -->
+    <div class="shelf shelf--stickers container" aria-labelledby="stickers-title">
+      <h3 class="shelf__title" id="stickers-title" data-reveal>Стикеры и открытки</h3>
+      <div class="shelf__grid" data-reveal-stagger>
+        <a class="art-card art-card--bare art-card--stack shelf__card" href="work.html?id=otkrytki">
+          <span class="art-card__media"><img src="assets/img/photos/home/sticker-otkrytki-440.webp" srcset="assets/img/photos/home/sticker-otkrytki-440.webp 440w, assets/img/photos/home/sticker-otkrytki-880.webp 880w" sizes="(max-width: 767px) 45vw, 22vw" width="880" height="1049" alt="Авторские открытки с иллюстрациями на столе" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Авторские открытки</span><span class="art-card__meta">250 р./шт</span></span>
+        </a>
+        <a class="art-card art-card--bare art-card--stack shelf__card" href="work.html?id=khao-yai">
+          <span class="art-card__media"><img src="assets/img/photos/home/sticker-khao-yai-440.webp" srcset="assets/img/photos/home/sticker-khao-yai-440.webp 440w, assets/img/photos/home/sticker-khao-yai-880.webp 880w" sizes="(max-width: 767px) 45vw, 22vw" width="880" height="1049" alt="Стикерпак Khao Yai и открытка на деревянном столе" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Стикеры Khao Yai</span><span class="art-card__meta">350 р.</span></span>
+        </a>
+        <a class="art-card art-card--bare art-card--stack shelf__card" href="work.html?id=blooming-bangkokians">
+          <span class="art-card__media"><img src="assets/img/photos/home/sticker-blooming-440.webp" srcset="assets/img/photos/home/sticker-blooming-440.webp 440w, assets/img/photos/home/sticker-blooming-880.webp 880w" sizes="(max-width: 767px) 45vw, 22vw" width="880" height="1051" alt="Стикерпак Blooming Bangkokians в руке" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Blooming Bangkokians</span><span class="art-card__meta">350 р.</span></span>
+        </a>
+        <a class="art-card art-card--bare art-card--stack shelf__card shelf__card--white" href="work.html?id=seven-eleven">
+          <span class="art-card__media"><img src="assets/img/photos/home/sticker-seven-eleven-440.webp" srcset="assets/img/photos/home/sticker-seven-eleven-440.webp 440w, assets/img/photos/home/sticker-seven-eleven-880.webp 880w" sizes="(max-width: 767px) 45vw, 22vw" width="880" height="1049" alt="Стикерпак 7‑Eleven: тосты, онигири, соки" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Стикеры 7‑Eleven</span><span class="art-card__meta">350 р.</span></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- «Все работы» -->
+    <div class="shelf shelf--works container" aria-labelledby="works-title">
+      <h3 class="shelf__title" id="works-title" data-reveal>Все работы</h3>
+      <div class="shelf__grid" data-reveal-stagger>
+        <a class="art-card art-card--bare art-card--stack shelf__card" href="work.html?id=prikosnovenie">
+          <span class="art-card__media"><img src="assets/img/works/prikosnovenie-640.webp" srcset="assets/img/works/prikosnovenie-640.webp 512w, assets/img/works/prikosnovenie-1280.webp 1024w" sizes="(max-width: 767px) 45vw, 22vw" width="1024" height="1280" alt="Картина «Прикосновение» — холст, масло" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Прикосновение</span><span class="art-card__meta">2021, Холст, масло</span></span>
+        </a>
+        <a class="art-card art-card--bare art-card--stack shelf__card" href="work.html?id=para-iz-chaynatauna">
+          <span class="art-card__media"><img src="assets/img/works/para-iz-chaynatauna-640.webp" srcset="assets/img/works/para-iz-chaynatauna-640.webp 640w, assets/img/works/para-iz-chaynatauna-1280.webp 1280w" sizes="(max-width: 767px) 45vw, 22vw" width="1280" height="1280" alt="Иллюстрация «Пара из чайнатауна»" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Пара из чайнатауна</span><span class="art-card__meta">2025</span></span>
+        </a>
+        <a class="art-card art-card--bare art-card--stack shelf__card" href="work.html?id=bez-nazvaniya-tishina">
+          <span class="art-card__media"><img src="assets/img/works/bez-nazvaniya-tishina-640.webp" srcset="assets/img/works/bez-nazvaniya-tishina-640.webp 429w, assets/img/works/bez-nazvaniya-tishina-1280.webp 857w" sizes="(max-width: 767px) 45vw, 22vw" width="857" height="1280" alt="Портрет девушки в платке — без названия" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Без названия</span><span class="art-card__meta">2025</span></span>
+        </a>
+        <a class="art-card art-card--bare art-card--stack shelf__card" href="work.html?id=sever">
+          <span class="art-card__media"><img src="assets/img/works/sever-640.webp" srcset="assets/img/works/sever-640.webp 425w, assets/img/works/sever-1280.webp 850w" sizes="(max-width: 767px) 45vw, 22vw" width="850" height="1280" alt="Иллюстрация «Север»: девушка с козлёнком" loading="lazy" decoding="async"></span>
+          <span class="art-card__body"><span class="art-card__title">Север</span><span class="art-card__meta">2025</span></span>
+        </a>
+      </div>
+      <a class="btn btn--green-wide btn--lg btn--block shelf__all" href="catalog.html" data-reveal>Весь каталог работ</a>
+    </div>
+  </section>
+
+  <!-- ========================= ARTIST STATEMENT (5084–5830) ========================= -->
+  <section class="statement container" aria-labelledby="statement-title">
+    <div class="statement__left">
+      <h2 class="statement__title" id="statement-title" data-reveal>Artist Statement</h2>
+      <p class="statement__lead" data-reveal>В своей художественной практике я исследую<br class="u-hide-t"> хрупкость настоящего момента и способы<br class="u-hide-t"> сохранения мимолётных состояний, которые легко<br class="u-hide-t"> остаются незамеченными в повседневной жизни.<br class="u-hide-t"> Меня интересует, как через образ, цвет<br class="u-hide-t"> и композицию можно передать чувство спокойствия<br class="u-hide-t"> и&nbsp;внутренней <span class="heart-anchor">тишины.<svg class="statement__heart" viewBox="330 5520 40 54" fill="none" stroke="#EDC7CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-draw><path d="M350.086 5540.45C348.125 5537.48 345.644 5534.95 341.945 5533.45C339.825 5532.59 336.775 5532.94 335.26 5534.68C333.745 5536.41 333.745 5539.88 334.48 5542.66C336.989 5552.14 345.6 5556.95 351.55 5561.72C353.043 5562.98 354.513 5564.46 355.761 5565.97C357.009 5567.48 357.99 5568.97 359 5569"/><path d="M352 5541.45C352 5537.54 354.023 5529.67 358.368 5524.24C359.373 5522.98 361.165 5522.75 362.453 5523.23C368.408 5525.45 367.327 5543.79 365.802 5555.95C364.783 5559.15 363.756 5562.12 362.736 5565.07C362.223 5566.55 361.717 5568.02 359.663 5571"/></svg></span></p>
+    </div>
+
+    <div class="statement__collage collage" style="--cw:590;--ch:745;--cw-m:300;--ch-m:380">
+      <span class="collage__item sheet-sage" data-reveal="drop" style="--x:90;--y:0;--w:500;--h:680;--rot:7.6302;--x-m:46;--y-m:0;--w-m:254;--h-m:345"></span>
+      <figure class="collage__item mat statement__mat" data-reveal="drop" style="--x:63;--y:57;--w:466;--h:667;--x-m:32;--y-m:29;--w-m:237;--h-m:339">
+        <img src="assets/img/works/tsvetochnyy-rynok-640.webp" srcset="assets/img/works/tsvetochnyy-rynok-640.webp 421w, assets/img/works/tsvetochnyy-rynok-1280.webp 842w" sizes="(max-width: 767px) 200px, 20vw" width="842" height="1280" alt="Работа «Цветочный рынок»: девушки с цветами и слон" loading="lazy" decoding="async">
+      </figure>
+      <span class="collage__item paperclip" data-reveal="drop" style="--x:480;--y:29;--w:64;--h:96;--z:3;--x-m:242;--y-m:15;--w-m:27;--h-m:41"><img src="assets/img/ui/paperclip.webp" width="267" height="400" alt="" loading="lazy" decoding="async"></span>
+    </div>
+
+    <div class="statement__right" data-reveal>
+      <p>Значительную часть моего художественного языка<br class="u-hide-t"> сформировал <span class="ink">опыт жизни в Азии<svg viewBox="1479 5221 185 9" preserveAspectRatio="none" aria-hidden="true" data-draw><path d="M1479 5226C1479.95 5226 1480.89 5226 1511.2 5226C1541.5 5226 1601.13 5226 1664 5225"/></svg></span>, особенно<br class="u-hide-t"> в Таиланде. &nbsp;В своих работах я обращаюсь<br class="u-hide-t"> к тайской визуальной культуре и природным<br class="u-hide-t"> мотивам, переосмысляя их через взгляд художника,<br class="u-hide-t"> выросшего в России. Это становится исследованием<br class="u-hide-t"> встречи разных культур.</p>
+      <p>Особое место в моей практике занимает <span class="ink">образ<svg viewBox="1731 5450 80 9" preserveAspectRatio="none" aria-hidden="true" data-draw><path d="M1731 5454C1734.77 5454 1739.07 5454.38 1749.01 5454.95C1769.31 5455.14 1784.79 5454.77 1791.89 5454.19C1796.64 5454 1803.71 5454 1811 5454"/></svg></span><br class="u-hide-t"> <span class="ink">женщины.<svg viewBox="1343 5486 90 9" preserveAspectRatio="none" aria-hidden="true" data-draw><path d="M1343 5492C1343.94 5492 1345.84 5491.5 1351.05 5490.75C1360.97 5490.5 1368.7 5490 1380.98 5489.25C1391.84 5489 1412.11 5489 1433 5489"/></svg></span> Меня интересует не столько внешний<br class="u-hide-t"> портрет, сколько внутренние состояния,<br class="u-hide-t"> многогранность феминности, её уязвимость и сила.</p>
+      <p>В своей работе я использую цифровую<br class="u-hide-t"> иллюстрацию, печатную графику и масляную<br class="u-hide-t"> живопись. Независимо от техники, для меня важно<br class="u-hide-t"> сохранить ощущение живого жеста,<br class="u-hide-t"> материальности и эмоциональной глубины<br class="u-hide-t"> изображения.</p>
+      <!-- коммент 7: отдельная страница «О художнике» -->
+      <a class="link-more link-more--lg statement__more" href="about.html">Подробнее о художнице</a>
+    </div>
+  </section>
+
+  <!-- ========================= БЛОКНОТ: О ХУДОЖНИКЕ + ВЫСТАВКИ (5960–7358) ========================= -->
+  <section class="nb-section u-clip" aria-labelledby="nb-name">
+    <div class="nb-section__band bg-olive" aria-hidden="true"></div>
+
+    <!-- desktop/tablet: композиция с блокнотом -->
+    <div class="nb-stage collage" style="--cw:1920;--ch:1398">
+      <div class="collage__item" data-reveal="drop" style="--x:138;--y:28;--w:596;--h:477;--rot:16.799"><img src="assets/img/ui/torn-sketch.webp" width="1100" height="880" alt="" loading="lazy" decoding="async"></div>
+      <div class="collage__item" data-reveal="drop" style="--x:1378;--y:615;--w:664;--h:498;--rot:17.6613"><img src="assets/img/ui/polaroid-interior.webp" width="1100" height="825" alt="Полароид: мастерская с мольбертами" loading="lazy" decoding="async"></div>
+      <div class="collage__item" data-reveal="drop" style="--x:1178;--y:362;--w:522;--h:602;--rot:-24.5707"><img src="assets/img/ui/sticky-note.webp" width="780" height="900" alt="" loading="lazy" decoding="async"></div>
+
+      <div class="collage__item notebook nb" style="--x:195;--y:113;--w:1530;--h:1225">
+        <img class="notebook__bg" src="assets/img/ui/notebook.webp" width="1402" height="1122" alt="" loading="lazy" decoding="async">
+
+        <div class="notebook__page notebook__page--left nb__left">
+          <h2 class="nb__name" id="nb-name">Катерина Макеева</h2>
+          <p class="nb__text">Катерина Макеева — художница и иллюстратор из Волгограда.<br> Работает с цифровой иллюстрацией, художественными принтами<br> и масляной живописью.</p>
+          <p class="nb__text">Знание языков и жизнь в Азии сформировали интерес к встрече разных<br> культур, а женский образ стал способом говорить об уязвимости, силе<br> и принятии себя.</p>
+          <p class="t-label nb__label">техники</p>
+          <p class="nb__value">Digital · масло · печатная графика</p>
+          <p class="t-label nb__label nb__label--edu">образование</p>
+          <p class="nb__value nb__value--edu">ДШИ №5 · школа им. Выстропова · ВГСПУ</p>
+        </div>
+
+        <div class="notebook__page notebook__page--right nb__right">
+          <div class="nb__head">
+            <h3 class="nb__h">Выставки</h3>
+            <a class="btn btn--pink" href="exhibitions.html">Все выставки</a>
+          </div>
+          <ul class="rows nb__rows">
+            <li class="rows__row"><span class="rows__year">2026</span><div class="rows__main"><span class="rows__title">Between Moments</span><a class="link-more" href="exhibitions.html#between-moments">Подробнее</a></div><p class="rows__place">Персональная выставка<br> Teaory Teahouse, Бангкок, Таиланд</p></li>
+            <li class="rows__row"><span class="rows__year">2026</span><div class="rows__main"><span class="rows__title">Групповая выставка</span><a class="link-more" href="exhibitions.html#group-515">Подробнее</a></div><p class="rows__place">515 Victory / 515 Event Hall,<br> Бангкок, Таиланд</p></li>
+            <li class="rows__row"><span class="rows__year">2021<br>–2022</span><div class="rows__main"><span class="rows__title">Точка зрения</span><a class="link-more" href="exhibitions.html#tochka-zreniya">Подробнее</a></div><p class="rows__place">креативный кластер «Икра»,<br> Волгоград</p></li>
+            <li class="rows__row"><span class="rows__year">2021</span><div class="rows__main"><span class="rows__title">Быстрее, выше, сойдёт</span><a class="link-more" href="exhibitions.html#bystree-vyshe">Подробнее</a></div><p class="rows__place">Волгоградский музей<br> изобразительных искусств<br> имени И.И. Машкова, Волгоград</p></li>
+          </ul>
+          <div class="nb__head nb__head--fest">
+            <h3 class="nb__h">Арт Фестивали</h3>
+            <a class="btn btn--yellow" href="exhibitions.html#festivals">Все мероприятия</a>
+          </div>
+          <ul class="rows rows--festivals nb__rows">
+            <li class="rows__row"><span class="rows__year">2026</span><div class="rows__main"><span class="rows__title">Inner garden</span><a class="link-more" href="exhibitions.html#inner-garden">Подробнее</a></div><p class="rows__place">Арт перфоманс,<br> Бангкок, Таиланд</p></li>
+            <li class="rows__row"><span class="rows__year">2022</span><div class="rows__main"><span class="rows__title">«А вы не видели Лосева?»</span><a class="link-more" href="exhibitions.html#losev">Подробнее</a></div><p class="rows__place">Волгоград</p></li>
+            <li class="rows__row"><span class="rows__year">2022</span><div class="rows__main"><span class="rows__title">222222</span><a class="link-more" href="exhibitions.html#222222">Подробнее</a></div><p class="rows__place">креативный кластер «Икра»,<br> Волгоград</p></li>
+            <li class="rows__row"><span class="rows__year">2019</span><div class="rows__main"><span class="rows__title">Арт-фестиваль</span><a class="link-more" href="exhibitions.html#festival-2019">Подробнее</a></div><p class="rows__place">Волгоградская областная<br> библиотека для молодежи</p></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- полароид на левой странице блокнота -->
+      <div class="collage__item" data-reveal="drop" style="--x:381;--y:251;--w:444;--h:518;--rot:-7.26023;--z:2"><img src="assets/img/ui/notebook-card.webp" width="455" height="531" alt="" loading="lazy" decoding="async"></div>
+      <div class="collage__item" data-reveal="drop" style="--x:404;--y:251;--w:460;--h:460;--z:3"><img src="assets/img/ui/polaroid-portrait.webp" width="1000" height="1000" alt="Катерина Макеева — полароидный снимок за работой" loading="lazy" decoding="async"></div>
+    </div>
+
+    <!-- mobile: страница блокнота + цветные листки (по мобильному макету) -->
+    <div class="nb-mobile">
+      <div class="nb-mobile__torn" aria-hidden="true"><img src="assets/img/ui/torn-sketch.webp" width="1100" height="880" alt="" loading="lazy" decoding="async"></div>
+      <div class="notebook-sheet nb-mobile__sheet">
+        <h2 class="nb__name">Катерина Макеева</h2>
+        <p class="nb__text">Катерина Макеева — художница и иллюстратор из Волгограда. Работает с цифровой иллюстрацией, художественными принтами и масляной живописью.</p>
+        <p class="nb__text">Знание языков и жизнь в Азии сформировали интерес к встрече разных культур, а женский образ стал способом говорить об уязвимости, силе и принятии себя.</p>
+        <p class="t-label nb__label">техники</p>
+        <p class="nb__value">Digital · масло · печатная графика</p>
+        <p class="t-label nb__label">образование</p>
+        <p class="nb__value">ДШИ №5 · школа им. Выстропова · ВГСПУ</p>
+      </div>
+      <div class="nb-mobile__polaroid"><img src="assets/img/ui/polaroid-portrait.webp" width="1000" height="1000" alt="Катерина Макеева — полароидный снимок за работой" loading="lazy" decoding="async"></div>
+      <div class="leaf leaf--yellow nb-mobile__leaf">
+        <div class="nb__head"><h3 class="nb__h">Выставки</h3></div>
+        <ul class="nb-list">
+          <li><a href="exhibitions.html#between-moments"><b>2026</b>персональная выставка Between Moments, Teaory Teahouse, Бангкок, Таиланд</a></li>
+          <li><a href="exhibitions.html#group-515"><b>2026</b>групповая выставка, 515 Victory / 515 Event Hall, Бангкок, Таиланд</a></li>
+          <li><a href="exhibitions.html#tochka-zreniya"><b>2021–2022</b>выставка «Точка зрения», креативный кластер «Икра», Волгоград</a></li>
+          <li><a href="exhibitions.html#bystree-vyshe"><b>2021</b>выставка «Быстрее, выше, сойдёт», Волгоградский музей изобразительных искусств имени И.И. Машкова, Волгоград</a></li>
+        </ul>
+        <a class="btn btn--pink" href="exhibitions.html">Все выставки</a>
+      </div>
+      <div class="leaf leaf--peach nb-mobile__leaf">
+        <div class="nb__head"><h3 class="nb__h">Арт Фестивали</h3></div>
+        <ul class="nb-list">
+          <li><a href="exhibitions.html#inner-garden"><b>2026</b>арт перфоманс «Inner garden», Бангкок, Таиланд</a></li>
+          <li><a href="exhibitions.html#losev"><b>2022</b>«А вы не видели Лосева?», Волгоград</a></li>
+          <li><a href="exhibitions.html#222222"><b>2022</b>«222222», креативный кластер «Икра», Волгоград</a></li>
+          <li><a href="exhibitions.html#festival-2019"><b>2019</b>арт-фестиваль, Волгоградская областная библиотека для молодежи</a></li>
+        </ul>
+        <a class="btn btn--yellow" href="exhibitions.html#festivals">Все мероприятия</a>
+      </div>
+      <div class="nb-mobile__interior"><img src="assets/img/ui/polaroid-interior.webp" width="1100" height="825" alt="Полароид: мастерская с мольбертами" loading="lazy" decoding="async"></div>
+    </div>
+  </section>
+
+  <!-- ========================= УСЛУГИ (7480–8442) ========================= -->
+  <section class="services container" id="services" aria-labelledby="services-title">
+    <h2 class="section-title services__title" id="services-title" data-reveal>Воплотим вашу историю<br> <em>в искусстве</em></h2>
+    <div class="services__folder" data-reveal>
+      <div class="folder" id="services-folder" data-tabs>
+        <div class="folder__tabs" role="tablist" aria-label="Услуги">
+          <button class="folder__tab" type="button" role="tab" aria-selected="true" aria-controls="svc-1"><span class="folder__num">01</span> Картины на заказ</button>
+          <button class="folder__tab" type="button" role="tab" aria-selected="false" aria-controls="svc-2"><span class="folder__num">02</span> Иллюстрации</button>
+          <button class="folder__tab" type="button" role="tab" aria-selected="false" aria-controls="svc-3"><span class="folder__num">03</span> Арт-встречи</button>
+          <button class="folder__tab" type="button" role="tab" aria-selected="false" aria-controls="svc-4"><span class="folder__num">04</span> Эскизы тату</button>
+        </div>
+        <div class="folder__body">
+          <div class="folder__panel" id="svc-1"><div class="svc"><div class="svc__text"><h3 class="svc__title">Авторские картины</h3><p class="svc__desc">Я создаю авторские картины маслом, вдохновлённые вашими историями, воспоминаниями или идеями. Каждая работа разрабатывается индивидуально — от концепции и эскиза до готового произведения</p><h4 class="svc__terms-h">Сроки и стоимость</h4><p class="svc__terms">2–8 недель · Стоимость индивидуально</p><div class="svc__actions"><a class="btn btn--pink btn--md" href="services.html#process">Этапы работы</a><a class="btn btn--green-wide btn--md" href="#contact">Связаться со мной</a></div></div><div class="svc__media"><img src="assets/img/photos/services-frame.webp" width="718" height="1280" alt="Картина с ирисом в резной раме в руках художницы" loading="lazy" decoding="async"><img src="assets/img/photos/services-easel.webp" width="938" height="1280" alt="Портрет маслом на мольберте и масляная пастель" loading="lazy" decoding="async"></div></div></div>
+          <div class="folder__panel" id="svc-2"><div class="svc"><div class="svc__text"><h3 class="svc__title">Иллюстрации</h3><p class="svc__desc">Создаю цифровые иллюстрации для книг, брендов, упаковки, открыток, постеров и коммерческих проектов. Работаю как с авторскими, так и с клиентскими концепциями, уделяя особое внимание атмосфере и деталям</p><h4 class="svc__terms-h">Сроки и стоимость</h4><p class="svc__terms">От 3 дней до 4 недель · От 5 000 ₽ за иллюстрацию</p><div class="svc__actions"><a class="btn btn--pink btn--md" href="services.html#process">Этапы работы</a><a class="btn btn--green-wide btn--md" href="#contact">Связаться со мной</a></div></div><div class="svc__media"><img src="assets/img/works/para-iz-chaynatauna-1280.webp" srcset="assets/img/works/para-iz-chaynatauna-640.webp 640w, assets/img/works/para-iz-chaynatauna-1280.webp 1280w" sizes="(max-width: 767px) 45vw, 17vw" width="1280" height="1280" alt="Иллюстрация «Пара из чайнатауна»" loading="lazy" decoding="async"><img src="assets/img/works/ne-zasypaetsya-1280.webp" srcset="assets/img/works/ne-zasypaetsya-640.webp 640w, assets/img/works/ne-zasypaetsya-1280.webp 1280w" sizes="(max-width: 767px) 45vw, 22vw" width="1280" height="1280" alt="Иллюстрация «Не засыпается»" loading="lazy" decoding="async"></div></div></div>
+          <div class="folder__panel" id="svc-3"><div class="svc"><div class="svc__text"><h3 class="svc__title">Арт-встречи</h3><p class="svc__desc">Организую арт-встречи и творческие мастер-классы по живописи и цифровой иллюстрации для людей с разным уровнем подготовки. Формат адаптируется под уровень участников и тематику мероприятия</p><h4 class="svc__terms-h">Сроки и стоимость</h4><p class="svc__terms">Организация — от 1 недели · Стоимость по запросу</p><div class="svc__actions"><a class="btn btn--pink btn--md" href="services.html#process">Этапы работы</a><a class="btn btn--green-wide btn--md" href="#contact">Связаться со мной</a></div></div><div class="svc__media"><img src="assets/img/photos/meetings/img-6366-1280.webp" srcset="assets/img/photos/meetings/img-6366-640.webp 480w, assets/img/photos/meetings/img-6366-1280.webp 960w" sizes="(max-width: 767px) 45vw, 17vw" width="960" height="1280" alt="Арт-встреча: живопись цветов маслом" loading="lazy" decoding="async"><img src="assets/img/photos/meetings/img-1175-1280.webp" srcset="assets/img/photos/meetings/img-1175-640.webp 480w, assets/img/photos/meetings/img-1175-1280.webp 960w" sizes="(max-width: 767px) 45vw, 22vw" width="960" height="1280" alt="Участницы арт-встречи за столом" loading="lazy" decoding="async"></div></div></div>
+          <div class="folder__panel" id="svc-4"><div class="svc"><div class="svc__text"><h3 class="svc__title">Эскизы тату</h3><p class="svc__desc">Разрабатываю авторские эскизы татуировок с учётом идеи, анатомии и пожеланий клиента. Каждый эскиз создаётся индивидуально и не повторяется</p><h4 class="svc__terms-h">Сроки и стоимость</h4><p class="svc__terms">От 3 до 10 дней · От 3 000 ₽</p><div class="svc__actions"><a class="btn btn--pink btn--md" href="services.html#process">Этапы работы</a><a class="btn btn--green-wide btn--md" href="#contact">Связаться со мной</a></div></div><div class="svc__media"><img src="assets/img/photos/tattoo/untitled-artwork-1-1280.webp" srcset="assets/img/photos/tattoo/untitled-artwork-1-640.webp 640w, assets/img/photos/tattoo/untitled-artwork-1-1280.webp 1280w" sizes="(max-width: 767px) 45vw, 17vw" width="1280" height="1280" alt="Эскиз татуировки — тигры" loading="lazy" decoding="async"><img src="assets/img/photos/tattoo/2025-05-27-18-29-03-1280.webp" srcset="assets/img/photos/tattoo/2025-05-27-18-29-03-640.webp 480w, assets/img/photos/tattoo/2025-05-27-18-29-03-1280.webp 960w" sizes="(max-width: 767px) 45vw, 22vw" width="960" height="1280" alt="Татуировка по авторскому эскизу на предплечье" loading="lazy" decoding="async"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= ОТЗЫВЫ (8690–9640) ========================= -->
+  <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+    <div class="container">
+      <h2 class="section-title reviews__title" id="reviews-title" data-reveal>Ваши отзывы</h2>
+      <p class="reviews__lead" data-reveal>Благодарю каждого, кто доверил мне свою историю. Здесь — впечатления<br class="u-hide-t"> о картинах, иллюстрациях, мастер-классах и авторских проектах.</p>
+    </div>
+    <div class="reviews__strip container" data-reveal-stagger>
+      <a class="review review--full" href="assets/img/photos/reviews/img-4298-1400.webp" data-lightbox="home-reviews" data-srcset="assets/img/photos/reviews/img-4298-700.webp 427w, assets/img/photos/reviews/img-4298-1400.webp 854w" data-w="854" data-h="1400">
+        <img src="assets/img/photos/reviews/img-4298-700.webp" srcset="assets/img/photos/reviews/img-4298-700.webp 427w, assets/img/photos/reviews/img-4298-1400.webp 854w" sizes="(max-width: 767px) 153px, 21vw" width="854" height="1400" alt="Отзыв: сторис с портретом пары, автор @kate.maomao" loading="lazy" decoding="async">
+      </a>
+      <a class="review review--inset" href="assets/img/photos/reviews/img-4302-1400.webp" data-lightbox="home-reviews" data-srcset="assets/img/photos/reviews/img-4302-700.webp 395w, assets/img/photos/reviews/img-4302-1400.webp 790w" data-w="790" data-h="1400">
+        <img src="assets/img/photos/reviews/img-4302-700.webp" srcset="assets/img/photos/reviews/img-4302-700.webp 395w, assets/img/photos/reviews/img-4302-1400.webp 790w" sizes="(max-width: 767px) 136px, 19vw" width="790" height="1400" alt="Отзыв: семья с подаренным портретом" loading="lazy" decoding="async">
+      </a>
+      <a class="review review--inset" href="assets/img/photos/reviews/img-4304-1400.webp" data-lightbox="home-reviews" data-srcset="assets/img/photos/reviews/img-4304-700.webp 429w, assets/img/photos/reviews/img-4304-1400.webp 858w" data-w="858" data-h="1400">
+        <img src="assets/img/photos/home/review-4304-440.webp" srcset="assets/img/photos/home/review-4304-440.webp 440w, assets/img/photos/home/review-4304-880.webp 880w" sizes="(max-width: 767px) 136px, 19vw" width="880" height="1571" alt="Отзыв tayu.bkk: картина в интерьере — «so proud to be a part of this project»" loading="lazy" decoding="async">
+      </a>
+      <a class="review review--chat" href="assets/img/photos/reviews/img-4368-1400.webp" data-lightbox="home-reviews" data-srcset="assets/img/photos/reviews/img-4368-700.webp 700w, assets/img/photos/reviews/img-4368-1400.webp 1320w" data-w="1320" data-h="1188">
+        <img src="assets/img/photos/reviews/img-4368-700.webp" srcset="assets/img/photos/reviews/img-4368-700.webp 700w, assets/img/photos/reviews/img-4368-1400.webp 1320w" sizes="(max-width: 767px) 153px, 21vw" width="1320" height="1188" alt="Переписка: «Приветик! Очень круто, мне очень нравится»" loading="lazy" decoding="async">
+      </a>
+    </div>
+    <!-- коммент 9: кнопка «Все отзывы» -->
+    <div class="reviews__more container" data-reveal><a class="btn btn--pink" href="reviews.html">Все отзывы</a></div>
+  </section>
+
+  <!-- ========================= FAQ (9870–10645) ========================= -->
+  <section class="faq-section container" id="faq" aria-labelledby="faq-title">
+    <h2 class="section-title faq-section__title" id="faq-title" data-reveal>Остались вопросы?</h2>
+    <ul class="faq" data-accordion="single" data-reveal>
+      <li class="faq__item">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span>Как заказать картину?</span><span class="faq__plus" aria-hidden="true">+</span></button></h3>
+        <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div class="faq__a-inner"><div><p>Свяжитесь со мной через форму на сайте, электронную почту или социальные сети. Расскажите о своей идее, желаемом размере, материалах и сроках. После обсуждения проекта я подготовлю предложение и расчёт стоимости.</p></div></div></div>
+      </li>
+      <li class="faq__item">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span>Как проходит работа над заказом?</span><span class="faq__plus" aria-hidden="true">+</span></button></h3>
+        <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div class="faq__a-inner"><div><p>Мы обсуждаем концепцию и детали будущей работы, при необходимости создаётся эскиз. После согласования и внесения предоплаты я приступаю к работе. По завершении вы получаете фотографии готового произведения перед отправкой.</p></div></div></div>
+      </li>
+      <li class="faq__item">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span>Сколько времени занимает создание картины?</span><span class="faq__plus" aria-hidden="true">+</span></button></h3>
+        <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div class="faq__a-inner"><div><p>В среднем от 2 до 8 недель. Точные сроки зависят от размера, сложности работы и текущей загруженности.</p></div></div></div>
+      </li>
+      <li class="faq__item">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span>Какие материалы вы используете?</span><span class="faq__plus" aria-hidden="true">+</span></button></h3>
+        <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div class="faq__a-inner"><div><p>Работаю преимущественно масляными красками на профессиональных холстах. Также создаю цифровые иллюстрации и художественные принты высокого качества.</p></div></div></div>
+      </li>
+      <li class="faq__item">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5"><span>Как оформляются картины?</span><span class="faq__plus" aria-hidden="true">+</span></button></h3>
+        <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div class="faq__a-inner"><div><p>Картины выполняются на натянутом холсте на подрамнике. По запросу помогу подобрать оформление в раму. После полного высыхания живописные работы могут быть покрыты защитным лаком.</p></div></div></div>
+      </li>
+      <li class="faq__item">
+        <h3 class="faq__h"><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span>Как происходит оплата?</span><span class="faq__plus" aria-hidden="true">+</span></button></h3>
+        <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div class="faq__a-inner"><div><p>Для начала работы требуется предоплата 50%. Оставшаяся сумма оплачивается после завершения проекта перед передачей или отправкой работы.</p></div></div></div>
+      </li>
+    </ul>
+  </section>
+
+<!-- @include contact -->
+<section class="contact bg-olive on-dark" id="contact" aria-labelledby="contact-title">
+  <div class="contact__inner container">
+    <h2 class="contact__title" id="contact-title">Давайте создадим<br>произведение <em>вместе</em></h2>
+
+    <div class="contact__collage collage" data-reveal-stagger>
+      <figure class="collage__item mat contact__mat" style="--x:280;--y:0;--w:466;--h:667;--x-m:150;--y-m:18;--w-m:206;--h-m:295" data-parallax="0.5">
+        <img src="assets/img/works/mgnovenie-640.webp" srcset="assets/img/works/mgnovenie-640.webp 457w, assets/img/works/mgnovenie-1280.webp 915w, assets/img/works/mgnovenie-2000.webp 1129w" sizes="(max-width: 767px) 180px, 21vw" width="1129" height="1580" alt="Картина «Мгновение» в белом паспарту" loading="lazy" decoding="async">
+      </figure>
+      <div class="collage__item" style="--x:0;--y:191;--w:460;--h:460;--rot:-14.3286;--x-m:0;--y-m:90;--w-m:200;--h-m:200" data-parallax="1">
+        <img src="assets/img/ui/polaroid-portrait.webp" width="1000" height="1000" alt="Катерина Макеева — полароидный снимок" loading="lazy" decoding="async">
+      </div>
+    </div>
+
+    <div class="contact__side">
+      <p class="contact__lead">Оставьте заявку и наш специалист<br>вас проконсультирует по всем вопросам!</p>
+      <form class="contact-form" data-contact-form action="https://api.web3forms.com/submit" method="post">
+        <div class="field">
+          <input class="field__input" id="cf-name" name="name" type="text" autocomplete="name" placeholder=" " required aria-describedby="cf-name-err">
+          <label class="field__label" for="cf-name">Ваше имя</label>
+          <span class="field__error" id="cf-name-err"></span>
+        </div>
+        <div class="field">
+          <input class="field__input" id="cf-contact" name="contact" type="text" autocomplete="email" placeholder=" " required aria-describedby="cf-contact-err">
+          <label class="field__label" for="cf-contact">Как с вами связаться</label>
+          <span class="field__error" id="cf-contact-err"></span>
+        </div>
+        <div class="field">
+          <textarea class="field__input" id="cf-message" name="message" rows="1" placeholder=" "></textarea>
+          <label class="field__label" for="cf-message">Расскажите об идее</label>
+        </div>
+        <div class="field">
+          <input class="field__input" id="cf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder=" ">
+          <label class="field__label" for="cf-phone">Номер телефона</label>
+        </div>
+        <input class="hp-field" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--light btn--submit btn--block" type="submit">Отправить запрос</button>
+        <label class="consent">
+          <input class="consent__box" type="checkbox" name="consent" required>
+          <span>Я соглашаюсь с <a href="consent.html">обработкой персональных данных</a> и&nbsp;<a href="privacy.html">политикой конфиденциальности</a></span>
+        </label>
+        <p class="contact-form__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <div class="contact__legal">
+    <p class="contact__meta">* проект Meta Platforms Inc, деятельность которой запрещена в РФ</p>
+    <a href="privacy.html">Политика конфиденциальности</a>
+    <a href="consent.html">Согласие на обработку персональных данных</a>
+    <p class="contact__inn" data-inn hidden>Самозанятая Катерина Макеева · ИНН <span data-inn-value></span></p>
+  </div>
+</section>
+<!-- @end contact -->
+</main>
+
+<!-- @include footer -->
+<footer class="site-footer">
+  <img class="site-footer__photo" src="assets/img/photos/footer-1920.webp" srcset="assets/img/photos/footer-960.webp 960w, assets/img/photos/footer-1920.webp 1920w" sizes="100vw" width="1920" height="1287" alt="" loading="lazy" decoding="async">
+  <div class="site-footer__inner frame">
+    <div class="site-footer__brand">
+      <p class="site-footer__tagline">художник / иллюстратор / автор арт-встреч</p>
+      <p class="site-footer__name" lang="en">KATE MAO MAO</p>
+    </div>
+    <nav class="site-footer__nav" aria-label="Навигация в подвале">
+      <h2 class="site-footer__h">Навигация</h2>
+      <ul class="site-footer__list">
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="catalog.html">Портфолио</a></li>
+        <li><a href="reviews.html">Отзывы</a></li>
+      </ul>
+    </nav>
+    <div class="site-footer__contacts">
+      <h2 class="site-footer__h">Контакты</h2>
+      <ul class="site-footer__list">
+        <li><a href="https://instagram.com/kate.maomao" data-contact="instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.9"/><circle cx="17.1" cy="6.9" r=".6" fill="currentColor"/></svg><span aria-hidden="true">Инст*</span><span class="visually-hidden">Инстаграм @kate.maomao (проект Meta Platforms Inc, деятельность которой запрещена в РФ)</span></a></li>
+        <li><a href="https://t.me/katemaomao" data-contact="telegram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M21.2 3.6 2.8 10.9c-.6.2-.6 1.1 0 1.3l4.6 1.6 1.8 5.6c.2.5.8.7 1.2.3l2.7-2.5 4.6 3.4c.5.4 1.2.1 1.3-.5l3.1-15.6c.1-.6-.4-1.1-.9-.9Z"/><path d="m7.4 13.8 10.3-6.6-8.1 8.1"/></svg>Телеграм</a></li>
+        <li><a href="mailto:kate.maomao@mail.ru" data-contact="email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.8 6.6 8.2 6.2 8.2-6.2"/></svg>Почта</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<!-- @end footer -->
+<!-- @include totop -->
+<button class="totop" type="button" data-totop aria-label="Наверх"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 19.5V5M5.5 11.5 12 5l6.5 6.5"/></svg></button>
+<!-- @end totop -->
+<!-- @include scripts js="pages/home.js" -->
+<script defer src="assets/js/config.js"></script>
+<script defer src="assets/js/data.js"></script>
+<script defer src="assets/js/photos.js"></script>
+<script defer src="assets/js/main.js"></script>
+<script defer src="assets/js/pages/home.js"></script>
+<!-- @end scripts -->
+</body>
+</html>

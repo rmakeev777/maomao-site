@@ -1,0 +1,39 @@
+/* MAOMAO — правовые страницы и 404. Бумага, заголовок Libertinus, текст Ysabeau. */
+.legal { max-width: calc(900px + 2 * var(--gutter)); padding-top: max(24px, calc(56 * var(--u))); padding-bottom: max(72px, calc(150 * var(--u))); }
+.legal__title {
+  margin: max(28px, calc(56 * var(--u))) 0 0;
+  font-family: var(--f-display);
+  font-size: var(--fs-80);
+  font-weight: 400;
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+.legal__meta { margin: 16px 0 0; font-size: var(--fs-18); font-weight: 500; opacity: .5; }
+.legal h2 {
+  margin: max(28px, calc(48 * var(--u))) 0 0;
+  font-family: var(--f-display);
+  font-size: var(--fs-42);
+  font-weight: 400;
+  line-height: 1.05;
+}
+.legal p { margin: 14px 0 0; font-size: var(--fs-20); font-weight: 500; line-height: 1.6; }
+.legal a { color: var(--olive); text-underline-offset: .2em; }
+.legal__ph { padding: 0 .3em; background: rgba(237, 199, 206, .55); }
+
+/* 404 */
+.nf {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  min-height: 70vh;
+  padding-top: max(32px, calc(80 * var(--u)));
+  padding-bottom: max(72px, calc(120 * var(--u)));
+}
+.nf__collage { justify-self: center; }
+.nf__code { margin: 0; font-family: var(--f-accent); font-size: var(--fs-28); opacity: .5; }
+.nf__title { margin: 12px 0 0; font-family: var(--f-display); font-size: var(--fs-117); font-weight: 400; letter-spacing: -.05em; line-height: .95; }
+.nf__title em { color: var(--olive); }
+.nf__lead { margin: max(16px, calc(30 * var(--u))) 0 0; max-width: 30em; font-size: var(--fs-25); font-weight: 500; line-height: 1.5; }
+.nf__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: max(24px, calc(44 * var(--u))); }
+@media (min-width: 900px) { .nf { grid-template-columns: calc(560 * var(--u)) minmax(0, 1fr); gap: calc(100 * var(--u)); } }

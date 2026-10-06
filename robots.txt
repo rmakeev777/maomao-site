@@ -1,0 +1,8 @@
+# МАОМАО — Катерина Макеева
+# https://example.com — заглушка, заменить на реальный домен при публикации
+User-agent: *
+Allow: /
+Disallow: /_partials/
+Disallow: /styleguide.html
+
+Sitemap: https://rmakeev777.github.io/maomao-site/sitemap.xml

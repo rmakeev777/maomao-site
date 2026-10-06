@@ -1,0 +1,141 @@
+/* =========================================================================
+   MAOMAO — «Выставки и мероприятия» (exhibitions.html). Коммент 8.
+   Элементы макета: таблица-строки блокнота, полароиды, скотч, лист-шалфей,
+   паспарту, скрепка, оливковая текстурная плашка, кнопки макета.
+   ========================================================================= */
+.ex-anchors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px max(20px, calc(48 * var(--u)));
+  margin-top: max(20px, calc(40 * var(--u)));
+}
+
+.ex-h {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: var(--fs-42);
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* ---------------------------------------------- список (как правая страница блокнота) */
+.ex-index {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 48px;
+  padding-top: max(24px, calc(40 * var(--u)));
+}
+.ex-rows { margin-top: max(18px, calc(34 * var(--u))); }
+.ex-rows .rows__row { min-height: 0; padding: max(14px, calc(22 * var(--u))) 0 max(12px, calc(18 * var(--u))); }
+.ex-rows .rows__year { line-height: 1.2; }
+.ex-rows .rows__title { line-height: 1.15; }
+.ex-rows .rows__place { margin-top: 0; line-height: 1.5; }
+@media (min-width: 1000px) {
+  .ex-index { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: calc(110 * var(--u)); }
+  .ex-rows { --rows-cols: calc(116 * var(--u)) calc(300 * var(--u)) minmax(0, 1fr); }
+}
+
+/* ------------------------------------------------------------------ событие */
+.ex-event { margin-top: max(72px, calc(150 * var(--u))); }
+.ex-event--feature,
+.ex-event--volgograd,
+.ex-event__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+.ex-event__year {
+  margin: 0;
+  font-family: var(--f-accent);
+  font-size: var(--fs-28);
+  font-weight: 500;
+  line-height: 1;
+}
+.ex-event .t-series-label { margin: max(14px, calc(26 * var(--u))) 0 0; line-height: 1; }
+.ex-event__title {
+  margin: max(8px, calc(14 * var(--u))) 0 0;
+  font-family: var(--f-display);
+  font-size: var(--fs-90);
+  font-weight: 400;
+  letter-spacing: -.05em;
+  line-height: 1;
+}
+.ex-event__place { margin: max(12px, calc(20 * var(--u))) 0 0; font-size: var(--fs-22); font-weight: 500; opacity: .7; }
+.ex-event__desc { margin: max(18px, calc(34 * var(--u))) 0 0; max-width: 40em; font-size: var(--fs-25); font-weight: 500; letter-spacing: -.02em; line-height: 1.52; }
+.ex-event__text .btn { margin-top: max(22px, calc(40 * var(--u))); }
+.ex-event__collage { justify-self: center; }
+@media (min-width: 1000px) {
+  .ex-event--feature,
+  .ex-event__inner { grid-template-columns: minmax(0, 1fr) calc(760 * var(--u)); gap: calc(90 * var(--u)); }
+  .ex-event--volgograd { grid-template-columns: calc(600 * var(--u)) minmax(0, 1fr); gap: calc(110 * var(--u)); }
+}
+
+/* галереи */
+.ex-gallery {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: max(12px, calc(40 * var(--u)));
+  margin-top: max(28px, calc(64 * var(--u)));
+}
+.ex-gallery--wide { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ex-gallery__item {
+  display: block;
+  padding: max(8px, calc(22 * var(--u)));
+  background: var(--white);
+  overflow: hidden;
+}
+.ex-gallery__item img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .6s var(--ease); }
+.ex-gallery--wide .ex-gallery__item img { aspect-ratio: 3 / 2; }
+.ex-gallery__item:hover img { transform: scale(1.035); }
+.ex-gallery--masonry { display: block; columns: 4; column-gap: max(12px, calc(40 * var(--u))); }
+.ex-gallery--masonry .ex-gallery__item { break-inside: avoid; margin-bottom: max(12px, calc(40 * var(--u))); }
+.ex-gallery--masonry .ex-gallery__item img { aspect-ratio: auto; height: auto; }
+@media (max-width: 1199.98px) {
+  .ex-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ex-gallery--masonry { columns: 3; }
+}
+@media (max-width: 767.98px) {
+  .ex-gallery,
+  .ex-gallery--wide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ex-gallery--masonry { columns: 2; }
+}
+
+/* Inner Garden — на оливковой плашке */
+.ex-event--band { margin-top: max(72px, calc(150 * var(--u))); }
+.ex-event__band { padding: max(56px, calc(110 * var(--u))) 0; }
+.ex-event__band .ex-event__place { opacity: .8; }
+.ex-event__band .ex-gallery__item { background: #FBFAF7; }
+
+/* групповая выставка — строка */
+.ex-plain {
+  display: grid;
+  grid-template-columns: calc(160 * var(--u)) minmax(0, 1fr);
+  gap: 20px;
+  padding: max(28px, calc(48 * var(--u))) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.ex-plain .ex-event__year { margin-top: max(14px, calc(26 * var(--u))); }
+.ex-plain .ex-event__title { font-size: var(--fs-60); }
+@media (max-width: 767.98px) { .ex-plain { grid-template-columns: 1fr; gap: 6px; } .ex-plain .ex-event__year { margin-top: 0; } }
+
+.ex-rows--short { margin-top: max(22px, calc(40 * var(--u))); }
+@media (min-width: 1000px) { .ex-rows--short { --rows-cols: calc(116 * var(--u)) calc(300 * var(--u)) minmax(0, 1fr); } }
+
+/* арт-встречи */
+.ex-meet { margin-top: max(72px, calc(150 * var(--u))); }
+.ex-meet__title { margin: 0; }
+.ex-meet__lead { max-width: 52em; margin: max(18px, calc(36 * var(--u))) auto 0; font-size: var(--fs-25); font-weight: 500; letter-spacing: -.02em; line-height: 1.52; text-align: center; }
+.ex-meet__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: max(22px, calc(40 * var(--u))); }
+
+.ex-more { margin-top: max(72px, calc(150 * var(--u))); padding-bottom: max(72px, calc(150 * var(--u))); }
+
+[id] { scroll-margin-top: calc(var(--header-h) + 24px); }
+@media (max-width: 767.98px) {
+  .ex-event__desc, .ex-meet__lead { font-size: 15px; }
+  .ex-event__title { font-size: 40px; }
+  .ex-meet__actions .btn { flex: 1 1 100%; }
+}

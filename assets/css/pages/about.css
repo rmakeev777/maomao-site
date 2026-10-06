@@ -1,0 +1,140 @@
+/* =========================================================================
+   MAOMAO — «О художнике» (about.html). Коммент 7: отдельная страница
+   в стилистике блока Artist Statement. Только элементы макета.
+   ========================================================================= */
+
+/* ------------------------------------------------------------ ЗНАКОМСТВО */
+.ab-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  padding-top: max(24px, calc(60 * var(--u)));
+}
+.ab-intro .t-series-label { margin: 0; line-height: 1; }
+.ab-intro__name {
+  margin: max(10px, calc(16 * var(--u))) 0 0;
+  font-family: var(--f-display);
+  font-size: var(--fs-80);
+  font-weight: 400;
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+.ab-intro__alias { margin: max(10px, calc(18 * var(--u))) 0 0; font-size: var(--fs-18); font-weight: 500; opacity: .5; }
+.ab-intro__bio { margin-top: max(20px, calc(40 * var(--u))); }
+.ab-intro__bio p { margin: 0; font-size: var(--fs-25); font-weight: 500; letter-spacing: -.02em; line-height: 1.52; }
+.ab-intro__bio p + p { margin-top: 1em; }
+.ab-intro__collage { justify-self: center; }
+.ab-facts { margin: 0; border-bottom: 1px solid var(--line); align-self: end; }
+.ab-facts__row {
+  display: grid;
+  grid-template-columns: minmax(96px, 34%) minmax(0, 1fr);
+  gap: 16px;
+  padding: max(12px, calc(20 * var(--u))) 0;
+  border-top: 1px solid var(--line);
+}
+.ab-facts dt { font-size: var(--fs-18); font-weight: 500; opacity: .5; }
+.ab-facts dd { margin: 0; font-size: var(--fs-22); font-weight: 500; line-height: 1.35; }
+@media (min-width: 1000px) {
+  .ab-intro {
+    grid-template-columns: minmax(0, 1fr) calc(640 * var(--u)) minmax(0, .78fr);
+    gap: calc(60 * var(--u));
+    align-items: start;
+  }
+  .ab-facts { align-self: start; margin-top: calc(160 * var(--u)); }
+}
+
+/* ------------------------------------------------------ ARTIST STATEMENT */
+.ab-statement { margin-top: max(72px, calc(140 * var(--u))); }
+@media (min-width: 1200px) {
+  .ab-statement { height: auto; min-height: calc(876 * var(--u)); }
+  .ab-statement .statement__lead { line-height: calc(38 * var(--u)); }
+}
+
+/* ----------------------------------------------------------------- БЛОКНОТ */
+.ab-nb { position: relative; margin-top: max(56px, calc(80 * var(--u))); padding-bottom: max(56px, calc(110 * var(--u))); }
+.ab-nb__band { position: absolute; left: 0; right: 0; bottom: 0; top: 34%; }
+.ab-nb__stage {
+  position: relative;
+  width: min(100%, calc(1920 * var(--u)));
+  margin: 0 auto;
+  padding: calc(60 * var(--u)) 0 0;
+}
+.ab-nb__book { margin: 0 auto; }
+.ab-nb__deco { position: absolute; z-index: 0; pointer-events: none; }
+.ab-nb__deco img { width: 100%; height: auto; }
+.ab-nb__deco--sketch { left: calc(120 * var(--u)); top: 0; width: calc(560 * var(--u)); rotate: 14deg; }
+.ab-nb__deco--sticky { right: calc(150 * var(--u)); top: calc(300 * var(--u)); width: calc(500 * var(--u)); rotate: -22deg; }
+.ab-nb__book { position: relative; z-index: 1; }
+.ab-nb__page { display: flex; flex-direction: column; }
+.ab-nb__h {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: var(--fs-42);
+  font-weight: 400;
+  line-height: 1;
+}
+.ab-nb__h--next { margin-top: calc(46 * var(--u)) !important; }
+.ab-nb__page .nb__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.ab-rows { --rows-cols: calc(150 * var(--u)) minmax(0, 1fr); margin-top: calc(30 * var(--u)); }
+.ab-nb__page--right .ab-rows,
+.notebook__page--right .ab-rows { --rows-cols: calc(116 * var(--u)) calc(270 * var(--u)) minmax(0, 1fr); }
+.ab-rows .rows__row { min-height: 0; padding: calc(16 * var(--u)) 0 calc(14 * var(--u)); }
+.ab-rows .rows__year { line-height: 1.2; }
+.ab-rows .rows__title { line-height: 1.1; }
+.ab-rows .rows__place { margin-top: 0; line-height: 1.4; }
+
+/* планшет/мобильный: блокнот → страница-лист (как в мобильном макете) */
+@media (max-width: 1199.98px) {
+  .ab-nb__band { top: 42%; }
+  .ab-nb__deco { display: none; }
+  .ab-nb__stage { padding: 0 var(--gutter); }
+  .ab-nb__book {
+    width: 100%;
+    max-width: 760px;
+    aspect-ratio: auto;
+    padding: 34px 26px 30px 32px;
+    background-color: var(--notebook);
+    background-image: url("../../img/ui/paper-sm.jpg");
+    background-size: cover;
+    background-blend-mode: multiply;
+    border-top: 7px solid var(--notebook-cover);
+    border-left: 7px solid var(--notebook-cover);
+    border-radius: 30px 0 0 0;
+    box-shadow: inset 10px 0 14px -10px rgba(90, 64, 30, .45), inset 0 10px 14px -12px rgba(90, 64, 30, .35), 0 16px 30px -18px rgba(0, 0, 0, .45);
+  }
+  .ab-nb__book .notebook__bg { display: none; }
+  .ab-nb__book .notebook__page { position: static; width: auto; }
+  .ab-nb__book .notebook__page + .notebook__page { margin-top: 40px; }
+  .ab-nb__h { font-size: 28px; }
+  .ab-nb__h--next { margin-top: 32px !important; }
+  .ab-rows,
+  .notebook__page--right .ab-rows { --rows-cols: 110px minmax(0, 1fr); margin-top: 16px; }
+  .ab-rows .rows__row { padding: 12px 0 10px; }
+  .ab-rows .rows__main { flex-direction: row; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
+}
+@media (max-width: 767.98px) {
+  .ab-rows .rows__row { grid-template-columns: 1fr; }
+  .ab-nb__page .nb__head .btn { height: 36px; min-height: 0; padding-inline: 16px; font-size: 14px; }
+}
+
+/* ------------------------------------------------------------------ ФОТО */
+.ab-photos { margin-top: max(72px, calc(150 * var(--u))); padding-bottom: max(72px, calc(150 * var(--u))); }
+.ab-photos__title { margin: 0; }
+.ab-photos__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: calc(48 * var(--u)) calc(40 * var(--u));
+  margin-top: max(32px, calc(70 * var(--u)));
+  align-items: start;
+}
+.ab-photo { --pol-ratio: 2 / 3; display: block; transition: transform .5s var(--ease); }
+.ab-photo:nth-child(4n+1) { rotate: -2deg; }
+.ab-photo:nth-child(4n+2) { rotate: 1.5deg; margin-top: calc(40 * var(--u)); }
+.ab-photo:nth-child(4n+3) { rotate: -1deg; }
+.ab-photo:nth-child(4n+4) { rotate: 2deg; margin-top: calc(28 * var(--u)); }
+.ab-photo:hover { transform: translateY(-4px); }
+@media (max-width: 1199.98px) { .ab-photos__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 22px; } }
+@media (max-width: 767.98px) {
+  .ab-photos__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 16px; }
+  .ab-photo:nth-child(n) { margin-top: 0; }
+}

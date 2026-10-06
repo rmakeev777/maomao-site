@@ -1,0 +1,223 @@
+/* =========================================================================
+   MAOMAO — каталог (catalog.html) и карточка работы (work.html).
+   Только элементы макета: заголовок «Галерея работ», шапка серии, белые карточки,
+   таблица-строки с линиями, кнопки макета, слайдер карточек.
+   ========================================================================= */
+
+/* ------------------------------------------------------------- КАТАЛОГ */
+.catalog { padding-bottom: max(72px, calc(150 * var(--u))); }
+.catalog__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: max(10px, calc(18 * var(--u))) max(18px, calc(44 * var(--u)));
+  padding-bottom: max(18px, calc(28 * var(--u)));
+  border-bottom: 1px solid var(--line);
+}
+.cat-filter {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: .35em;
+  padding: 6px 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: 500 var(--fs-22)/1.2 var(--f-text);
+  cursor: pointer;
+}
+.cat-filter__n { font-family: var(--f-accent); font-size: .68em; opacity: .5; }
+.cat-filter::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--pink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .45s var(--ease);
+}
+.cat-filter:hover::after { transform: scaleX(.35); }
+.cat-filter[aria-pressed="true"]::after { transform: scaleX(1); }
+
+.catalog__intro { margin-top: max(36px, calc(72 * var(--u))); }
+.catalog__intro[hidden] { display: none; }
+.cat-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+}
+.cat-intro .t-series-label { margin: 0 0 calc(14 * var(--u)); line-height: 1; padding-left: calc(9 * var(--u)); }
+.cat-intro__title {
+  margin: 0;
+  padding-left: calc(9 * var(--u));
+  font-family: var(--f-display);
+  font-size: var(--fs-60);
+  font-weight: 400;
+  letter-spacing: -.05em;
+  line-height: 1;
+}
+.cat-intro__kind { margin: 12px 0 0; padding-left: calc(9 * var(--u)); font-size: var(--fs-18); font-weight: 500; opacity: .5; }
+.cat-intro__text { margin: 0; max-width: 62ch; font-size: var(--fs-25); font-weight: 500; letter-spacing: -.02em; line-height: 1.52; }
+@media (min-width: 900px) {
+  .cat-intro { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: calc(80 * var(--u)); align-items: end; }
+}
+
+.catalog__count {
+  margin: max(28px, calc(56 * var(--u))) 0 max(16px, calc(26 * var(--u)));
+  font-size: var(--fs-18);
+  font-weight: 500;
+  opacity: .5;
+}
+
+/* сетка-«кладка»: работы в собственных пропорциях (как в белых карточках макета) */
+.catalog__grid {
+  columns: 4 calc(300 * var(--u));
+  column-gap: calc(40 * var(--u));
+}
+.cat-card {
+  break-inside: avoid;
+  margin-bottom: calc(40 * var(--u));
+  --card-pad: max(12px, calc(30 * var(--u)));
+  opacity: 0;
+  translate: 0 18px;
+  transition: opacity .6s var(--ease), translate .6s var(--ease);
+  transition-delay: calc(var(--i, 0) * 50ms);
+}
+.catalog__grid.is-shown .cat-card { opacity: 1; translate: none; }
+.cat-card .art-card__media { background: transparent; }
+.cat-card .art-card__note { opacity: .6; }
+@media (prefers-reduced-motion: reduce) {
+  .cat-card { opacity: 1; translate: none; transition: none; }
+}
+@media (max-width: 1199.98px) { .catalog__grid { columns: 3; column-gap: 20px; } .cat-card { margin-bottom: 20px; } }
+@media (max-width: 767.98px) {
+  .catalog__filters { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scrollbar-width: none; gap: 22px; }
+  .catalog__filters::-webkit-scrollbar { display: none; }
+  .cat-filter { flex: none; font-size: 15px; }
+  .catalog__grid { columns: 2; column-gap: 14px; }
+  .cat-card { margin-bottom: 14px; }
+  .cat-card .art-card__body { flex-direction: column; gap: 2px; }
+}
+
+/* ---------------------------------------------------- КАРТОЧКА РАБОТЫ */
+.work-crumbs { padding-top: max(24px, calc(56 * var(--u))); }
+.work {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  margin-top: max(24px, calc(48 * var(--u)));
+  padding-bottom: max(56px, calc(120 * var(--u)));
+}
+@media (min-width: 900px) {
+  .work { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: calc(110 * var(--u)); align-items: start; }
+  .work__media { position: sticky; top: calc(var(--header-h) + 24px); }
+}
+.work__main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(16px, calc(56 * var(--u)));
+  background: var(--white);
+  cursor: zoom-in;
+}
+.work__main img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(78vh, calc(860 * var(--u) + 200px));
+  object-fit: contain;
+  transition: transform .6s var(--ease);
+}
+.work__main:hover img { transform: scale(1.02); }
+.work__zoom {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .9);
+  color: var(--ink);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.work__zoom svg { width: 22px; height: 22px; }
+.work__main:hover .work__zoom,
+.work__main:focus-visible .work__zoom { opacity: 1; }
+.work__thumbs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.work__thumb { display: block; width: 92px; height: 92px; padding: 6px; background: var(--white); }
+.work__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.work__thumb[aria-current="true"] { box-shadow: inset 0 -2px 0 var(--pink); }
+
+.work__info .t-series-label { margin: 0; line-height: 1; }
+.work__series { margin: 10px 0 0; font-size: var(--fs-22); font-weight: 500; }
+.work__series a { color: var(--olive); text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; }
+.work__series--plain { margin-top: 0; }
+.work__title {
+  margin: max(14px, calc(24 * var(--u))) 0 0;
+  font-family: var(--f-display);
+  font-size: var(--fs-80);
+  font-weight: 400;
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+.work__rows { margin: max(24px, calc(44 * var(--u))) 0 0; border-bottom: 1px solid var(--line); }
+.work__row {
+  display: grid;
+  grid-template-columns: minmax(110px, 30%) minmax(0, 1fr);
+  gap: 16px;
+  padding: max(12px, calc(18 * var(--u))) 0;
+  border-top: 1px solid var(--line);
+}
+.work__row dt { font-size: var(--fs-18); font-weight: 500; opacity: .5; }
+.work__row dd { margin: 0; font-size: var(--fs-22); font-weight: 500; line-height: 1.35; }
+.work__desc { margin-top: max(24px, calc(40 * var(--u))); }
+.work__desc p { margin: 0; font-size: var(--fs-25); font-weight: 500; letter-spacing: -.02em; line-height: 1.52; }
+.work__desc p + p { margin-top: .8em; }
+.work__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: max(28px, calc(48 * var(--u))); }
+.work__pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: max(36px, calc(64 * var(--u)));
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.work__pager-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--fs-22);
+  font-weight: 500;
+  line-height: 1.25;
+}
+.work__pager-link .t-label { display: block; margin-bottom: 4px; font-size: var(--fs-16); }
+.work__pager-link svg { width: 26px; height: 26px; flex: none; transition: transform .35s var(--ease); }
+.work__pager-link:hover svg { transform: translateX(-4px); }
+.work__pager-link--next { text-align: right; }
+.work__pager-link--next:hover svg { transform: translateX(4px); }
+
+.work-missing { grid-column: 1 / -1; padding: max(40px, calc(100 * var(--u))) 0; text-align: center; }
+.work-missing__title { margin: 0; font-family: var(--f-display); font-size: var(--fs-90); font-weight: 400; letter-spacing: -.05em; }
+.work-missing__text { margin: 20px 0 32px; font-size: var(--fs-25); }
+
+.work-more { padding-bottom: max(72px, calc(150 * var(--u))); }
+.work-more[hidden] { display: none; }
+.work-more .series-head .t-series-label { margin: 0; line-height: 1; }
+.work-more .series-head__title { margin: 6px 0 0; line-height: 1; }
+.work-more__slider { margin-top: max(24px, calc(42.9 * var(--u))); }
+@media (max-width: 767.98px) {
+  .work__main { padding: 14px; }
+  .work__desc p { font-size: 15px; }
+  .work__actions .btn { flex: 1 1 100%; }
+  .work-more .series-head__actions .btn { display: none; }
+}
