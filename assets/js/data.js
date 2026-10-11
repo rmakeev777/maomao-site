@@ -408,12 +408,12 @@ window.MAOMAO_DATA = {
    }
   },
   {
-   "id": "zhasmin",
+   "id": "vnutrennee-otrazhenie",
    "series": "perlamutr",
-   "title": "Жасмин",
-   "year": null,
-   "medium": "Масло",
-   "description": "",
+   "title": "Внутреннее отражение",
+   "year": 2026,
+   "medium": "Холст, масло",
+   "description": "Портрет помещён в перламутровую форму раковины, словно образ возникает не перед зеркалом, а внутри памяти. Цветы усиливают ощущение хрупкости, одновременно превращая женский профиль в образ внутренней собранности.",
    "status": "request",
    "prints": [],
    "gallery": [
@@ -424,13 +424,13 @@ window.MAOMAO_DATA = {
      "srcset": "assets/img/photos/perlamutr-hand-2.webp 960w"
     }
    ],
-   "workingTitle": true,
    "img": {
     "src": "assets/img/works/zhasmin-2000.webp",
     "w": 1504,
     "h": 2000,
     "srcset": "assets/img/works/zhasmin-640.webp 481w, assets/img/works/zhasmin-1280.webp 963w, assets/img/works/zhasmin-2000.webp 1504w"
-   }
+   },
+   "size": "24 × 18 см"
   },
   {
    "id": "rakovina",
@@ -573,22 +573,22 @@ window.MAOMAO_DATA = {
    }
   },
   {
-   "id": "zhemchuzhnaya-serga",
+   "id": "vzglyad-vnutr",
    "series": "perlamutr",
-   "title": "Жемчужная серьга",
-   "year": null,
-   "medium": "Масло",
-   "description": "",
+   "title": "Взгляд внутрь",
+   "year": 2026,
+   "medium": "Холст, масло",
+   "description": "Женский профиль и раковина соединяются в единый образ: внешнее становится продолжением внутреннего. Работа говорит о внимании к себе — не как об изоляции, а как о способе услышать собственное состояние.",
    "status": "request",
    "prints": [],
    "gallery": [],
-   "workingTitle": true,
    "img": {
     "src": "assets/img/works/zhemchuzhnaya-serga-2000.webp",
     "w": 1943,
     "h": 2000,
     "srcset": "assets/img/works/zhemchuzhnaya-serga-640.webp 622w, assets/img/works/zhemchuzhnaya-serga-1280.webp 1244w, assets/img/works/zhemchuzhnaya-serga-2000.webp 1943w"
-   }
+   },
+   "size": "20 × 20 см"
   },
   {
    "id": "lotos-i-zhemchug",
@@ -609,22 +609,22 @@ window.MAOMAO_DATA = {
    }
   },
   {
-   "id": "zhemchuzhina",
+   "id": "nimfa",
    "series": "perlamutr",
-   "title": "Жемчужина",
-   "year": null,
-   "medium": "Масло",
-   "description": "",
+   "title": "Нимфа",
+   "year": 2026,
+   "medium": "Холст, масло",
+   "description": "Фигура, укрытая внутри раскрытой раковины, существует рядом с жемчужиной как частью собственного пространства. Здесь раковина становится почти архитектурой внутреннего мира — местом покоя, уязвимости и сохранённой ценности.",
    "status": "request",
    "prints": [],
    "gallery": [],
-   "workingTitle": true,
    "img": {
     "src": "assets/img/works/zhemchuzhina-2000.webp",
     "w": 2000,
     "h": 1530,
     "srcset": "assets/img/works/zhemchuzhina-640.webp 640w, assets/img/works/zhemchuzhina-1280.webp 1280w, assets/img/works/zhemchuzhina-2000.webp 2000w"
-   }
+   },
+   "size": "30 × 40 см"
   },
   {
    "id": "prikosnovenie",

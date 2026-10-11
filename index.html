@@ -112,26 +112,26 @@
       <div class="hero__collage collage" style="--cw:960;--ch:920;--cw-m:390;--ch-m:462">
         <!-- коммент 2: новый набросок с той же рваной окантовкой -->
         <div class="collage__item hero__piece" data-intro="drop" data-parallax="0.6"
-             style="--i:5;--x:45;--y:241;--w:388;--h:310;--x-m:-18;--y-m:98;--w-m:197;--h-m:158">
+             style="--i:5;--x:22;--y:150;--w:388;--h:310;--rot:-3;--x-m:-22;--y-m:52;--w-m:190;--h-m:152">
           <img src="assets/img/ui/torn-sketch-hero.webp" width="1100" height="880" alt="Набросок с натуры на рваном листе бумаги" fetchpriority="high" decoding="async">
         </div>
         <!-- коммент 3: «Цветочная композиция» в полароиде со скотчем (вместо полароида с девочкой) -->
         <figure class="collage__item polaroid hero__piece hero__flowers" data-intro="drop" data-parallax="1"
-                style="--i:6;--x:70;--y:520;--w:250;--h:344;--x-m:6;--y-m:236;--w-m:128;--h-m:174;--pol-ratio:1589/2000;--pol-bottom:16cqw">
+                style="--i:6;--x:64;--y:492;--w:250;--h:344;--x-m:4;--y-m:228;--w-m:124;--h-m:170;--pol-ratio:1589/2000;--pol-bottom:16cqw">
           <span class="tape" style="--tape-y:1.5%;--tape-rot:-3deg" aria-hidden="true"></span>
           <img src="assets/img/works/tsvetochnaya-kompozitsiya-640.webp" srcset="assets/img/works/tsvetochnaya-kompozitsiya-640.webp 544w, assets/img/works/tsvetochnaya-kompozitsiya-1280.webp 1088w" sizes="(max-width: 767px) 120px, 13vw" width="1088" height="1280" alt="Работа «Цветочная композиция»" decoding="async">
         </figure>
-        <!-- коммент 1: фото Кати с рамкой-бабочкой в полароиде -->
-        <div class="collage__item hero__piece" data-intro="drop" data-parallax="1.4"
-             style="--i:7;--x:311;--y:107;--w:392;--h:392;--x-m:117;--y-m:30;--w-m:200;--h-m:200">
-          <img src="assets/img/ui/polaroid-hero.webp" width="1000" height="1000" alt="Катерина Макеева с картиной из серии «Перламутр» — полароид" fetchpriority="high" decoding="async">
-        </div>
+        <!-- коммент 1 + правка 11.10 («фото в полном размере»): фото Кати с рамкой-бабочкой целиком, вертикальный полароид -->
+        <figure class="collage__item polaroid hero__piece hero__portrait" data-intro="drop" data-parallax="1.4"
+                style="--i:7;--x:312;--y:84;--w:300;--h:540;--rot:-2;--x-m:122;--y-m:10;--w-m:146;--h-m:263;--pol-ratio:1080/1920;--pol-bottom:15cqw">
+          <img src="assets/img/photos/kate-butterfly-1280.webp" srcset="assets/img/photos/kate-butterfly-640.webp 360w, assets/img/photos/kate-butterfly-1280.webp 720w, assets/img/photos/kate-butterfly-1920.webp 1080w" sizes="(max-width: 767px) 140px, 16vw" width="1080" height="1920" alt="Катерина Макеева с картиной из серии «Перламутр» — полароид" fetchpriority="high" decoding="async">
+        </figure>
         <div class="collage__item hero__piece" data-intro="drop" data-parallax="0.9"
-             style="--i:8;--x:351;--y:403;--w:311;--h:359;--x-m:138;--y-m:181;--w-m:158;--h-m:183">
+             style="--i:8;--x:530;--y:528;--w:311;--h:359;--x-m:150;--y-m:268;--w-m:150;--h-m:173">
           <img src="assets/img/ui/sticky-note-text.webp" width="933" height="1077" alt="Стикер: живопись, иллюстрация, принты, арт-встречи, тату" decoding="async">
         </div>
         <div class="collage__item hero__piece" data-intro="drop" data-parallax="1.2"
-             style="--i:9;--x:552;--y:396;--w:400;--h:300;--x-m:240;--y-m:177;--w-m:204;--h-m:153">
+             style="--i:9;--x:598;--y:196;--w:400;--h:300;--x-m:252;--y-m:122;--w-m:190;--h-m:143">
           <img src="assets/img/ui/polaroid-interior-caption.webp" width="1200" height="900" alt="Полароид мастерской с подписью «Москва · Бангкок, работаю по всему миру»" decoding="async">
         </div>
       </div>
@@ -230,7 +230,7 @@
       </div>
     </div>
 
-    <!-- Серия «Перламутр» -->
+    <!-- Серия «Перламутр» — слайдер со всеми работами серии (правка 11.10: «надо чтобы листалось») -->
     <div class="series series--perl container" aria-labelledby="perl-title">
       <div class="series-head" data-reveal>
         <div class="series-head__titles">
@@ -238,45 +238,111 @@
           <h3 class="series-head__title" id="perl-title">Перламутр</h3>
         </div>
         <div class="series-head__actions">
+          <div class="slider__controls">
+            <button class="slider__btn slider__btn--prev" type="button" data-slider-prev="perl-slider" aria-label="Предыдущие работы"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 4 7 13l9 9"/></svg></button>
+            <button class="slider__btn slider__btn--next" type="button" data-slider-next="perl-slider" aria-label="Следующие работы"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m10 4 9 9-9 9"/></svg></button>
+          </div>
           <a class="btn btn--pink" href="catalog.html?series=perlamutr">Каталог серии</a>
         </div>
       </div>
-      <div class="perl-grid" data-reveal-stagger>
-        <a class="art-card" href="work.html?id=inzhir">
-          <span class="art-card__media"><img src="assets/img/photos/perlamutr-hand-1.webp" width="960" height="1280" alt="Работа «Инжир» из серии «Перламутр» в руках художницы" loading="lazy" decoding="async"></span>
-          <span class="art-card__body"><span class="art-card__title">Инжир</span></span>
-        </a>
-        <a class="art-card" href="work.html?id=zhasmin">
-          <span class="art-card__media"><img src="assets/img/photos/perlamutr-hand-2.webp" width="960" height="1280" alt="Работа «Жасмин» из серии «Перламутр» в руках художницы" loading="lazy" decoding="async"></span>
-          <span class="art-card__body"><span class="art-card__title">Жасмин</span></span>
-        </a>
-        <a class="art-card" href="work.html?id=rakovina">
-          <span class="art-card__media"><img src="assets/img/photos/perlamutr-hand-3.webp" width="960" height="1280" alt="Работа «Раковина» из серии «Перламутр» в круглой резной раме" loading="lazy" decoding="async"></span>
-          <span class="art-card__body"><span class="art-card__title">Раковина</span></span>
-        </a>
+      <div class="slider perl-slider" id="perl-slider" data-slider data-slider-label="Работы серии «Перламутр»">
+        <div class="slider__track" data-slider-track>
+          <a class="art-card perl-card slider__slide" href="work.html?id=inzhir" style="--r:960/1280">
+            <span class="art-card__media"><img src="assets/img/photos/perlamutr-hand-1.webp" width="960" height="1280" alt="Работа «Инжир» из серии «Перламутр» в руках художницы" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Инжир</span></span>
+          </a>
+          <a class="art-card perl-card slider__slide" href="work.html?id=vnutrennee-otrazhenie" style="--r:960/1280">
+            <span class="art-card__media"><img src="assets/img/photos/perlamutr-hand-2.webp" width="960" height="1280" alt="Работа «Внутреннее отражение» из серии «Перламутр» в руках художницы" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Внутреннее отражение</span></span>
+          </a>
+          <a class="art-card perl-card slider__slide" href="work.html?id=rakovina" style="--r:960/1280">
+            <span class="art-card__media"><img src="assets/img/photos/perlamutr-hand-3.webp" width="960" height="1280" alt="Работа «Раковина» из серии «Перламутр» в круглой резной раме" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Раковина</span></span>
+          </a>
+          <a class="art-card perl-card slider__slide" href="work.html?id=iris" style="--r:1060/1484">
+            <span class="art-card__media"><img src="assets/img/works/iris-640.webp" srcset="assets/img/works/iris-640.webp 457w, assets/img/works/iris-1280.webp 914w, assets/img/works/iris-2000.webp 1060w" sizes="(max-width: 767px) 260px, 26vw" width="1060" height="1484" alt="Работа «Ирис» из серии «Перламутр» — холст, масло, резная рама" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Ирис</span></span>
+          </a>
+          <a class="art-card perl-card slider__slide" href="work.html?id=babochka" style="--r:1097/1434">
+            <span class="art-card__media"><img src="assets/img/works/babochka-640.webp" srcset="assets/img/works/babochka-640.webp 490w, assets/img/works/babochka-1280.webp 979w, assets/img/works/babochka-2000.webp 1097w" sizes="(max-width: 767px) 260px, 26vw" width="1097" height="1434" alt="Работа «Бабочка» из серии «Перламутр» — холст, масло, резная рама" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Бабочка</span></span>
+          </a>
+          <a class="art-card perl-card slider__slide" href="work.html?id=zhemchuzhnye-kapli" style="--r:1086/1448">
+            <span class="art-card__media"><img src="assets/img/works/zhemchuzhnye-kapli-640.webp" srcset="assets/img/works/zhemchuzhnye-kapli-640.webp 480w, assets/img/works/zhemchuzhnye-kapli-1280.webp 960w, assets/img/works/zhemchuzhnye-kapli-2000.webp 1086w" sizes="(max-width: 767px) 260px, 26vw" width="1086" height="1448" alt="Работа «Жемчужные капли» из серии «Перламутр» — холст, масло, резная рама" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Жемчужные капли</span></span>
+          </a>
+          <a class="art-card perl-card slider__slide" href="work.html?id=ustritsa" style="--r:1500/2000">
+            <span class="art-card__media"><img src="assets/img/works/ustritsa-640.webp" srcset="assets/img/works/ustritsa-640.webp 480w, assets/img/works/ustritsa-1280.webp 960w, assets/img/works/ustritsa-2000.webp 1500w" sizes="(max-width: 767px) 260px, 26vw" width="1500" height="2000" alt="Работа «Устрица» из серии «Перламутр» — холст, масло, резная рама" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Устрица</span></span>
+          </a>
+          <a class="art-card perl-card slider__slide" href="work.html?id=u-vody" style="--r:1501/2000">
+            <span class="art-card__media"><img src="assets/img/works/u-vody-640.webp" srcset="assets/img/works/u-vody-640.webp 480w, assets/img/works/u-vody-1280.webp 961w, assets/img/works/u-vody-2000.webp 1501w" sizes="(max-width: 767px) 260px, 26vw" width="1501" height="2000" alt="Работа «У воды» из серии «Перламутр» — холст, масло, резная рама" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">У воды</span></span>
+          </a>
+          <a class="art-card perl-card slider__slide" href="work.html?id=dve-rakoviny" style="--r:2000/1502">
+            <span class="art-card__media"><img src="assets/img/works/dve-rakoviny-640.webp" srcset="assets/img/works/dve-rakoviny-640.webp 640w, assets/img/works/dve-rakoviny-1280.webp 1280w, assets/img/works/dve-rakoviny-2000.webp 2000w" sizes="(max-width: 767px) 260px, 26vw" width="2000" height="1502" alt="Работа «Две раковины» из серии «Перламутр» — холст, масло" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Две раковины</span></span>
+          </a>
+          <a class="art-card perl-card slider__slide" href="work.html?id=vzglyad-vnutr" style="--r:1943/2000">
+            <span class="art-card__media"><img src="assets/img/works/zhemchuzhnaya-serga-640.webp" srcset="assets/img/works/zhemchuzhnaya-serga-640.webp 622w, assets/img/works/zhemchuzhnaya-serga-1280.webp 1244w, assets/img/works/zhemchuzhnaya-serga-2000.webp 1943w" sizes="(max-width: 767px) 260px, 26vw" width="1943" height="2000" alt="Работа «Взгляд внутрь» из серии «Перламутр» — холст, масло, резная рама" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Взгляд внутрь</span></span>
+          </a>
+          <a class="art-card perl-card slider__slide" href="work.html?id=lotos-i-zhemchug" style="--r:1867/2000">
+            <span class="art-card__media"><img src="assets/img/works/lotos-i-zhemchug-640.webp" srcset="assets/img/works/lotos-i-zhemchug-640.webp 598w, assets/img/works/lotos-i-zhemchug-1280.webp 1195w, assets/img/works/lotos-i-zhemchug-2000.webp 1867w" sizes="(max-width: 767px) 260px, 26vw" width="1867" height="2000" alt="Работа «Лотос и жемчуг» из серии «Перламутр» — холст, масло, резная рама" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Лотос и жемчуг</span></span>
+          </a>
+          <a class="art-card perl-card slider__slide" href="work.html?id=nimfa" style="--r:2000/1530">
+            <span class="art-card__media"><img src="assets/img/works/zhemchuzhina-640.webp" srcset="assets/img/works/zhemchuzhina-640.webp 640w, assets/img/works/zhemchuzhina-1280.webp 1280w, assets/img/works/zhemchuzhina-2000.webp 2000w" sizes="(max-width: 767px) 260px, 26vw" width="2000" height="1530" alt="Работа «Нимфа» из серии «Перламутр» — холст, масло" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Нимфа</span></span>
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- «Стикеры и открытки» -->
+    <!-- «Стикеры и открытки» — слайдер (правка 11.10: «тут тоже» листать) -->
     <div class="shelf shelf--stickers container" aria-labelledby="stickers-title">
-      <h3 class="shelf__title" id="stickers-title" data-reveal>Стикеры и открытки</h3>
-      <div class="shelf__grid" data-reveal-stagger>
-        <a class="art-card art-card--bare art-card--stack shelf__card" href="work.html?id=otkrytki">
-          <span class="art-card__media"><img src="assets/img/photos/home/sticker-otkrytki-440.webp" srcset="assets/img/photos/home/sticker-otkrytki-440.webp 440w, assets/img/photos/home/sticker-otkrytki-880.webp 880w" sizes="(max-width: 767px) 45vw, 22vw" width="880" height="1049" alt="Авторские открытки с иллюстрациями на столе" loading="lazy" decoding="async"></span>
-          <span class="art-card__body"><span class="art-card__title">Авторские открытки</span><span class="art-card__meta">250 р./шт</span></span>
-        </a>
-        <a class="art-card art-card--bare art-card--stack shelf__card" href="work.html?id=khao-yai">
-          <span class="art-card__media"><img src="assets/img/photos/home/sticker-khao-yai-440.webp" srcset="assets/img/photos/home/sticker-khao-yai-440.webp 440w, assets/img/photos/home/sticker-khao-yai-880.webp 880w" sizes="(max-width: 767px) 45vw, 22vw" width="880" height="1049" alt="Стикерпак Khao Yai и открытка на деревянном столе" loading="lazy" decoding="async"></span>
-          <span class="art-card__body"><span class="art-card__title">Стикеры Khao Yai</span><span class="art-card__meta">350 р.</span></span>
-        </a>
-        <a class="art-card art-card--bare art-card--stack shelf__card" href="work.html?id=blooming-bangkokians">
-          <span class="art-card__media"><img src="assets/img/photos/home/sticker-blooming-440.webp" srcset="assets/img/photos/home/sticker-blooming-440.webp 440w, assets/img/photos/home/sticker-blooming-880.webp 880w" sizes="(max-width: 767px) 45vw, 22vw" width="880" height="1051" alt="Стикерпак Blooming Bangkokians в руке" loading="lazy" decoding="async"></span>
-          <span class="art-card__body"><span class="art-card__title">Blooming Bangkokians</span><span class="art-card__meta">350 р.</span></span>
-        </a>
-        <a class="art-card art-card--bare art-card--stack shelf__card shelf__card--white" href="work.html?id=seven-eleven">
-          <span class="art-card__media"><img src="assets/img/photos/home/sticker-seven-eleven-440.webp" srcset="assets/img/photos/home/sticker-seven-eleven-440.webp 440w, assets/img/photos/home/sticker-seven-eleven-880.webp 880w" sizes="(max-width: 767px) 45vw, 22vw" width="880" height="1049" alt="Стикерпак 7‑Eleven: тосты, онигири, соки" loading="lazy" decoding="async"></span>
-          <span class="art-card__body"><span class="art-card__title">Стикеры 7‑Eleven</span><span class="art-card__meta">350 р.</span></span>
-        </a>
+      <div class="shelf__head" data-reveal>
+        <h3 class="shelf__title" id="stickers-title">Стикеры и открытки</h3>
+        <div class="slider__controls">
+            <button class="slider__btn slider__btn--prev" type="button" data-slider-prev="stickers-slider" aria-label="Предыдущие стикеры и открытки"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 4 7 13l9 9"/></svg></button>
+            <button class="slider__btn slider__btn--next" type="button" data-slider-next="stickers-slider" aria-label="Следующие стикеры и открытки"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m10 4 9 9-9 9"/></svg></button>
+          </div>
+      </div>
+      <div class="slider stickers-slider" id="stickers-slider" data-slider data-slider-label="Стикеры и открытки">
+        <div class="slider__track" data-slider-track>
+          <a class="art-card art-card--bare art-card--stack shelf__card slider__slide" href="work.html?id=otkrytki">
+            <span class="art-card__media"><img src="assets/img/photos/home/sticker-otkrytki-440.webp" srcset="assets/img/photos/home/sticker-otkrytki-440.webp 440w, assets/img/photos/home/sticker-otkrytki-880.webp 880w" sizes="(max-width: 767px) 170px, 22vw" width="880" height="1049" alt="Авторские открытки с иллюстрациями на столе" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Авторские открытки</span><span class="art-card__meta">250 р./шт</span></span>
+          </a>
+          <a class="art-card art-card--bare art-card--stack shelf__card slider__slide" href="work.html?id=khao-yai">
+            <span class="art-card__media"><img src="assets/img/photos/home/sticker-khao-yai-440.webp" srcset="assets/img/photos/home/sticker-khao-yai-440.webp 440w, assets/img/photos/home/sticker-khao-yai-880.webp 880w" sizes="(max-width: 767px) 170px, 22vw" width="880" height="1049" alt="Стикерпак Khao Yai и открытка на деревянном столе" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Стикеры Khao Yai</span><span class="art-card__meta">350 р.</span></span>
+          </a>
+          <a class="art-card art-card--bare art-card--stack shelf__card slider__slide" href="work.html?id=blooming-bangkokians">
+            <span class="art-card__media"><img src="assets/img/photos/home/sticker-blooming-440.webp" srcset="assets/img/photos/home/sticker-blooming-440.webp 440w, assets/img/photos/home/sticker-blooming-880.webp 880w" sizes="(max-width: 767px) 170px, 22vw" width="880" height="1051" alt="Стикерпак Blooming Bangkokians в руке" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Blooming Bangkokians</span><span class="art-card__meta">350 р.</span></span>
+          </a>
+          <a class="art-card art-card--bare art-card--stack shelf__card shelf__card--white slider__slide" href="work.html?id=seven-eleven">
+            <span class="art-card__media"><img src="assets/img/photos/home/sticker-seven-eleven-440.webp" srcset="assets/img/photos/home/sticker-seven-eleven-440.webp 440w, assets/img/photos/home/sticker-seven-eleven-880.webp 880w" sizes="(max-width: 767px) 170px, 22vw" width="880" height="1049" alt="Стикерпак 7‑Eleven: тосты, онигири, соки" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Стикеры 7‑Eleven</span><span class="art-card__meta">350 р.</span></span>
+          </a>
+          <a class="art-card art-card--bare art-card--stack shelf__card shelf__card--white shelf__card--contain slider__slide" href="work.html?id=milk-tea-club">
+            <span class="art-card__media"><img src="assets/img/works/milk-tea-club-640.webp" srcset="assets/img/works/milk-tea-club-640.webp 426w, assets/img/works/milk-tea-club-1280.webp 852w, assets/img/works/milk-tea-club-2000.webp 1259w" sizes="(max-width: 767px) 170px, 22vw" width="1259" height="1892" alt="Стикерпак Milk Tea Club: чай, десерты и напитки" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Стикеры Milk Tea Club</span><span class="art-card__meta">350 р.</span></span>
+          </a>
+          <a class="art-card art-card--bare art-card--stack shelf__card shelf__card--white shelf__card--contain slider__slide" href="work.html?id=otkrytka-sestry">
+            <span class="art-card__media"><img src="assets/img/works/otkrytka-sestry-640.webp" srcset="assets/img/works/otkrytka-sestry-640.webp 530w, assets/img/works/otkrytka-sestry-1280.webp 1060w, assets/img/works/otkrytka-sestry-2000.webp 1124w" sizes="(max-width: 767px) 170px, 22vw" width="1124" height="1357" alt="Открытка «Сёстры»: сёстры читают книгу" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Открытка «Сёстры»</span><span class="art-card__meta">250 р.</span></span>
+          </a>
+          <a class="art-card art-card--bare art-card--stack shelf__card shelf__card--white shelf__card--contain slider__slide" href="work.html?id=otkrytka-barista">
+            <span class="art-card__media"><img src="assets/img/works/otkrytka-barista-640.webp" srcset="assets/img/works/otkrytka-barista-640.webp 478w, assets/img/works/otkrytka-barista-1280.webp 956w, assets/img/works/otkrytka-barista-2000.webp 1414w" sizes="(max-width: 767px) 170px, 22vw" width="1414" height="1894" alt="Открытка «Бариста»: юноша готовит кофе" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Открытка «Бариста»</span><span class="art-card__meta">250 р.</span></span>
+          </a>
+          <a class="art-card art-card--bare art-card--stack shelf__card shelf__card--white shelf__card--contain slider__slide" href="work.html?id=otkrytka-treshchina">
+            <span class="art-card__media"><img src="assets/img/works/otkrytka-treshchina-640.webp" srcset="assets/img/works/otkrytka-treshchina-640.webp 503w, assets/img/works/otkrytka-treshchina-1280.webp 1006w, assets/img/works/otkrytka-treshchina-2000.webp 1572w" sizes="(max-width: 767px) 170px, 22vw" width="1572" height="2000" alt="Открытка «Трещина»: графический портрет" loading="lazy" decoding="async"></span>
+            <span class="art-card__body"><span class="art-card__title">Открытка «Трещина»</span><span class="art-card__meta">250 р.</span></span>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -309,7 +375,7 @@
   <section class="statement container" aria-labelledby="statement-title">
     <div class="statement__left">
       <h2 class="statement__title" id="statement-title" data-reveal>Artist Statement</h2>
-      <p class="statement__lead" data-reveal>В своей художественной практике я исследую<br class="u-hide-t"> хрупкость настоящего момента и способы<br class="u-hide-t"> сохранения мимолётных состояний, которые легко<br class="u-hide-t"> остаются незамеченными в повседневной жизни.<br class="u-hide-t"> Меня интересует, как через образ, цвет<br class="u-hide-t"> и композицию можно передать чувство спокойствия<br class="u-hide-t"> и&nbsp;внутренней <span class="heart-anchor">тишины.<svg class="statement__heart" viewBox="330 5520 40 54" fill="none" stroke="#EDC7CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" data-draw><path d="M350.086 5540.45C348.125 5537.48 345.644 5534.95 341.945 5533.45C339.825 5532.59 336.775 5532.94 335.26 5534.68C333.745 5536.41 333.745 5539.88 334.48 5542.66C336.989 5552.14 345.6 5556.95 351.55 5561.72C353.043 5562.98 354.513 5564.46 355.761 5565.97C357.009 5567.48 357.99 5568.97 359 5569"/><path d="M352 5541.45C352 5537.54 354.023 5529.67 358.368 5524.24C359.373 5522.98 361.165 5522.75 362.453 5523.23C368.408 5525.45 367.327 5543.79 365.802 5555.95C364.783 5559.15 363.756 5562.12 362.736 5565.07C362.223 5566.55 361.717 5568.02 359.663 5571"/></svg></span></p>
+      <p class="statement__lead" data-reveal>В своей художественной практике я исследую<br class="u-hide-t"> хрупкость настоящего момента и способы<br class="u-hide-t"> сохранения мимолётных состояний, которые легко<br class="u-hide-t"> остаются незамеченными в повседневной жизни.<br class="u-hide-t"> Меня интересует, как через образ, цвет<br class="u-hide-t"> и композицию можно передать чувство спокойствия<br class="u-hide-t"> и&nbsp;внутренней тишины.</p>
     </div>
 
     <div class="statement__collage collage" style="--cw:590;--ch:745;--cw-m:300;--ch-m:380">
@@ -430,7 +496,7 @@
           <button class="folder__tab" type="button" role="tab" aria-selected="false" aria-controls="svc-4"><span class="folder__num">04</span> Эскизы тату</button>
         </div>
         <div class="folder__body">
-          <div class="folder__panel" id="svc-1"><div class="svc"><div class="svc__text"><h3 class="svc__title">Авторские картины</h3><p class="svc__desc">Я создаю авторские картины маслом, вдохновлённые вашими историями, воспоминаниями или идеями. Каждая работа разрабатывается индивидуально — от концепции и эскиза до готового произведения</p><h4 class="svc__terms-h">Сроки и стоимость</h4><p class="svc__terms">2–8 недель · Стоимость индивидуально</p><div class="svc__actions"><a class="btn btn--pink btn--md" href="services.html#process">Этапы работы</a><a class="btn btn--green-wide btn--md" href="#contact">Связаться со мной</a></div></div><div class="svc__media"><img src="assets/img/photos/services-frame.webp" width="718" height="1280" alt="Картина с ирисом в резной раме в руках художницы" loading="lazy" decoding="async"><img src="assets/img/photos/services-easel.webp" width="938" height="1280" alt="Портрет маслом на мольберте и масляная пастель" loading="lazy" decoding="async"></div></div></div>
+          <div class="folder__panel" id="svc-1"><div class="svc"><div class="svc__text"><h3 class="svc__title">Авторские картины</h3><p class="svc__desc">Я создаю авторские картины маслом, вдохновлённые вашими историями, воспоминаниями или идеями. Каждая работа разрабатывается индивидуально — от концепции и эскиза до готового произведения</p><h4 class="svc__terms-h">Сроки и стоимость</h4><p class="svc__terms">2–8 недель · Стоимость индивидуально</p><div class="svc__actions"><a class="btn btn--pink btn--md" href="services.html#process">Этапы работы</a><a class="btn btn--green-wide btn--md" href="#contact">Связаться со мной</a></div></div><div class="svc__media"><img style="object-position: 55% 50%" src="assets/img/photos/services-fig-1280.webp" srcset="assets/img/photos/services-fig-640.webp 480w, assets/img/photos/services-fig-1280.webp 960w" sizes="(max-width: 767px) 45vw, (max-width: 1199px) 30vw, 17vw" width="960" height="1280" alt="Картина маслом с инжиром в белой резной раме и жемчуг в раковине" loading="lazy" decoding="async"><img src="assets/img/photos/services-jasmine-1280.webp" srcset="assets/img/photos/services-jasmine-640.webp 481w, assets/img/photos/services-jasmine-1280.webp 963w" sizes="(max-width: 767px) 45vw, (max-width: 1199px) 30vw, 22vw" width="963" height="1280" alt="Картина маслом «Внутреннее отражение» в багетной раме" loading="lazy" decoding="async"></div></div></div>
           <div class="folder__panel" id="svc-2"><div class="svc"><div class="svc__text"><h3 class="svc__title">Иллюстрации</h3><p class="svc__desc">Создаю цифровые иллюстрации для книг, брендов, упаковки, открыток, постеров и коммерческих проектов. Работаю как с авторскими, так и с клиентскими концепциями, уделяя особое внимание атмосфере и деталям</p><h4 class="svc__terms-h">Сроки и стоимость</h4><p class="svc__terms">От 3 дней до 4 недель · От 5 000 ₽ за иллюстрацию</p><div class="svc__actions"><a class="btn btn--pink btn--md" href="services.html#process">Этапы работы</a><a class="btn btn--green-wide btn--md" href="#contact">Связаться со мной</a></div></div><div class="svc__media"><img src="assets/img/works/para-iz-chaynatauna-1280.webp" srcset="assets/img/works/para-iz-chaynatauna-640.webp 640w, assets/img/works/para-iz-chaynatauna-1280.webp 1280w" sizes="(max-width: 767px) 45vw, 17vw" width="1280" height="1280" alt="Иллюстрация «Пара из чайнатауна»" loading="lazy" decoding="async"><img src="assets/img/works/ne-zasypaetsya-1280.webp" srcset="assets/img/works/ne-zasypaetsya-640.webp 640w, assets/img/works/ne-zasypaetsya-1280.webp 1280w" sizes="(max-width: 767px) 45vw, 22vw" width="1280" height="1280" alt="Иллюстрация «Не засыпается»" loading="lazy" decoding="async"></div></div></div>
           <div class="folder__panel" id="svc-3"><div class="svc"><div class="svc__text"><h3 class="svc__title">Арт-встречи</h3><p class="svc__desc">Организую арт-встречи и творческие мастер-классы по живописи и цифровой иллюстрации для людей с разным уровнем подготовки. Формат адаптируется под уровень участников и тематику мероприятия</p><h4 class="svc__terms-h">Сроки и стоимость</h4><p class="svc__terms">Организация — от 1 недели · Стоимость по запросу</p><div class="svc__actions"><a class="btn btn--pink btn--md" href="services.html#process">Этапы работы</a><a class="btn btn--green-wide btn--md" href="#contact">Связаться со мной</a></div></div><div class="svc__media"><img src="assets/img/photos/meetings/img-6366-1280.webp" srcset="assets/img/photos/meetings/img-6366-640.webp 480w, assets/img/photos/meetings/img-6366-1280.webp 960w" sizes="(max-width: 767px) 45vw, 17vw" width="960" height="1280" alt="Арт-встреча: живопись цветов маслом" loading="lazy" decoding="async"><img src="assets/img/photos/meetings/img-1175-1280.webp" srcset="assets/img/photos/meetings/img-1175-640.webp 480w, assets/img/photos/meetings/img-1175-1280.webp 960w" sizes="(max-width: 767px) 45vw, 22vw" width="960" height="1280" alt="Участницы арт-встречи за столом" loading="lazy" decoding="async"></div></div></div>
           <div class="folder__panel" id="svc-4"><div class="svc"><div class="svc__text"><h3 class="svc__title">Эскизы тату</h3><p class="svc__desc">Разрабатываю авторские эскизы татуировок с учётом идеи, анатомии и пожеланий клиента. Каждый эскиз создаётся индивидуально и не повторяется</p><h4 class="svc__terms-h">Сроки и стоимость</h4><p class="svc__terms">От 3 до 10 дней · От 3 000 ₽</p><div class="svc__actions"><a class="btn btn--pink btn--md" href="services.html#process">Этапы работы</a><a class="btn btn--green-wide btn--md" href="#contact">Связаться со мной</a></div></div><div class="svc__media"><img src="assets/img/photos/tattoo/untitled-artwork-1-1280.webp" srcset="assets/img/photos/tattoo/untitled-artwork-1-640.webp 640w, assets/img/photos/tattoo/untitled-artwork-1-1280.webp 1280w" sizes="(max-width: 767px) 45vw, 17vw" width="1280" height="1280" alt="Эскиз татуировки — тигры" loading="lazy" decoding="async"><img src="assets/img/photos/tattoo/2025-05-27-18-29-03-1280.webp" srcset="assets/img/photos/tattoo/2025-05-27-18-29-03-640.webp 480w, assets/img/photos/tattoo/2025-05-27-18-29-03-1280.webp 960w" sizes="(max-width: 767px) 45vw, 22vw" width="960" height="1280" alt="Татуировка по авторскому эскизу на предплечье" loading="lazy" decoding="async"></div></div></div>

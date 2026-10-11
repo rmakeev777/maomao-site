@@ -82,25 +82,25 @@
 .ab-rows .rows__year { line-height: 1.2; }
 .ab-rows .rows__title { line-height: 1.1; }
 .ab-rows .rows__place { margin-top: 0; line-height: 1.4; }
+.ab-rows .ab-media-link { display: inline; font-size: inherit; line-height: inherit; }
 
 /* планшет/мобильный: блокнот → страница-лист (как в мобильном макете) */
 @media (max-width: 1199.98px) {
   .ab-nb__band { top: 42%; }
   .ab-nb__deco { display: none; }
   .ab-nb__stage { padding: 0 var(--gutter); }
+  /* страница блокнота целиком в обложке (тот же 9-slice, что .notebook-sheet в components.css) */
   .ab-nb__book {
+    --nbs-t: 36px; --nbs-r: 36px; --nbs-b: 36px; --nbs-l: 42px;
     width: 100%;
     max-width: 760px;
     aspect-ratio: auto;
-    padding: 34px 26px 30px 32px;
-    background-color: var(--notebook);
-    background-image: url("../../img/ui/paper-sm.jpg");
-    background-size: cover;
-    background-blend-mode: multiply;
-    border-top: 7px solid var(--notebook-cover);
-    border-left: 7px solid var(--notebook-cover);
-    border-radius: 30px 0 0 0;
-    box-shadow: inset 10px 0 14px -10px rgba(90, 64, 30, .45), inset 0 10px 14px -12px rgba(90, 64, 30, .35), 0 16px 30px -18px rgba(0, 0, 0, .45);
+    padding: 26px 22px 26px 26px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: var(--nbs-t) var(--nbs-r) var(--nbs-b) var(--nbs-l);
+    border-image: url("../../img/ui/notebook-page.webp") 72 72 72 84 fill / var(--nbs-t) var(--nbs-r) var(--nbs-b) var(--nbs-l) stretch;
+    filter: drop-shadow(0 14px 18px rgba(38, 38, 38, .2));
   }
   .ab-nb__book .notebook__bg { display: none; }
   .ab-nb__book .notebook__page { position: static; width: auto; }
@@ -112,7 +112,14 @@
   .ab-rows .rows__row { padding: 12px 0 10px; }
   .ab-rows .rows__main { flex-direction: row; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
 }
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  /* у строк выставок 3 ячейки: место — под названием во 2-й колонке, а не в узкой колонке года */
+  .notebook__page--right .ab-rows .rows__place { grid-column: 2; }
+}
 @media (max-width: 767.98px) {
+  .ab-nb__page .nb__head { flex-wrap: wrap; align-items: center; }
+  .ab-nb__page .nb__head .btn { white-space: nowrap; }
+  .ab-nb__book { --nbs-t: 24px; --nbs-r: 24px; --nbs-b: 24px; --nbs-l: 28px; padding: 18px 12px 18px 14px; }
   .ab-rows .rows__row { grid-template-columns: 1fr; }
   .ab-nb__page .nb__head .btn { height: 36px; min-height: 0; padding-inline: 16px; font-size: 14px; }
 }

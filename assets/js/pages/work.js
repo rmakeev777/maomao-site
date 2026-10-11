@@ -6,6 +6,12 @@
   if (!D || !M || !C || !root) return;
   var esc = M.esc;
   var id = new URLSearchParams(location.search).get("id");
+  // старые адреса работ «Перламутра» (до официальных названий из каталога Martemanchello, 11.10.2026)
+  var OLD_IDS = { "zhasmin": "vnutrennee-otrazhenie", "zhemchuzhnaya-serga": "vzglyad-vnutr", "zhemchuzhina": "nimfa" };
+  if (OLD_IDS[id]) {
+    id = OLD_IDS[id];
+    try { history.replaceState(null, "", "work.html?id=" + id + location.hash); } catch (e) {}
+  }
   var w = D.works.filter(function (x) { return x.id === id; })[0];
   var crumbs = document.querySelector("[data-work-crumbs]");
 

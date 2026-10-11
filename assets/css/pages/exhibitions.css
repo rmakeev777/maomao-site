@@ -31,6 +31,10 @@
 .ex-rows .rows__year { line-height: 1.2; }
 .ex-rows .rows__title { line-height: 1.15; }
 .ex-rows .rows__place { margin-top: 0; line-height: 1.5; }
+@media (min-width: 768px) and (max-width: 999.98px) {
+  /* узкий планшет: колонки таблицы от макета 1920 слишком узкие (≈50/100px) — даём нормальные */
+  .ex-rows { --rows-cols: 92px minmax(0, 1fr) minmax(0, 1fr); }
+}
 @media (min-width: 1000px) {
   .ex-index { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: calc(110 * var(--u)); }
   .ex-rows { --rows-cols: calc(116 * var(--u)) calc(300 * var(--u)) minmax(0, 1fr); }
