@@ -37,6 +37,10 @@
   var md = document.querySelector('meta[name="description"]');
   var desc = (w.description || s.text || "").replace(/\s+/g, " ").slice(0, 155);
   if (md) md.setAttribute("content", "«" + w.title + "», " + (w.medium || "").toLowerCase() + ". " + desc);
+  var canon = document.querySelector('link[rel="canonical"]');
+  if (canon) canon.setAttribute("href", canon.getAttribute("href").replace(/work\.html.*$/, "work.html?id=" + encodeURIComponent(w.id)));
+  var ogu = document.querySelector('meta[property="og:url"]');
+  if (ogu) ogu.setAttribute("content", ogu.getAttribute("content").replace(/work\.html.*$/, "work.html?id=" + encodeURIComponent(w.id)));
   var ogt = document.querySelector('meta[property="og:title"]');
   if (ogt) ogt.setAttribute("content", document.title);
   crumbs.insertAdjacentHTML("beforeend",
@@ -50,6 +54,7 @@
   var main =
     '<a class="work__main" href="' + esc(im0().src) + '" ' + lbAttrs(im0()) + ' aria-label="Открыть изображение «' + esc(w.title) + '» крупно">' +
     M.img(im0(), { alt: w.title + (w.medium ? " — " + w.medium.toLowerCase() : ""), sizes: "(max-width: 767px) 92vw, 46vw", eager: true }) +
+    (w.status === "sold" ? '<span class="sold-badge sold-badge--lg">Продана</span>' : "") +
     '<span class="work__zoom" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M10.5 7.5v6M7.5 10.5h6"/></svg></span></a>';
   function im0() { return imgs[0]; }
   var thumbs = imgs.length > 1 ? '<div class="work__thumbs">' + imgs.map(function (im, i) {
@@ -70,7 +75,7 @@
   var paragraphs = (w.description || "").split("\n").filter(Boolean).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
   if (!paragraphs && s.text) paragraphs = "<p>" + esc(s.text) + "</p>";
 
-  var wantText = w.series === "stickers" ? "Заказать" : (w.status === "available" ? "Хочу эту работу" : "Узнать о работе");
+  var wantText = w.series === "stickers" ? "Заказать" : (w.status === "available" ? "Хочу эту работу" : (w.status === "sold" ? "Хочу похожую работу" : "Узнать о работе"));
 
   root.innerHTML =
     '<div class="work__media">' + main + thumbs + "</div>" +
@@ -95,7 +100,7 @@
   // предзаполнение формы при «Хочу эту работу»
   var want = root.querySelector("[data-want]");
   want.addEventListener("click", function () {
-    M.prefill("Интересует работа «" + w.title + "»" + (isSeries ? " (серия «" + s.title + "»)" : ""));
+    M.prefill((w.status === "sold" ? "Хочу работу в духе «" : "Интересует работа «") + w.title + "»" + (isSeries ? " (серия «" + s.title + "»)" : ""));
   });
 
   // ---------- другие работы серии (слайдер как на главной) ----------

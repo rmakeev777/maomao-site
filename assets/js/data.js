@@ -389,7 +389,7 @@ window.MAOMAO_DATA = {
    "year": null,
    "medium": "Масло",
    "description": "",
-   "status": "request",
+   "status": "sold",
    "prints": [],
    "gallery": [
     {
@@ -439,7 +439,7 @@ window.MAOMAO_DATA = {
    "year": null,
    "medium": "Масло",
    "description": "",
-   "status": "request",
+   "status": "sold",
    "prints": [],
    "gallery": [
     {
@@ -464,7 +464,7 @@ window.MAOMAO_DATA = {
    "year": null,
    "medium": "Масло",
    "description": "",
-   "status": "request",
+   "status": "sold",
    "prints": [],
    "gallery": [
     {
@@ -507,7 +507,7 @@ window.MAOMAO_DATA = {
    "year": null,
    "medium": "Масло",
    "description": "",
-   "status": "request",
+   "status": "sold",
    "prints": [],
    "gallery": [],
    "workingTitle": true,
@@ -525,7 +525,7 @@ window.MAOMAO_DATA = {
    "year": null,
    "medium": "Масло",
    "description": "",
-   "status": "request",
+   "status": "sold",
    "prints": [],
    "gallery": [],
    "workingTitle": true,
@@ -543,7 +543,7 @@ window.MAOMAO_DATA = {
    "year": null,
    "medium": "Масло",
    "description": "",
-   "status": "request",
+   "status": "sold",
    "prints": [],
    "gallery": [],
    "workingTitle": true,
@@ -561,7 +561,7 @@ window.MAOMAO_DATA = {
    "year": null,
    "medium": "Масло",
    "description": "",
-   "status": "request",
+   "status": "sold",
    "prints": [],
    "gallery": [],
    "workingTitle": true,

@@ -454,7 +454,10 @@
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     }
     on(toggle, "click", function () { setList(!el.classList.contains("is-list-open")); });
-    on(doc, "click", function (e) { if (!el.contains(e.target)) setList(false); });
+    on(doc, "pointerdown", function (e) {
+      if (!el.classList.contains("is-list-open")) return;
+      if (!toggle.contains(e.target) && !list.contains(e.target)) setList(false);
+    });
     function select(i, focus) {
       tabs.forEach(function (t, j) {
         var sel = j === i;
@@ -590,7 +593,7 @@
       void box.offsetHeight;
       box.classList.add("is-open");
       lockScroll();
-      setTimeout(function () { $(".lightbox__close", box).focus(); }, 30);
+      setTimeout(function () { $(".lightbox__close", box).focus({ preventScroll: true }); }, 30);
     }
     function close() {
       if (!st.open) return;
@@ -604,7 +607,8 @@
     on($(".lightbox__prev", box), "click", function () { show(st.i - 1); });
     on($(".lightbox__next", box), "click", function () { show(st.i + 1); });
     on(st.stage, "click", function (e) { if (e.target === st.stage || e.target === st.fig) close(); });
-    on(box, "keydown", function (e) {
+    on(doc, "keydown", function (e) {
+      if (!st.open) return;
       if (e.key === "Escape") { e.preventDefault(); close(); }
       else if (e.key === "ArrowRight" && st.items.length > 1) { e.preventDefault(); show(st.i + 1); }
       else if (e.key === "ArrowLeft" && st.items.length > 1) { e.preventDefault(); show(st.i - 1); }
@@ -786,16 +790,61 @@
     var upd = rafThrottle(function () { b.classList.toggle("is-visible", window.scrollY > window.innerHeight); });
     on(window, "scroll", upd, { passive: true });
     upd();
-    on(b, "click", function () {
+    on(b, "click", function (e) {
       window.scrollTo({ top: 0, behavior: reduced() ? "auto" : "smooth" });
-      var t = $(".skip-link") || $(".site-header__logo") || $("h1");
+      b.blur();
+      if (e.detail !== 0) return; // мышь/тап — фокус не трогаем
+      var t = $(".site-header__logo") || $("h1");
       if (t) setTimeout(function () { t.focus({ preventScroll: true }); }, reduced() ? 0 : 500);
     });
+  }
+
+  /* ---------- плашка «Продана» ----------
+     Источник — status: "sold" у работы в data.js. Плашка ставится на любую карточку-ссылку
+     work.html?id=… с .art-card__media (главная, каталог, «Другие работы»), повторно не дублируется. */
+  function soldIds() {
+    var D = window.MAOMAO_DATA, map = {};
+    if (D && D.works) D.works.forEach(function (w) { if (w.status === "sold") map[w.id] = true; });
+    return map;
+  }
+  function markSold(ctx) {
+    var sold = soldIds();
+    $$('a[href*="work.html?id="]', ctx || doc).forEach(function (a) {
+      var m = /[?&]id=([^&#]+)/.exec(a.getAttribute("href"));
+      var media = $(".art-card__media", a);
+      if (!m || !media || !sold[decodeURIComponent(m[1])]) return;
+      a.classList.add("is-sold");
+      if (!$(".sold-badge", media)) media.insertAdjacentHTML("beforeend", '<span class="sold-badge">Продана</span>');
+    });
+  }
+
+  /* ---------- модальность ввода ----------
+     Safari показывает :focus-visible и при программном фокусе после тапа (лайтбокс, «наверх»).
+     html.is-pointer — последний ввод был мышью/пальцем; клавиатура снимает класс, рамки снова видны. */
+  on(doc, "pointerdown", function () { root.classList.add("is-pointer"); }, { passive: true, capture: true });
+  on(doc, "keydown", function (e) { if (e.key === "Tab" || e.key.indexOf("Arrow") === 0 || e.key === "Enter" || e.key === " ") root.classList.remove("is-pointer"); }, { capture: true });
+
+  /* ---------- якорь из адреса после подгрузки шрифтов ----------
+     Браузер прокручивает к #якорю до замены шрифта; после замены тексты выше становятся короче
+     и цель уезжает под шапку — поправляем один раз, если пользователь ещё не прокручивал сам. */
+  function fixHashAfterFonts() {
+    var h = location.hash;
+    if (!h || h.length < 2 || !doc.fonts || !doc.fonts.ready) return;
+    var target; try { target = doc.getElementById(decodeURIComponent(h.slice(1))); } catch (err) { return; }
+    if (!target) return;
+    var userScrolled = false;
+    var mark = function () { userScrolled = true; };
+    on(window, "wheel", mark, { passive: true, once: true });
+    on(window, "touchmove", mark, { passive: true, once: true });
+    var go = function () { if (!userScrolled) target.scrollIntoView({ block: "start", behavior: "auto" }); };
+    doc.fonts.ready.then(function () { requestAnimationFrame(go); });
+    on(window, "load", function () { setTimeout(go, 60); });
   }
 
   /* ---------- init ---------- */
   function init(ctx) {
     ctx = ctx || doc;
+    markSold(ctx);
     initContacts(ctx);
     markActive(ctx);
     $$("[data-slider]", ctx).forEach(initSlider);
@@ -820,6 +869,7 @@
     initLightboxDelegation();
     initToTop();
     init(doc);
+    fixHashAfterFonts();
     window.MAOMAO_READY = true;
     root.classList.add("is-ready");
   }
@@ -836,6 +886,7 @@
     prefill: prefill,
     img: imgHTML,
     esc: esc,
+    markSold: markSold,
     lightbox: {
       open: function (items, i, opener) { buildLightbox().openWith(items, i || 0, opener); },
       close: function () { if (LB) LB.close(); }

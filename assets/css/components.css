@@ -484,6 +484,29 @@ a .art-card__media:hover img { transform: scale(1.035); }
   .art-card--slide-s .art-card__title { font-size: 13px; }
 }
 
+/* плашка «Продана» (status: "sold" в data.js; ставит main.js → markSold) — прямоугольная, как кнопки макета */
+.sold-badge {
+  position: absolute;
+  z-index: 2;
+  top: max(10px, calc(18 * var(--u)));
+  left: max(10px, calc(18 * var(--u)));
+  padding: max(6px, calc(9 * var(--u))) max(11px, calc(18 * var(--u)));
+  font-family: var(--f-text);
+  font-size: max(13px, calc(18 * var(--u)));
+  font-weight: 600;
+  letter-spacing: .01em;
+  line-height: 1;
+  color: var(--ink);
+  background: var(--pink);
+  box-shadow: 0 2px 10px rgba(38, 38, 38, .18);
+  pointer-events: none;
+}
+.sold-badge--lg { font-size: max(14px, calc(22 * var(--u))); }
+@media (max-width: 767.98px) {
+  .sold-badge { top: 8px; left: 8px; padding: 5px 9px; font-size: 12px; }
+  .sold-badge--lg { top: 12px; left: 12px; padding: 7px 12px; font-size: 14px; }
+}
+
 /* =============================== ПОЛАРОИД =============================== */
 /* белая фактурная рамка, нижнее поле больше, мягкая тень */
 .polaroid {
@@ -874,22 +897,20 @@ a .art-card__media:hover img { transform: scale(1.035); }
 .svc__terms-h { margin-top: max(18px, calc(42 * var(--u))); font-size: var(--fs-32); font-weight: 400; letter-spacing: -.03em; line-height: 1.2; }
 .svc__terms { margin-top: max(4px, calc(13 * var(--u))); font-size: var(--fs-22); font-weight: 500; line-height: 1.4; color: rgba(38, 38, 38, .8); }
 .svc__actions { display: flex; flex-direction: column; align-items: flex-start; gap: max(10px, calc(12 * var(--u))); margin-top: max(20px, calc(59 * var(--u))); }
-.svc__media { display: flex; gap: max(10px, calc(29 * var(--u))); }
-.svc__media img { height: calc(560 * var(--u)); object-fit: cover; }
-.svc__media img:first-child { width: calc(314 * var(--u)); }
-.svc__media img:last-child { width: calc(410 * var(--u)); }
+/* фото — в исходных пропорциях (без обрезки): обе одной высоты, ширина каждой ∝ её пропорции (--ar из разметки) */
+.svc__media { display: flex; align-items: flex-start; gap: max(10px, calc(29 * var(--u))); width: calc(753 * var(--u)); }
+.svc__media img { flex: var(--ar, 1) 1 0; min-width: 0; width: auto; height: auto; }
 
 @media (max-width: 1199.98px) and (min-width: 768px) {
   .folder__tab { font-size: var(--fs-18); padding-right: 28px; }
   .svc { grid-template-columns: 1fr; }
   .svc__desc { max-width: none; }
-  /* фото вертикальные (картины в рамах — без обрезки рам) */
-  .svc__media img { height: auto; aspect-ratio: 4 / 5; flex: 1 1 0; width: auto !important; min-width: 0; }
+  .svc__media { width: 100%; max-width: 660px; }
 }
 @media (max-width: 1199.98px) and (min-width: 1000px) {
   /* широкий планшет: как на десктопе — текст слева, две фотографии справа */
   .svc { grid-template-columns: minmax(0, 1fr) minmax(0, 44%); }
-  .svc__media img { aspect-ratio: 3 / 4; }
+  .svc__media { max-width: none; }
 }
 @media (max-width: 767.98px) {
   /* мобильная версия: «селект» цвета активной вкладки + карточка (мобильный фрейм) */
@@ -969,9 +990,7 @@ a .art-card__media:hover img { transform: scale(1.035); }
   .svc__terms-h { font-size: 20px; margin-top: 22px; }
   .svc__terms { font-size: 14px; }
   .svc__actions { align-items: stretch; margin-top: 18px; }
-  .svc__media img,
-  .svc__media img:first-child,
-  .svc__media img:last-child { width: auto; flex: 1 1 0; min-width: 0; height: auto; aspect-ratio: 146 / 184; }
+  .svc__media { width: 100%; }
 }
 
 /* ================================== FAQ ================================== */
@@ -1464,7 +1483,7 @@ textarea.field__input { resize: none; overflow: hidden; min-height: calc(1.3em +
   line-height: 1.2;
 }
 .site-footer__list li { display: flex; }
-.site-footer__contacts .site-footer__list li { justify-content: flex-end; }
+
 .site-footer__list a {
   display: inline-flex;
   align-items: center;
@@ -1484,9 +1503,9 @@ textarea.field__input { resize: none; overflow: hidden; min-height: calc(1.3em +
   position: absolute;
   right: calc(40 * var(--u));
   top: calc(416 * var(--u));   /* на одном уровне с колонкой «Навигация» */
-  text-align: right;
+  text-align: left;            /* иконки — ровной вертикальной линией */
 }
-.site-footer__contacts .site-footer__list { align-items: flex-end; }
+.site-footer__contacts .site-footer__list { align-items: flex-start; }
 .site-footer :focus-visible { outline-color: var(--pink); }
 @media (max-width: 767.98px) {
   .site-footer__inner {
@@ -1546,6 +1565,8 @@ html.is-locked .totop { opacity: 0; visibility: hidden; }
 
 /* картина «Мгновение» в контакт-блоке — белое паспарту как в макете (коммент 4) */
 .contact__mat { --mat-zoom: 1; --mat-pad: max(8px, calc(42 * var(--u))); }
+/* «Мгновение» — лист целиком: собственные белые поля работы и есть паспарту, ничего не подрезается */
+.contact__mat.mat--flush { --mat-pad: 0; }
 
 /* ======================= ARTIST STATEMENT (главная, «О художнике») ======================= */
 .statement {

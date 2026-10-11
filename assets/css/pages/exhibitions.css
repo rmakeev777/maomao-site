@@ -143,3 +143,4 @@
   .ex-event__title { font-size: 40px; }
   .ex-meet__actions .btn { flex: 1 1 100%; }
 }
+.ex-event__more { margin: max(12px, calc(20 * var(--u))) 0 0; }

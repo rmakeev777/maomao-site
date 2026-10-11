@@ -310,6 +310,10 @@ main { display: block; }
   line-height: 1.1;
   color: rgba(38, 38, 38, .6);   /* fill-opacity .6 в макете */
 }
+/* на тёмных плашках (Inner Garden и т.п.) серый текст не читался */
+.on-dark .t-series-label,
+.bg-olive .t-series-label,
+.bg-green .t-series-label { color: rgba(255, 255, 255, .72); }
 .t-unageo { font-family: var(--f-accent); }
 
 /* Ysabeau Infant — текстовые стили макета */
@@ -364,6 +368,11 @@ main { display: block; }
 .bg-green :focus-visible,
 .bg-olive :focus-visible,
 .on-dark :focus-visible { outline-color: var(--pink); }
+/* после касания/клика (html.is-pointer, ставит main.js) рамку от программного фокуса не показываем — Safari рисует её и при тапе;
+   при управлении с клавиатуры класс снимается и рамки снова видны */
+.is-pointer a:focus-visible,
+.is-pointer button:focus-visible,
+.is-pointer [tabindex]:focus-visible { outline: none; }
 
 /* ---------- Доступность ---------- */
 .visually-hidden,
@@ -436,7 +445,8 @@ main { display: block; }
   transition-delay: calc(var(--i, 0) * var(--stagger, 60ms) + var(--delay, 0ms));
 }
 .js [data-intro] { --stagger: 90ms; transition-duration: 1s; }
-.js [data-reveal="fade"] { translate: none; }
+.js [data-reveal="fade"],
+.js [data-intro="fade"] { translate: none; }
 .js [data-reveal="drop"],
 .js [data-intro="drop"] { rotate: var(--drop-rot, 3deg); translate: 0 24px; }
 

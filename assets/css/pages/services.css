@@ -37,7 +37,8 @@
 .sv-step p { margin: max(10px, calc(16 * var(--u))) 0 0; font-size: var(--fs-22); font-weight: 500; line-height: 1.45; }
 .sv-note {
   position: relative;
-  padding: max(56px, calc(110 * var(--u))) max(26px, calc(56 * var(--u))) max(30px, calc(56 * var(--u)));
+  /* бумага в картинке занимает ≈10–92% по ширине и 15–90% по высоте: поля — в % от неё, чтобы текст не вылезал за стикер */
+  padding: max(64px, calc(124 * var(--u))) 15% max(52px, 15%) 17%;
   background: url("../../img/ui/sticky-note.webp") center / 100% 100% no-repeat;
   rotate: 2.5deg;
   align-self: start;

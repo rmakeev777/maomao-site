@@ -88,6 +88,7 @@
     count.textContent = list.length + " " + plural(list.length, "работа", "работы", "работ");
     grid.classList.remove("is-shown");
     grid.innerHTML = list.map(card).join("");
+    if (M.markSold) M.markSold(grid);
     // мягкое появление сетки
     requestAnimationFrame(function () { requestAnimationFrame(function () { grid.classList.add("is-shown"); }); });
     var title = active === "all" ? "Каталог работ" : SERIES[active].title + " — каталог работ";

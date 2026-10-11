@@ -63,7 +63,7 @@
   height: 100%;
   object-fit: cover;
 }
-.hero__collage { --collage-w-m: 100%; position: relative; }
+.hero__collage { --collage-w-m: 100%; position: relative; z-index: 1; }
 .hero__tagline {
   position: absolute;
   z-index: 2;
@@ -93,10 +93,24 @@
   .hero__text { max-width: 420px; font-size: 16px; }
   .hero__tagline { left: auto; right: calc(26 * var(--u)); top: calc(38.5 * var(--u)); bottom: auto; font-size: var(--fs-24); }
 }
-/* планшет: коллаж по центру правой половины (не прилипает к верху), подпись — внизу, чтобы не наезжать на полароид */
+/* планшет: подпись — внизу (вверху справа она наезжала бы на полароид-портрет) */
 @media (min-width: 768px) and (max-width: 1199.98px) {
-  .hero__right { display: flex; align-items: center; }
   .hero__tagline { left: 0; right: 0; top: auto; bottom: 16px; text-align: center; font-size: 15px; }
+}
+/* планшет и телефон: подпись внизу на светлых мазках — мягкое затемнение под ней для читаемости */
+@media (max-width: 1199.98px) {
+  .hero__right::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    height: 64px;
+    background: linear-gradient(180deg, rgba(30, 36, 20, 0), rgba(30, 36, 20, .42));
+    pointer-events: none;
+  }
+  .hero__tagline { text-shadow: 0 0 2px rgba(30, 36, 20, .6), 0 1px 10px rgba(30, 36, 20, .55); }
 }
 
 /* desktop ≥1200: 1:1 макет (0–920) */
@@ -108,6 +122,7 @@
   /* левая половина: контент прикреплён к правому краю половины (центр экрана), как в макете */
   .hero__logo {
     display: block;
+    z-index: 3;
     left: calc(18.32 * var(--u));
     top: calc(13 * var(--u));
     font-family: var(--f-display);
@@ -117,18 +132,21 @@
     color: var(--paper-text);
     text-decoration: none;
   }
+  /* меню крупнее (правка 11.10) и кликабельно: поверх абсолютного .hero__content */
   .hero__nav {
     display: block;
+    z-index: 3;
     right: calc(19 * var(--u));
-    top: calc(6 * var(--u));
+    top: calc(8 * var(--u));
   }
   .hero__nav ul { list-style: none; margin: 0; padding: 0; text-align: right; }
-  .hero__nav li { line-height: calc(32 * var(--u)); height: calc(32 * var(--u)); }
+  .hero__nav li { line-height: calc(40 * var(--u)); height: calc(40 * var(--u)); }
   .hero__nav a {
-    font-size: max(13px, calc(18 * var(--u)));
-    font-weight: 300;
+    display: inline-block;
+    font-size: max(16px, calc(24 * var(--u)));
+    font-weight: 400;
     letter-spacing: -.02em;
-    line-height: calc(32 * var(--u));
+    line-height: calc(40 * var(--u));
     color: var(--paper-text);
     text-decoration: none;
   }
@@ -138,7 +156,9 @@
     top: 0;
     width: calc(960 * var(--u));
     height: 100%;
+    pointer-events: none;   /* прозрачный слой на всю половину не должен перекрывать лого и меню */
   }
+  .hero__content > * { pointer-events: auto; }
   .hero__content > * { position: absolute; margin: 0; }
   .hero__role {
     left: calc(351 * var(--u));
@@ -224,8 +244,11 @@
 /* шапка полки: заголовок + стрелки слайдера справа */
 .shelf__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px 24px; }
 .stickers-slider { margin-top: calc(49 * var(--u)); }
-.stickers-slider .slider__track { --slider-gap: calc(40 * var(--u)); align-items: stretch; }
-.stickers-slider .shelf__card { width: max(200px, calc(410 * var(--u))); }
+.works-slider { margin-top: calc(43 * var(--u)); }
+.stickers-slider .slider__track,
+.works-slider .slider__track { --slider-gap: calc(40 * var(--u)); align-items: stretch; }
+.stickers-slider .shelf__card,
+.works-slider .shelf__card { width: max(200px, calc(410 * var(--u))); }
 .shelf__card--contain { --card-fit: contain; }
 .shelf__title {
   margin: 0;
@@ -345,28 +368,25 @@
   line-height: 1.4;
   text-align: center;
 }
-.reviews__strip {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: calc(48 * var(--u));
-  margin-top: calc(79 * var(--u));
-}
+/* слайдер отзывов: 4 карточки 404×684 в ряд (как в макете), листается; скриншоты целиком — без обрезки */
+.reviews-slider { margin-top: calc(79 * var(--u)); }
+.reviews-slider .slider__track { --slider-gap: calc(48 * var(--u)); align-items: stretch; }
 .review {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  --rw: max(180px, calc(404 * var(--u)));
+  width: var(--rw);
   aspect-ratio: 404 / 684;
   background: var(--white);
   overflow: hidden;
 }
-.review img { display: block; transition: transform .6s var(--ease); }
+.review img { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform .6s var(--ease); }
 .review:hover img { transform: scale(1.03); }
-.review--full img { width: 100%; height: 100%; object-fit: cover; }
-.review--inset { padding: 5.4% 5.4%; }
-.review--inset img { width: 100%; height: 100%; object-fit: cover; border-radius: calc(11 * var(--u)); }
-.review--chat img { width: 100%; height: auto; }
-.reviews__more { display: flex; justify-content: center; margin-top: calc(48 * var(--u)); }
+.review--inset { padding: calc(var(--rw) * .054); }   /* от ширины карточки (в слайдере % считались бы от ленты) */
+.review--chat img { height: auto; }
+.reviews__more { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: calc(48 * var(--u)); }
 @media (min-width: 1200px) {
   /* 8442 → заголовок 8684.5 */
   .reviews { margin-top: calc(223.5 * var(--u)); }
@@ -405,8 +425,9 @@
   .hero { min-height: 560px; }
   .shelf__grid { gap: 20px; }
   .perl-slider .slider__track,
-  .stickers-slider .slider__track { --slider-gap: 20px; }
-  .reviews__strip { gap: 20px; }
+  .stickers-slider .slider__track,
+  .works-slider .slider__track { --slider-gap: 20px; }
+  .reviews-slider .slider__track { --slider-gap: 20px; }
 }
 
 /* ============================================================== МОБИЛЬНЫЙ */
@@ -432,15 +453,18 @@
   .perl-slider { margin: 20px calc(-1 * var(--gutter)) 0; }
   .perl-slider .slider__track { --slider-gap: 14px; --slider-pad: var(--gutter); }
   .perl-card { --ph: 210px; }
-  .stickers-slider { margin-top: 20px; }
-  .stickers-slider .slider__track {
+  .stickers-slider,
+  .works-slider { margin-top: 20px; }
+  .stickers-slider .slider__track,
+  .works-slider .slider__track {
     display: grid;
     grid-auto-flow: column;
     grid-template-rows: auto auto;
     grid-auto-columns: calc((100% - 20px) / 2);
     gap: 22px 20px;
   }
-  .stickers-slider .shelf__card { width: auto; }
+  .stickers-slider .shelf__card,
+  .works-slider .shelf__card { width: auto; }
   .shelf { margin-top: 48px; }
   .shelf__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 20px; margin-top: 20px; }
   .shelf__card { --card-gap: 8px; }
@@ -456,28 +480,17 @@
   .services__folder { margin-top: 28px; }
   .reviews { margin-top: 64px; }
   .reviews__lead { font-size: 14px; }
-  .reviews__strip {
-    display: grid;
-    grid-auto-flow: column;
-    grid-template-columns: none;
-    grid-auto-columns: 153px;
-    gap: 18px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    margin-top: 24px;
-    padding-bottom: 6px;
-    scrollbar-width: none;
-  }
-  .reviews__strip::-webkit-scrollbar { display: none; }
-  .review { scroll-snap-align: start; }
-  .reviews__more { margin-top: 24px; }
+  .reviews-slider { margin-top: 24px; }
+  .reviews-slider .slider__track { --slider-gap: 18px; }
+  .review { --rw: 153px; }
+  .reviews__more { margin-top: 24px; gap: 12px; }
   .faq-section { margin-top: 64px; padding-bottom: 64px; }
   .faq-section .faq { margin-top: 24px; }
 }
 
 /* планшет 768–1199: лого и меню в зелёной половине hero (как на desktop) */
 @media (min-width: 768px) and (max-width: 1199.98px) {
-  .hero__left { padding-top: 96px; }
+  .hero__left { padding-top: 150px; }
   .hero__logo,
   .hero__nav { display: block; position: absolute; z-index: 2; }
   .hero__logo {
@@ -492,6 +505,6 @@
   }
   .hero__nav { right: 20px; top: 12px; }
   .hero__nav ul { list-style: none; margin: 0; padding: 0; text-align: right; }
-  .hero__nav li { line-height: 24px; }
-  .hero__nav a { font-size: 14px; font-weight: 300; letter-spacing: -.02em; color: var(--paper-text); text-decoration: none; }
+  .hero__nav li { line-height: 30px; }
+  .hero__nav a { display: inline-block; font-size: 17px; font-weight: 400; letter-spacing: -.02em; color: var(--paper-text); text-decoration: none; }
 }
