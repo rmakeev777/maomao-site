@@ -507,6 +507,31 @@ a .art-card__media:hover img { transform: scale(1.035); }
   .sold-badge--lg { top: 12px; left: 12px; padding: 7px 12px; font-size: 14px; }
 }
 
+/* переключатель языка RU/EN (шапка, меню первого экрана, мобильное меню) */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.6em;
+  padding: .28em .55em .3em;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-family: var(--f-accent);
+  font-size: .78em;
+  font-weight: 500;
+  letter-spacing: .08em;
+  line-height: 1;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color .3s var(--ease), color .3s var(--ease);
+}
+.lang-switch:hover { background-color: var(--pink); color: var(--ink); border-color: var(--pink); }
+.site-nav__lang { display: flex; align-items: center; }
+.hero__lang { margin-top: 6px; }
+.hero__nav .hero__lang { height: auto !important; line-height: 1 !important; margin-top: max(6px, calc(10 * var(--u))); }
+.hero__nav .hero__lang .lang-switch { font-size: max(11px, calc(15 * var(--u))); line-height: 1; }
+.menu__lang { flex-basis: 100%; margin: 0 0 6px; font-size: 18px; }
+
 /* =============================== ПОЛАРОИД =============================== */
 /* белая фактурная рамка, нижнее поле больше, мягкая тень */
 .polaroid {

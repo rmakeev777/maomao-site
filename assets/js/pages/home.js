@@ -8,7 +8,7 @@
     var a = document.createElement("a");
     a.className = "btn btn--green-wide btn--block bm-mobile-btn u-show-m";
     a.href = "catalog.html?series=between-moments";
-    a.textContent = "Каталог серии";
+    a.textContent = (window.MAOMAO && MAOMAO.t ? MAOMAO.t("Каталог серии") : "Каталог серии");
     bm.appendChild(a);
   }
 })();

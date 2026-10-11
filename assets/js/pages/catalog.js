@@ -3,7 +3,7 @@
   "use strict";
   var D = window.MAOMAO_DATA, M = window.MAOMAO;
   if (!D || !M) return;
-  var esc = M.esc;
+  var esc = M.esc, t = M.t || function (s) { return s; }, EN = M.lang === "en";
   var SERIES = {};
   D.series.forEach(function (s) { SERIES[s.id] = s; });
 
@@ -11,18 +11,18 @@
   function money(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " "); }
   function priceText(w) {
     if (w.price) {
-      if (w.series === "stickers") return money(w.price) + (/шт/.test(w.priceUnit || "") ? " р./шт" : " р.");
+      if (w.series === "stickers") return money(w.price) + (/шт/.test(w.priceUnit || "") ? t(" р./шт") : t(" р."));
       return money(w.price) + " ₽";
     }
     return "";
   }
   function statusText(w) {
-    if (w.status === "available" && w.price && w.series !== "stickers") return priceText(w) + " · оригинал в наличии";
-    if (w.status === "available") return priceText(w) || "В наличии";
-    if (w.status === "print") return "Доступна печать";
-    if (w.status === "sold") return "Продана";
-    if (w.status === "order") return "Под заказ";
-    return "Цена по запросу";
+    if (w.status === "available" && w.price && w.series !== "stickers") return priceText(w) + t(" · оригинал в наличии");
+    if (w.status === "available") return priceText(w) || t("В наличии");
+    if (w.status === "print") return t("Доступна печать");
+    if (w.status === "sold") return t("Продана");
+    if (w.status === "order") return t("Под заказ");
+    return t("Цена по запросу");
   }
   function metaText(w) {
     if (w.series === "stickers") return priceText(w);
@@ -58,7 +58,7 @@
   }
 
   function renderFilters(active) {
-    var items = [{ id: "all", title: "Все работы" }].concat(D.series);
+    var items = [{ id: "all", title: t("Все работы") }].concat(D.series);
     filters.innerHTML = items.map(function (s) {
       var n = s.id === "all" ? D.works.length : D.works.filter(function (w) { return w.series === s.id; }).length;
       return '<button class="cat-filter" type="button" data-series="' + s.id + '" aria-pressed="' + (s.id === active) + '">' +
@@ -73,7 +73,7 @@
     intro.innerHTML =
       '<div class="cat-intro">' +
       '<div class="cat-intro__titles">' +
-      (active === "between-moments" || active === "perlamutr" ? '<p class="t-series-label">серия</p>' : "") +
+      (active === "between-moments" || active === "perlamutr" ? '<p class="t-series-label">' + t("серия") + '</p>' : "") +
       '<h2 class="cat-intro__title">' + esc(s.title) + "</h2>" +
       '<p class="cat-intro__kind">' + esc(s.kind) + "</p>" +
       "</div>" +
@@ -85,14 +85,14 @@
     var list = active === "all" ? D.works : D.works.filter(function (w) { return w.series === active; });
     renderFilters(active);
     renderIntro(active);
-    count.textContent = list.length + " " + plural(list.length, "работа", "работы", "работ");
+    count.textContent = list.length + " " + (EN ? (list.length === 1 ? "work" : "works") : plural(list.length, "работа", "работы", "работ"));
     grid.classList.remove("is-shown");
     grid.innerHTML = list.map(card).join("");
     if (M.markSold) M.markSold(grid);
     // мягкое появление сетки
     requestAnimationFrame(function () { requestAnimationFrame(function () { grid.classList.add("is-shown"); }); });
-    var title = active === "all" ? "Каталог работ" : SERIES[active].title + " — каталог работ";
-    document.title = title + " — Катерина Макеева · МАОМАО";
+    var title = active === "all" ? t("Каталог работ") : SERIES[active].title + t(" — каталог работ");
+    document.title = title + t(" — Катерина Макеева · МАОМАО");
     if (push) {
       var url = active === "all" ? "catalog.html" : "catalog.html?series=" + active;
       history.pushState({ series: active }, "", url);

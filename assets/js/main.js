@@ -337,7 +337,7 @@
     var next = $("[data-slider-next]", el) || (id && $('[data-slider-next="' + id + '"]'));
     if (!track.hasAttribute("tabindex")) track.setAttribute("tabindex", "0");
     if (!track.hasAttribute("role")) track.setAttribute("role", "region");
-    if (!track.hasAttribute("aria-label")) track.setAttribute("aria-label", el.getAttribute("data-slider-label") || "Галерея, листайте вбок");
+    if (!track.hasAttribute("aria-label")) track.setAttribute("aria-label", el.getAttribute("data-slider-label") || t("Галерея, листайте вбок"));
     function gap() { return parseFloat(getComputedStyle(track).columnGap) || 0; }
     function slides() { return Array.prototype.slice.call(track.children); }
     function step() {
@@ -546,13 +546,13 @@
     box.className = "lightbox";
     box.setAttribute("role", "dialog");
     box.setAttribute("aria-modal", "true");
-    box.setAttribute("aria-label", "Просмотр изображения");
+    box.setAttribute("aria-label", t("Просмотр изображения"));
     box.setAttribute("inert", "");
     box.innerHTML =
       '<div class="lightbox__stage"><figure class="lightbox__figure"><img class="lightbox__img" alt="" decoding="async"><figcaption class="lightbox__caption"></figcaption></figure></div>' +
-      '<button type="button" class="lightbox__btn lightbox__close" aria-label="Закрыть">' + ICON.close + "</button>" +
-      '<button type="button" class="lightbox__btn lightbox__prev" aria-label="Предыдущее изображение">' + ICON.prev + "</button>" +
-      '<button type="button" class="lightbox__btn lightbox__next" aria-label="Следующее изображение">' + ICON.next + "</button>" +
+      '<button type="button" class="lightbox__btn lightbox__close" aria-label="' + t("Закрыть") + '">' + ICON.close + "</button>" +
+      '<button type="button" class="lightbox__btn lightbox__prev" aria-label="' + t("Предыдущее изображение") + '">' + ICON.prev + "</button>" +
+      '<button type="button" class="lightbox__btn lightbox__next" aria-label="' + t("Следующее изображение") + '">' + ICON.next + "</button>" +
       '<p class="lightbox__count" aria-live="polite"></p>';
     doc.body.appendChild(box);
     var st = { box: box, items: [], i: 0, opener: null, open: false,
@@ -698,7 +698,7 @@
     // предзаполнение: ?work=<id> → data-prefill → ничего
     var q = new URLSearchParams(location.search);
     var wt = workTitle(q.get("work") || form.getAttribute("data-prefill-work"));
-    var pre = wt ? "Интересует работа «" + wt + "»" : form.getAttribute("data-prefill");
+    var pre = wt ? t("Интересует работа «") + wt + t("»") : form.getAttribute("data-prefill");
     if (pre && form.elements.message && !form.elements.message.value) prefill(pre, form);
 
     function fieldOf(input) { return input && input.closest(".field, .consent"); }
@@ -730,12 +730,12 @@
       var el = form.elements;
       var name = el.name, contact = el.contact, consent = el.consent;
       var bad = [];
-      if (name && !name.value.trim()) { setError(name, "Укажите имя"); bad.push(name); }
-      if (contact && !contact.value.trim()) { setError(contact, "Укажите почту, телефон или Telegram"); bad.push(contact); }
-      if (consent && !consent.checked) { setError(consent, "Нужно согласие на обработку данных"); bad.push(consent); say("Отметьте согласие на обработку персональных данных", true); }
-      if (bad.length) { bad[0].focus(); if (!consent || consent.checked) say("Заполните обязательные поля", true); return; }
+      if (name && !name.value.trim()) { setError(name, t("Укажите имя")); bad.push(name); }
+      if (contact && !contact.value.trim()) { setError(contact, t("Укажите почту, телефон или Telegram")); bad.push(contact); }
+      if (consent && !consent.checked) { setError(consent, t("Нужно согласие на обработку данных")); bad.push(consent); say(t("Отметьте согласие на обработку персональных данных"), true); }
+      if (bad.length) { bad[0].focus(); if (!consent || consent.checked) say(t("Заполните обязательные поля"), true); return; }
       say("");
-      if (el.botcheck && el.botcheck.checked) { form.reset(); say("Спасибо! Заявка отправлена."); return; }
+      if (el.botcheck && el.botcheck.checked) { form.reset(); say(t("Спасибо! Заявка отправлена.")); return; }
       var data = {
         name: name ? name.value.trim() : "",
         contact: contact ? contact.value.trim() : "",
@@ -744,21 +744,21 @@
       };
       var key = CFG.web3formsKey;
       if (!key) {
-        var body = "Имя: " + data.name + "\nКонтакт: " + data.contact + (data.phone ? "\nТелефон: " + data.phone : "") +
-          (data.message ? "\n\n" + data.message : "") + "\n\nСтраница: " + location.href;
-        var href = "mailto:" + (CFG.email || "") + "?subject=" + encodeURIComponent(CFG.formSubject || "Заявка с сайта MAOMAO") + "&body=" + encodeURIComponent(body);
+        var body = t("Имя: ") + data.name + "\n" + t("Контакт: ") + data.contact + (data.phone ? "\n" + t("Телефон: ") + data.phone : "") +
+          (data.message ? "\n\n" + data.message : "") + "\n\n" + t("Страница: ") + location.href;
+        var href = "mailto:" + (CFG.email || "") + "?subject=" + encodeURIComponent(t(CFG.formSubject || "Заявка с сайта MAOMAO")) + "&body=" + encodeURIComponent(body);
         window.location.href = href;
-        say("Открываем почтовую программу… Если она не открылась, напишите на " + (CFG.email || "почту") + " или в Telegram " + (CFG.telegram || "") + ".");
+        say(t("Открываем почтовую программу… Если она не открылась, напишите на ") + (CFG.email || t("почту")) + t(" или в Telegram ") + (CFG.telegram || "") + ".");
         return;
       }
-      setBtn("Отправляем…", true);
+      setBtn(t("Отправляем…"), true);
       fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: key,
-          subject: CFG.formSubject || "Заявка с сайта MAOMAO",
-          from_name: "Сайт МАОМАО",
+          subject: t(CFG.formSubject || "Заявка с сайта MAOMAO"),
+          from_name: t("Сайт МАОМАО"),
           name: data.name,
           contact: data.contact,
           message: data.message,
@@ -771,13 +771,13 @@
           if (!res.ok) throw new Error("fail");
           form.reset();
           if (area) autogrow(area);
-          setBtn("Запрос отправлен", false);
-          say("Спасибо! Я свяжусь с вами в ближайшее время.");
+          setBtn(t("Запрос отправлен"), false);
+          say(t("Спасибо! Я свяжусь с вами в ближайшее время."));
           setTimeout(function () { setBtn(btnText, false); }, 4000);
         })
         .catch(function () {
           setBtn(btnText, false);
-          say("Не получилось отправить. Напишите на " + (CFG.email || "почту") + " или в Telegram " + (CFG.telegram || "") + ".", true);
+          say(t("Не получилось отправить. Напишите на ") + (CFG.email || t("почту")) + t(" или в Telegram ") + (CFG.telegram || "") + ".", true);
         });
     });
   }
@@ -799,6 +799,24 @@
     });
   }
 
+  /* ---------- язык ----------
+     t("русская строка") → перевод из window.MAOMAO_EN.ui (assets/js/en.js подключается только на /en/-страницах). */
+  var LANG = root.getAttribute("lang") === "en" ? "en" : "ru";
+  function t(s) {
+    var d = LANG === "en" && window.MAOMAO_EN && window.MAOMAO_EN.ui;
+    return (d && d[s]) || s;
+  }
+  // переключатель RU/EN: запоминаем выбор и открываем ту же страницу на другом языке (с ?id=… и #якорем)
+  on(doc, "click", function (e) {
+    var a = e.target.closest && e.target.closest("a[data-lang]");
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey || e.button > 0) return;
+    var to = a.getAttribute("data-lang");
+    try { localStorage.setItem("maomao-lang", to); } catch (err) {}
+    var f = location.pathname.split("/").pop() || "index.html";
+    e.preventDefault();
+    location.href = (to === "en" ? "en/" : "../") + f + location.search + location.hash;
+  });
+
   /* ---------- плашка «Продана» ----------
      Источник — status: "sold" у работы в data.js. Плашка ставится на любую карточку-ссылку
      work.html?id=… с .art-card__media (главная, каталог, «Другие работы»), повторно не дублируется. */
@@ -814,7 +832,7 @@
       var media = $(".art-card__media", a);
       if (!m || !media || !sold[decodeURIComponent(m[1])]) return;
       a.classList.add("is-sold");
-      if (!$(".sold-badge", media)) media.insertAdjacentHTML("beforeend", '<span class="sold-badge">Продана</span>');
+      if (!$(".sold-badge", media)) media.insertAdjacentHTML("beforeend", '<span class="sold-badge">' + t("Продана") + "</span>");
     });
   }
 
@@ -887,6 +905,8 @@
     img: imgHTML,
     esc: esc,
     markSold: markSold,
+    t: t,
+    lang: LANG,
     lightbox: {
       open: function (items, i, opener) { buildLightbox().openWith(items, i || 0, opener); },
       close: function () { if (LB) LB.close(); }
