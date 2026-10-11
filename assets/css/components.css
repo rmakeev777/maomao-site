@@ -237,7 +237,6 @@ html.is-locked { overflow: hidden; }
 }
 .menu__foot a { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; }
 .menu__foot svg { width: 18px; height: 18px; flex: 0 0 auto; }
-.menu__note { flex-basis: 100%; font-size: 12px; opacity: .5; }
 @media (min-width: 768px) {
   .menu { display: none; }
 }
@@ -1378,14 +1377,14 @@ textarea.field__input { resize: none; overflow: hidden; min-height: calc(1.3em +
 .contact-form__status:not(:empty) { animation: status-in .4s var(--ease); }
 @keyframes status-in { from { opacity: 0; translate: 0 6px; } }
 .hp-field { display: none !important; }
-/* нижняя строка: Meta-сноска (x26) · Политика (x813) · Согласие (x1125) · ИНН (x1857) */
+/* нижняя строка: «Согласие на обработку персональных данных» слева · ИНН справа (сноска о Meta и политика убраны 11.10) */
 .contact__legal {
   position: absolute;
   left: 0;
   right: 0;
   bottom: calc(26 * var(--u));
   display: grid;
-  grid-template-columns: calc(787 * var(--u)) calc(312 * var(--u)) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
   max-width: var(--container);
   margin-inline: auto;
@@ -1396,15 +1395,13 @@ textarea.field__input { resize: none; overflow: hidden; min-height: calc(1.3em +
 }
 .contact__legal a { transition: opacity .3s var(--ease); }
 .contact__legal a:hover { text-decoration: underline; text-underline-offset: .18em; }
-.contact__meta { opacity: .4; }
 .contact__inn { justify-self: end; }
 
 @media (max-width: 1199.98px) and (min-width: 768px) {
   .contact__inner { padding-bottom: 140px; }
   /* сноска — отдельной строкой, ниже обе правовые ссылки рядом; поля — как у контейнера */
-  .contact__legal { grid-template-columns: auto auto minmax(0, 1fr); gap: 8px 32px; bottom: 22px; padding-inline: var(--gutter); }
-  .contact__meta { grid-column: 1 / -1; }
-  .contact__inn { justify-self: start; grid-column: 1 / -1; }
+  .contact__legal { grid-template-columns: minmax(0, 1fr); gap: 8px 32px; bottom: 22px; padding-inline: var(--gutter); }
+  .contact__inn { justify-self: start; }
 }
 @media (max-width: 767.98px) {
   .contact__inner {

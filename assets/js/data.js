@@ -362,12 +362,12 @@ window.MAOMAO_DATA = {
    }
   },
   {
-   "id": "mgnovenie",
+   "id": "sobiraya-tishinu",
    "series": "between-moments",
-   "title": "Мгновение",
-   "year": 2025,
-   "medium": "Цифровая живопись",
-   "description": "Момент искренней благодарности и заботы, выраженный через цветы. Работа напоминает о том, что самые ценные эмоции часто скрываются в простых жестах.",
+   "title": "Собирая тишину",
+   "year": 2026,
+   "medium": "Цифровая живопись, холст",
+   "description": "Работа о редком состоянии внутреннего покоя. Девушка собирает букет, превращая обычный момент в тихий ритуал внимательности, красоты и близости к природе. Яркие растения и тёмный фон подчёркивают хрупкость мгновения и ощущение сосредоточенности на настоящем.",
    "status": "print",
    "prints": [
     "открытки",
@@ -380,7 +380,8 @@ window.MAOMAO_DATA = {
     "w": 1129,
     "h": 1580,
     "srcset": "assets/img/works/mgnovenie-640.webp 457w, assets/img/works/mgnovenie-1280.webp 915w, assets/img/works/mgnovenie-2000.webp 1129w"
-   }
+   },
+   "size": "80 × 100 см"
   },
   {
    "id": "inzhir",
@@ -625,6 +626,24 @@ window.MAOMAO_DATA = {
     "srcset": "assets/img/works/zhemchuzhina-640.webp 640w, assets/img/works/zhemchuzhina-1280.webp 1280w, assets/img/works/zhemchuzhina-2000.webp 2000w"
    },
    "size": "30 × 40 см"
+  },
+  {
+   "id": "pered-vykhodom",
+   "series": "perlamutr",
+   "title": "Перед выходом",
+   "year": 2026,
+   "medium": "Холст, масло",
+   "size": "40 × 40 см",
+   "description": "Повседневная сцена фиксирует короткую паузу перед движением наружу. Снятая обувь, книга, раковина и ткань сохраняют след присутствия человека, превращая интерьер в тихий автопортрет без фигуры.",
+   "status": "request",
+   "prints": [],
+   "gallery": [],
+   "img": {
+    "src": "assets/img/works/pered-vykhodom-2000.webp",
+    "w": 1656,
+    "h": 1686,
+    "srcset": "assets/img/works/pered-vykhodom-640.webp 629w, assets/img/works/pered-vykhodom-1280.webp 1257w, assets/img/works/pered-vykhodom-2000.webp 1656w"
+   }
   },
   {
    "id": "prikosnovenie",

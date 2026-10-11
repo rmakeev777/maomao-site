@@ -116,6 +116,7 @@
 
   var medium = {
     "Цифровая живопись": "Digital painting",
+    "Цифровая живопись, холст": "Digital painting on canvas",
     "Открытка": "Postcard",
     "Стикерпак": "Sticker pack",
     "Масло": "Oil",
@@ -140,7 +141,7 @@
     "tsvetochnaya-kompozitsiya": ["Floral Composition", "The tenderness of the flowers and the calm of the portrait create the feeling of a quiet moment you want to hold on to. The work explores the beauty of things that don’t last."],
     "u-morya": ["By the Sea", "Travel as a chance to stop and listen to yourself. The work conveys the calm that comes with sea air and the anticipation of a new journey."],
     "khranitel-khrama": ["Temple Keeper", "A small corner of a temple becomes a meeting place for nature, an animal and the past. The work is dedicated to quiet spaces where time seems to flow more slowly."],
-    "mgnovenie": ["A Moment", "A moment of sincere gratitude and care, expressed through flowers. The work is a reminder that the most precious emotions often hide in simple gestures."],
+    "sobiraya-tishinu": ["Gathering Silence", "A work about a rare state of inner calm. A girl gathers a bouquet, turning an ordinary moment into a quiet ritual of attentiveness, beauty and closeness to nature. The bright plants and dark background emphasise the fragility of the moment and a sense of focus on the present."],
     "inzhir": ["Fig", ""],
     "vnutrennee-otrazhenie": ["Inner Reflection", "The portrait is set inside the pearly form of a shell, as if the image appears not in front of a mirror but within memory. The flowers heighten the sense of fragility while turning the female profile into an image of inner composure."],
     "rakovina": ["Seashell", ""],
@@ -152,6 +153,7 @@
     "dve-rakoviny": ["Two Shells", ""],
     "vzglyad-vnutr": ["Looking Within", "A female profile and a shell merge into a single image: the outer becomes a continuation of the inner. The work speaks of attention to oneself — not as isolation, but as a way to hear your own state."],
     "lotos-i-zhemchug": ["Lotus and Pearl", ""],
+    "pered-vykhodom": ["Before Going Out", "An everyday scene captures a brief pause before stepping outside. Shoes taken off, a book, a shell and fabric keep the trace of a person’s presence, turning the interior into a quiet self-portrait without a figure."],
     "nimfa": ["Nymph", "A figure sheltered inside an open shell exists beside a pearl as part of her own space. Here the shell becomes almost the architecture of an inner world — a place of rest, vulnerability and treasured value."],
     "prikosnovenie": ["Touch", "The painting explores the bond between people and nature through the image of a girl and a deer sharing one space. It is a story of trust, tenderness and a sense of unity with all living things."],
     "bez-nazvaniya-vostok": ["Untitled", "A portrait inspired by Eastern aesthetics."],

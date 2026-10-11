@@ -200,6 +200,8 @@
   .hero__right { height: 100%; }
   .hero__collage { --collage-w: calc(960 * var(--u)); position: absolute; left: 0; top: 0; }
   .hero__tagline { left: calc(620 * var(--u)); right: auto; top: calc(38.5 * var(--u)); font-size: calc(24 * var(--u)); white-space: nowrap; }
+  /* английская подпись длиннее — привязываем к правому краю, чтобы не обрезалась */
+  html[lang="en"] .hero__tagline { left: auto; right: calc(26 * var(--u)); }
 }
 
 /* ----------------------------------------------------------- ГАЛЕРЕЯ */

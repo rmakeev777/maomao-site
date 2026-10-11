@@ -7,7 +7,7 @@
   var esc = M.esc, t = M.t || function (s) { return s; };
   var id = new URLSearchParams(location.search).get("id");
   // старые адреса работ «Перламутра» (до официальных названий из каталога Martemanchello, 11.10.2026)
-  var OLD_IDS = { "zhasmin": "vnutrennee-otrazhenie", "zhemchuzhnaya-serga": "vzglyad-vnutr", "zhemchuzhina": "nimfa" };
+  var OLD_IDS = { "zhasmin": "vnutrennee-otrazhenie", "zhemchuzhnaya-serga": "vzglyad-vnutr", "zhemchuzhina": "nimfa", "mgnovenie": "sobiraya-tishinu" };
   if (OLD_IDS[id]) {
     id = OLD_IDS[id];
     try { history.replaceState(null, "", "work.html?id=" + id + location.hash); } catch (e) {}
