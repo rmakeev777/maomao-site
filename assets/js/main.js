@@ -93,7 +93,7 @@
   function initContacts(ctx) {
     $$("[data-contact]", ctx).forEach(function (a) {
       var k = a.getAttribute("data-contact");
-      var href = { email: CFG.email && "mailto:" + CFG.email, phone: CFG.phoneHref, telegram: CFG.telegramUrl, instagram: CFG.instagramUrl }[k];
+      var href = { email: CFG.email && "mailto:" + CFG.email, phone: CFG.phoneHref, telegram: CFG.telegramUrl, channel: CFG.channelUrl, instagram: CFG.instagramUrl }[k];
       var text = { email: CFG.email, phone: CFG.phone, telegram: CFG.telegram, instagram: CFG.instagram }[k];
       if (href && a.tagName === "A") a.setAttribute("href", href);
       if (text && a.hasAttribute("data-contact-text")) a.textContent = text;
@@ -752,21 +752,30 @@
         return;
       }
       setBtn(t("Отправляем…"), true);
+      // Письмо приходит художнице — поля подписаны по-русски на обеих версиях сайта.
+      // Если в «Как с вами связаться» указана почта — она станет адресом для ответа (поле email у Web3Forms).
+      var isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.contact);
+      var tgUser = /^@?[a-z0-9_]{5,32}$/i.test(data.contact) && !isEmail ? data.contact.replace(/^@/, "") : "";
+      var payload = {
+        access_key: key,
+        subject: (CFG.formSubject || "Заявка с сайта MAOMAO") + (LANG === "en" ? " (английская версия)" : "") + (data.name ? " — " + data.name : ""),
+        from_name: "Сайт МАОМАО",
+        "Имя": data.name,
+        "Как связаться": data.contact + (tgUser ? " (Telegram: https://t.me/" + tgUser + ")" : ""),
+        "Телефон": data.phone || "—",
+        "Идея": data.message || "—",
+        "Страница": location.href,
+        botcheck: ""
+      };
+      if (isEmail) payload.email = data.contact;
+      var ctrl = "AbortController" in window ? new AbortController() : null;
+      var timer = ctrl && setTimeout(function () { ctrl.abort(); }, 15000);
       fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: key,
-          subject: t(CFG.formSubject || "Заявка с сайта MAOMAO"),
-          from_name: t("Сайт МАОМАО"),
-          name: data.name,
-          contact: data.contact,
-          message: data.message,
-          phone: data.phone,
-          page: location.href,
-          botcheck: false
-        })
-      }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok && j.success !== false }; }); })
+        body: JSON.stringify(payload),
+        signal: ctrl ? ctrl.signal : undefined
+      }).then(function (r) { if (timer) clearTimeout(timer); return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok && j.success !== false }; }); })
         .then(function (res) {
           if (!res.ok) throw new Error("fail");
           form.reset();

@@ -8,6 +8,7 @@ window.MAOMAO_CONFIG = {
   phoneHref: "tel:+79610702578",
   telegram: "@katemaomao",
   telegramUrl: "https://t.me/katemaomao",
+  channelUrl: "https://t.me/teahouseofmaomao",   // Телеграм-канал «Чайный домик Мао Мао»
   instagram: "@kate.maomao",
   instagramUrl: "https://instagram.com/kate.maomao",
   /* Ключ Web3Forms (https://web3forms.com). Пока пусто — форма откроет почтовую программу (mailto). */

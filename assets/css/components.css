@@ -1398,10 +1398,7 @@ textarea.field__input { resize: none; overflow: hidden; min-height: calc(1.3em +
 .contact__inn { justify-self: end; }
 
 @media (max-width: 1199.98px) and (min-width: 768px) {
-  .contact__inner { padding-bottom: 140px; }
-  /* сноска — отдельной строкой, ниже обе правовые ссылки рядом; поля — как у контейнера */
-  .contact__legal { grid-template-columns: minmax(0, 1fr); gap: 8px 32px; bottom: 22px; padding-inline: var(--gutter); }
-  .contact__inn { justify-self: start; }
+  .contact__inner { padding-bottom: 72px; }
 }
 @media (max-width: 767.98px) {
   .contact__inner {
