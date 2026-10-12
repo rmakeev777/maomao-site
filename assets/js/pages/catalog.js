@@ -10,6 +10,9 @@
   // ---------- общие форматтеры (используются и на work.html через MAOMAO_CAT) ----------
   function money(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " "); }
   function priceText(w) {
+    if (w.price && window.MAOMAO_EN && MAOMAO_EN.usd) {
+      return MAOMAO_EN.usd(w.price) + (w.series === "stickers" && /шт/.test(w.priceUnit || "") ? " / pc" : "");
+    }
     if (w.price) {
       if (w.series === "stickers") return money(w.price) + (/шт/.test(w.priceUnit || "") ? t(" р./шт") : t(" р."));
       return money(w.price) + " ₽";

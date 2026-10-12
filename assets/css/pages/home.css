@@ -201,7 +201,7 @@
   .hero__collage { --collage-w: calc(960 * var(--u)); position: absolute; left: 0; top: 0; }
   .hero__tagline { left: calc(620 * var(--u)); right: auto; top: calc(38.5 * var(--u)); font-size: calc(24 * var(--u)); white-space: nowrap; }
   /* английская подпись длиннее — привязываем к правому краю, чтобы не обрезалась */
-  html[lang="en"] .hero__tagline { left: auto; right: calc(26 * var(--u)); }
+  html[lang="en"] .hero__tagline { left: auto; right: calc(26 * var(--u)); width: calc(330 * var(--u)); white-space: normal; text-align: right; line-height: 1.2; text-wrap: balance; }
 }
 
 /* ----------------------------------------------------------- ГАЛЕРЕЯ */
@@ -328,13 +328,13 @@
   .nb-mobile { display: grid !important; gap: 22px; max-width: 720px; margin: 0 auto; }
   .nb-section__band { top: 46%; }
   /* набросок выглядывает из-за блокнота: нижняя половина спрятана под страницей */
-  .nb-mobile__torn { width: 60%; margin: 0 0 -26% 30%; rotate: 9deg; position: relative; z-index: 0; }
+  .nb-mobile__torn { width: 60%; margin: 0 0 -15% 30%; rotate: 9deg; position: relative; z-index: 0; }
   .nb-mobile__sheet { position: relative; z-index: 1; }
   .nb-mobile .nb__name { margin: 0; font-size: 26px; }
   .nb-mobile .nb__text { margin-top: 14px; font-size: 14px; }
   .nb-mobile .nb__label { margin-top: 20px; font-size: 13px; }
   .nb-mobile .nb__value { margin-top: 8px; font-size: 15px; line-height: 1.35; }
-  .nb-mobile__polaroid { width: 62%; justify-self: end; margin-top: -10px; rotate: -4deg; position: relative; z-index: 2; }
+  .nb-mobile__polaroid { width: 62%; justify-self: end; margin-top: -13%; rotate: -4deg; position: relative; z-index: 2; }
   .nb-mobile__leaf { position: relative; z-index: 1; }
   .nb-mobile__leaf .nb__h { font-size: 26px; }
   .nb-mobile__leaf .btn { margin-top: 22px; }
@@ -439,6 +439,7 @@
   .gallery__lead { font-size: 15px; }
   .series { margin-top: 40px; }
   .series-head__actions .btn { display: none; }
+  .bm-mobile-btn { margin-top: 28px; }
   /* слайдер — 2 ряда по 2 карточки (как сетка 2×2 мобильного макета), свайп */
   .bm-slider .slider__track {
     display: grid;

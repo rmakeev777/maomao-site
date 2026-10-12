@@ -5,4 +5,4 @@ Allow: /
 Disallow: /_partials/
 Disallow: /styleguide.html
 
-Sitemap: https://rmakeev777.github.io/maomao-site/sitemap.xml
+Sitemap: https://katemaomao.art/sitemap.xml

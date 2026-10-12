@@ -42,20 +42,18 @@
     "Спасибо! Я свяжусь с вами в ближайшее время.": "Thank you! I’ll get back to you soon.",
     "Не получилось отправить. Напишите на ": "Couldn’t send the request. Please write to ",
     // каталог
-    " р./шт": " ₽ / pc",
-    " р.": " ₽",
     " · оригинал в наличии": " · original available",
     "В наличии": "Available",
     "Доступна печать": "Prints available",
     "Под заказ": "Made to order",
     "Цена по запросу": "Price on request",
     "Все работы": "All works",
-    "Каталог работ": "Catalog",
-    " — каталог работ": " — catalog",
+    "Каталог работ": "Artworks",
+    " — каталог работ": " — artworks",
     " — Катерина Макеева · МАОМАО": " — Katerina Makeeva · MAOMAO",
     // карточка работы
     "Работа не найдена": "Artwork not found",
-    "Возможно, ссылка устарела. Посмотрите все работы в каталоге.": "The link may be out of date. Have a look at all works in the catalog.",
+    "Возможно, ссылка устарела. Посмотрите все работы в каталоге.": "The link may be out of date. Have a look at all artworks.",
     " · Катерина Макеева · МАОМАО": " · Katerina Makeeva · MAOMAO",
     "Открыть изображение «": "Open image “",
     "» крупно": "” full size",
@@ -81,7 +79,7 @@
     "Следующая": "Next",
     "Предыдущие работы": "Previous works",
     "Следующие работы": "Next works",
-    "Каталог серии": "Series catalog",
+    "Каталог серии": "All artworks",
     "Другие работы: ": "More works: ",
     "Написать в Telegram": "Message on Telegram"
   };
@@ -198,5 +196,14 @@
   var C = window.MAOMAO_CONFIG;
   if (C) { C.siteName = "MAOMAO — Katerina Makeeva"; C.artist = "Katerina Makeeva"; }
 
-  window.MAOMAO_EN = { ui: ui };
+  // Цены на английской версии — в долларах. Курс USD/RUB по Google (рынок) на 12.10.2026: 1 $ ≈ 85,03 ₽.
+  // Округление: до $1 (меньше $20), до $5 (до $100), до $10 (до $1000), дальше до $50.
+  var USD_RUB = 85.03;
+  function usd(rub) {
+    var v = rub / USD_RUB;
+    var step = v < 20 ? 1 : v < 100 ? 5 : v < 1000 ? 10 : 50;
+    return "$" + String(Math.round(v / step) * step).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  window.MAOMAO_EN = { ui: ui, usd: usd };
 })();
